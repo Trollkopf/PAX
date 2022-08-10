@@ -3,6 +3,7 @@
 	include_once(HELPERS_PATH.'cambiaM_a_espanol.php'); 
 	include_once(HELPERS_PATH.'appointmentsinfo.php'); 
 	include_once(MODELS_PATH.'appointment.php'); 
+	include_once(HELPERS_PATH.'borrar-citas-pasadas.php');?>
 ?>
 
 <div class='panel'>
