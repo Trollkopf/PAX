@@ -1,0 +1,44 @@
+{
+  "noticia":[
+    {
+      "title": "HTML5 nuevas etiquetas, efectos y comportamientos",
+      "body": "HTML5 tambi&eacute;n es un termino de marketing para agrupar las nuevas tecnolog&iacute;as y est&aacute;ndares de desarrollo de aplicaciones Web: HTML5, CSS3 y Javascript.",
+      "link": "https://disenowebakus.net/html5.php"
+    },
+    {
+      "title": "Javascript: los operadores Spread y Rest",
+      "body": "C&oacute;mo funciona y c&oacute;mo usar los operadores Spread y Rest",
+      "link": "https://www.ma-no.org/es/programacion/javascript/javascript-los-operadores-de-propagacion-y-del-resto"
+    },
+    {
+      "title": "Las Mejores Librerias de JavaScript para Aumentar la Productividad",
+      "body": "Todos escribimos mucho c&oacute;digo en nuestro d&iacute;a a d&iacute;a. A veces creamos aplicaciones enormes y otras veces nos pasamos el d&iacute;a escribiendo c&oacute;digo para funciones sencillas que quiz&aacute; no tengamos que programar en absoluto. Hay cientos de miles de bibliotecas para todo tipo de casos de uso, y el uso de estos paquetes puede ahorrar mucho tiempo que puedes utilizar para ser m&aacute;s productivo.",
+      "link": "https://www.ma-no.org/es/programacion/javascript/librerias-de-javascript-para-aumentar-la-productividad"
+    },
+    {
+      "title": "Javascript se mantiene como el lenguaje de programaci&oacute;n m&aacute;s popular",
+      "body": "El lenguaje de programaci&oacute;n Javascript es el m&aacute;s utilizado en la actualidad, y casi 14 millones de desarrolladores en el mundo programan con &eacute;l especialmente en la web y para la nube, seguido de otros lenguajes como Python, Java y C++",
+      "link": "https://www.europapress.es/portaltic/software/noticia-javascript-mantiene-lenguaje-programacion-mas-popular-14-millones-desarrolladores-20210430172721.html"
+    },
+              {
+                "title": "Ultima noticia 5",
+                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+              },
+              {
+                "title": "Ultima noticia 6",
+                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+              },
+              {
+                "title": "Ultima noticia 7",
+                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+              },
+              {
+                "title": "Ultima noticia 8",
+                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+              },
+              {
+                "title": "Ultima noticia 9",
+                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+              }
+            ]
+}

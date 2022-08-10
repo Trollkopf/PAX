@@ -1,0 +1,88 @@
+﻿#formulario section {
+    width: 50%;
+    height: auto;
+    border: 1px 1px 0px 1px solid #582A7A;
+    margin: 0px auto;
+    padding: 50px 20px 20px 40px;
+    font-family: "TrebuchetMS";
+    background: whitesmoke;
+    color: #2B0548;
+    box-shadow: 1px 1px 2px #582A7A;
+}
+
+#formulario td input {
+    border: 1px solid #2B0548;
+    border-radius:2px;
+    caret-color: #582A7A;
+}
+#formulario td select {
+    border: 1px solid #2B0548;
+    border-radius: 2px;
+}
+
+#formulario table td:first-child{
+    width:200px;
+}
+#formulario table td:nth-child(2){
+    width:200px;
+}
+
+#formulario #last {
+    width: 50%;
+    text-align: center;
+    height: auto;
+    border: 0px 1px 1px 1px solid #582A7A;
+    margin: 0px auto;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+    font-family: "TrebuchetMS";
+    background: whitesmoke;
+    color: #2B0548;
+    box-shadow: 1px 1px 2px #582A7A;
+}
+ 
+
+#formulario .title h2{
+    float: left;
+    background: #0E0018;
+    color: whitesmoke;
+    font-family:"BebasNeue";
+    letter-spacing:2px;
+    height: 30px;
+    line-height: 30px;
+    margin: -50px 0px 0px -40px;
+    padding: 4px;
+    font-size: 24px;
+    border-radius: 0px 0px 5px 0px;
+}
+/*BOTONES*/
+#reset {
+    font-family: "BebasNeue";
+    font-size: 16px;
+    padding: 12px;
+    background: whitesmoke;
+    color: #582A7A;
+    border: 1px solid #582A7A;
+    cursor: pointer;
+    transition: .5s ease;
+    border-radius: 4px;
+}
+    #reset:hover {
+        box-shadow: inset 10.50em 0 0 0 #582A7A, inset -10.50em 0 0 0 #582A7A;
+        color: whitesmoke;
+    }
+
+#submit {
+    font-family: "BebasNeue";
+    font-size: 16px;
+    padding: 12px 32px 12px 32px;
+    background: #582A7A;
+    color: whitesmoke;
+    border: 1px solid #582A7A;
+    cursor: pointer;
+    transition: .5s ease;
+    border-radius: 4px;
+}
+    #submit:hover {
+        box-shadow: inset 10.50em 0 0 0 #0E0018;
+    }

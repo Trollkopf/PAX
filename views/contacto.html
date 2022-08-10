@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <!--IDIOMA DE LOS CARACTERES-->
+    <meta charset="utf-8" />
+    <!--TÍTULO-->
+    <title>PAX | DIGITAL MINDS</title>
+    <!--ICONO-->
+    <link rel="icon" type="favicon/x-icon" href="../images/icon.png" />
+    <!--LLAMADA A LAS HOJAS DE ESTILO-->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/General.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/Contacto.css" />
+
+    <!--LLAMADA A LOS SCRIPTS-->
+    <script src="../scripts/RRSS.js"></script>
+    <script src="../scripts/contact.js"></script>
+    <!--LLAMADA A LA API DE GOOGLE MAPS-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW2fSc43cKOZDCuSncDzJ73qrqQ5uLYxs&callback=initMap"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--METADATOS-->
+    <meta name="author" content="Maximiliano Serratosa" />
+    <meta name="robots" content="follow" />
+    <meta name="description" content="PAX | DIGITAL MINDS es tu solucion para tu aplicacion web" />
+    <meta name="keywords" content="html, css, javascript, php, diseño web, ajax, mysql" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="category" content="Web app" />
+</head>
+<body onload="cargarmapa();">
+
+    <!--INICIO DE LA CABECERA-->
+    <header id="header">
+        <div class="wrap">
+            <div id="logo">
+                <span class="displ"><img src="../images/icon.png"  alt="logo"/></span>
+                <h1>PAX | DIGITAL MINDS</h1>
+            </div>
+
+            <!--MENÚ DE NAVEGACIÓN-->
+            <nav id="menu">
+                <ul>
+                    <li><a href="../index.html" class="btn">INICIO</a></li>
+                    <li><a href="galeria.html" class="btn">GALER&Iacute;A</a></li>
+                    <li><a href="presupuesto.html" class="btn">PRESUPUESTO</a></li>
+                    <li><a href="#" class="btn_in">CONTACTO</a></li>
+                    <li><a href="../users/areausuarios.php" class="users">AREA USUARIOS</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </header>
+
+    <!--INICIO DE SECCION-->
+    <section class="wrap wrap-content"><h2>CONTACTO</h2>
+        <section class="info">
+            <!--INICIO DEL BANNER-->
+            <div id="banner"><h2>CONTACTO</h2></div>
+
+        </section>
+
+        <div id="contact">
+            <!--MAPA-->
+            <div id="map">
+
+            </div>
+            <!--DIRECCIONES-->
+            <div id="ruta"></div>
+            <!--CALCULAR DIRECCIONES-->
+            
+            <span class="route"><input type="text" class="loc" id="partida" placeholder="Inserte el punto de partida" /></span>
+            <span class="route"><input type="button" id="button" value="Calcular Ruta" onclick="calcularRuta();" /></span>
+            
+        </div>
+
+    </section>
+
+
+
+    <!--PIE DE PÁGINA-->
+    <div class="clearfix"></div>
+    <footer id="footer">
+
+        <div class="wrap">
+
+
+            <div>
+                <h5>PAX | DIGITAL MINDS</h5>
+                <!--DIRECCION-->
+                Avenida de Palmela 19 - 03730 J&aacute;vea (Alicante)<br />
+                <!--AVISO LEGAL-->
+                <p>
+                    <a href="#" class="advice">Política de cookies</a>&nbsp; | &nbsp;
+                    <a href="#" class="advice">Política de privacidad</a>&nbsp; | &nbsp;
+                    <a href="views/avisolegal.html" class="advice">Aviso Legal</a>
+                </p>
+                <!--RRSS-->
+                <p>
+                    <a href="#" class="rrss" onmouseover="fbhover()" onmouseout="fbblack()"><img id="fb" alt="Facebook" src="../images/rrss/facebook.png" /></a> &nbsp;
+                    <a href="#" class="rrss" onmouseover="ighover()" onmouseout="igblack()"><img id="ig" alt="Instagram" src="../images/rrss/instagram.png" /></a> &nbsp;
+                    <a href="#" class="rrss" onmouseover="twhover()" onmouseout="twblack()"><img id="tw" alt="twitter" src="../images/rrss/twitter.png" /></a>
+                </p>&copy; PAX | DIGITAL MINDS 2022
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

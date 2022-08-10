@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <!--IDIOMA DE LOS CARACTERES-->
+    <meta charset="utf-8" />
+    <!--TÍTULO-->
+    <title>PAX | DIGITAL MINDS</title>
+    <!--ICONO-->
+    <link rel="icon" type="favicon/x-icon" href="images/icon.png" />
+    <!--LLAMADA A LAS HOJAS DE ESTILO-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/General.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/inicio.css" />
+    <!--LLAMADA A LOS SCRIPTS-->
+    <script src="scripts/RRSS.js"></script>
+    <script src="scripts/jsonLoader.js"></script>
+
+    
+
+    <!--METADATOS-->
+    <meta name="author" content="Maximiliano Serratosa" />
+    <meta name="robots" content="follow" />
+    <meta name="description" content="PAX | DIGITAL MINDS es tu solucion para tu aplicacion web" />
+    <meta name="keywords" content="html, css, javascript, php, diseño web, ajax, mysql" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="category" content="Web app" />
+</head>
+<body>
+
+    <!--INICIO DE LA CABECERA-->
+    <header id="header">
+        <div class="wrap">
+            <div id="logo">
+                <span class="displ"><img src="images/icon.png" alt="logo"/></span>
+                <h1>PAX | DIGITAL MINDS</h1>
+            </div>
+
+            <!--MENÚ DE NAVEGACIÓN-->
+            <nav id="menu">
+                <ul>
+                    <li><a href="#" class="btn_in">INICIO</a></li>
+                    <li><a href="views/galeria.html" class="btn">GALER&Iacute;A</a></li>
+                    <li><a href="views/presupuesto.html" class="btn">PRESUPUESTO</a></li>
+                    <li><a href="views/contacto.html" class="btn">CONTACTO</a></li>
+                    <li><a href="users/areausuarios.php" class="users">AREA USUARIOS</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </header>
+
+    <!--INICIO DE LAS SECCIONES-->
+    <section class="wrap wrap-content"><h2>Index</h2>
+        <section class="info">
+            <!--INICIO DEL BANNER-->
+            <div id="banner"><h2>Desarrollo de aplicaciones web y diseño de experiencia de usuario</h2></div>
+
+
+            <!--INICIO TARJETAS-->
+            <div id="cards">
+                <div class="card">
+                    <p class="icon">H</p>
+                    <h2 class="category">Desarrollo Web</h2>
+                    <p class="description">Ofrecemos un extenso conocimiento en Html y CSS para dar un diseño atractivo y moderno a tu proyecto</p>
+                </div>
+
+                <div class="card">
+                    <p class="icon">_</p>
+                    <h2 class="category">Funcionalidad</h2>
+                    <p class="description">Con la integración de APIs externas aumentamos la funcionalidad de tu proyecto</p>
+                </div>
+
+                <div class="card">
+                    <p class="icon">S</p>
+                    <h2 class="category">Diseño UI/UX</h2>
+                    <p class="description">Facilita a tus usuarios el acceso a tu aplicación gracias a un dise&ntilde;o intuitivo</p>
+                </div>
+
+                <div class="card">
+                    <p class="icon">u</p>
+                    <h2 class="category">Potenciadores</h2>
+                    <p class="description">Observa como crece tu negocio gracias al SEO y la grata experiencia de tus usuarios</p>
+                </div>
+
+                <div class="card">
+                    <p class="icon">a</p>
+                    <h2 class="category">Base de datos</h2>
+                    <p class="description">Gracias a las bases de datos, controla los datos de tus clientes/empleados</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--INICIO BARRA LATERAL-->
+        <aside id="asideBar">
+
+            <h3>BUSCAR</h3>
+            <div id="search">
+                <form>
+                    <input type="text" />
+                    <input type="button" value="L" class="icon" />
+                </form>
+            </div>
+
+            <h3>&Uacute;LTIMAS NOTICIAS</h3>
+            <div id="latestNews" class="aside-box">
+
+            </div>
+        </aside>
+
+        <!--INICIO ARTÍCULOS-->
+        <section id="articles">
+            <h2>Novedades</h2>
+            <div class="clearfix"></div>
+            <article>
+                <div class="data">
+                    <span>Fecha: 19/01/2022</span>
+                    <span>Categor&iacute;a: Javascript</span>
+                </div>
+                <h4><a href="#">Finalizaci&oacute;n del proyecto</a></h4>
+                <p>
+                    En la &uacute;ltima semana programamos los diferentes ficheros de js. Comenzamos con la integraci&oacute;n de un carrusel de
+                    im&aacute;genes (visual lightbox) gracias a JQUERY, donde no solo incluyo la librer&iacute;a sino que debo localizar dentro de
+                    la misma las diferentes funciones para adaptarla a mi proyecto. Posteriormente continuamos con la validación del formulario de
+                    la secci&oacute;n "Presupuesto". El descuento lo he calculado descontando un 10% del total seg&uacute;n las semanas que nos cedan
+                    para crearlo (obviamente, esto es irreal en la vida real, simplemente es un ejemplo). Por &uacute;ltimo integramos la API de 
+                    Google Maps para insertar en la secci&oacute;n "Contacto" el mapa con localizaci&oacute;n de la empresa, con una marca que nos 
+                    muestra d&oacute; est&aacute; y c&oacute; se llama y un calculador de ruta que nos muestra la ruta desde la ubicaci&oacute;n
+                    que le ingresemos hasta la empresa.                 
+                </p>
+                <p>
+                    PD: El buscador del index no est&aacute; funcionando porque no he querido emplear m&aacute;s tiempo para integrar una funci&oacute;n
+                    que no es necesaria para el proyecto. S&iacute;mplemente lo he diseñado para crear un aspecto visual atractivo.
+                </p>
+            </article>
+
+            <article>
+                <div class="data">
+                    <span>Fecha: 12/01/2012</span>
+                    <span>Categor&iacute;a: JSON</span>
+                </div>
+                <h4><a href="#">Inclu&iacute;mos el lector de JSON</a></h4>
+                <p>
+                    Incluimos un lector de json gracias a JavaScript. El documento .json lo inluyo en una carpeta llamada "resources" que espero 
+                    me sirva m&aacute; adelante para organizar otros archivos que pueda ir necesitando a la hora de crear una aplicaci&oacute;n web.
+                </p>
+
+                <p>
+                    Me he val&iacute;do del panel "aside" derecho para incrustar las diferentes noticias de tem&aacute;tica relacionada con el curso. 
+                    Esto proporcionar&aacute; un aspecto más claro y elegante, permitiendo al usuario ignorar las noticias (en caso de no estar 
+                    interesado en ellas) o por el contrario, tener un r&aacute;pido acceso a las mismas.
+                </p>
+            </article>
+
+            <article>
+                <div class="data">
+                    <span>Fecha: 06/01/2022</span>
+                    <span>Categor&iacute;a: Informaci&oacute;n</span>
+                </div>
+                <h4><a href="#">Iniciamos la plataforma de PAX | DIGITAL MINDS</a></h4>
+                <p>
+                    Comenzamos la aventura de PAX | DIGITAL MINDS creando el esqueleto del HTML. Bas&aacute;ndonos en el anterior proyecto
+                    (Max Serratosa | Full stack developer), tomamos algo de la estructura (como por ejemplo el encabezado que incluye un men&uacute; de
+                    navegaci&oacute;n o el footer con el script que utilizamos tambi&eacute;n para el "hover" de las redes sociales).
+                </p>
+                <p>
+
+                    Incrustamos el CSS incorporando conocimientos que he ido a&ntilde;adiendo durante estos meses gracias a cursos externos, 
+                    informaci&oacute;n de diferentes webs o perfiles de instagram que ense&ntilde;an f&oacute;rmulas de JavaScript y css. Esto
+                    me permite dar un aspecto mucho m&aacute;s atractivo a la web con diferentes efectos que ofrecen dinamismo visual. Adem&aacute;s,
+                    he incrustado diferentes tipos de fuentes que dan un aspecto profesional al trabajo final.
+
+                </p>
+            </article>
+        </section>
+    </section>
+
+
+    <!--PIE DE PÁGINA-->
+    <div class="clearfix"></div>
+    <footer id="footer">
+
+        <div class="wrap">
+
+            
+            <div>
+                <h5>PAX | DIGITAL MINDS</h5>
+                <!--DIRECCION-->
+                Avenida de Palmela 19 - 03730 J&aacute;vea (Alicante)<br />
+                <!--AVISO LEGAL-->
+                <p><a href="#" class="advice">Política de cookies</a>&nbsp; | &nbsp;
+                <a href="#" class="advice">Política de privacidad</a>&nbsp; | &nbsp;
+                <a href="views/avisolegal.html" class="advice">Aviso Legal</a></p>
+                <!--RRSS-->
+                <p><a href="#" class="rrss" onmouseover="fbhoverind()" onmouseout="fbblackind()"><img id="fb" alt="Facebook" src="images/rrss/facebook.png" /></a> &nbsp;
+                <a href="#" class="rrss" onmouseover="ighoverind()" onmouseout="igblackind()"><img id="ig" alt="Instagram" src="images/rrss/instagram.png" /></a> &nbsp;
+                <a href="#" class="rrss" onmouseover="twhoverind()" onmouseout="twblackind()"><img id="tw" alt="twitter" src="images/rrss/twitter.png" /></a>
+                </p>&copy; PAX | DIGITAL MINDS 2022
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+﻿/*TARJETAS*/
+.card {
+    float: left;
+    width: 204px;
+    height: 304px;
+    border: 1px solid #2B0548;
+    box-shadow: 1px 1px 2px #582A7A;
+    background: whitesmoke;
+    overflow: hidden;
+    margin: 22px;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+    .card:hover {
+        transform: translateY(-20px);
+        background-color: #1B022F;
+        
+    }
+
+.card:last-child{
+    margin-right: 0px;
+}
+
+.card .icon{
+    display: block;
+    width: 100%;
+    height: 130px;
+    font-size: 50px;
+    line-height:110px;
+    text-align:center;
+    margin: 0px auto;
+}
+
+    .card:hover .icon {
+        color: #582A7A;
+        animation: fromAbove 300ms linear;
+        
+    }
+
+@keyframes fromAbove{
+    from{
+        transform: translateY(-200%) ;
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+.card .category {
+    width: 100%;
+    height: 50px;
+    font-family: "TrebuchetMS";
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    color: #2B0548;
+}
+
+    .card:hover .category{
+        color: whitesmoke;
+        animation: fromLeft 300ms linear;
+    }
+
+@keyframes fromLeft {
+    0%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.card .description {
+    font-family: 'TrebuchetMS';
+    text-align: center;
+    padding: 6px;
+    color: #401562;
+}
+    .card:hover .description{
+        color: whitesmoke;
+        animation: fromRight 300ms linear;
+    }
+
+@keyframes fromRight{
+    0%{
+        transform: translateX(200%);
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+/*BARRA LATERAL*/
+#asideBar {
+    width: 300px;
+    min-height: 800px;
+    font-family: "TrebuchetMS";
+    color: #0E0018;
+    float: right;
+    margin: 20px;
+}
+
+    #asideBar a {
+        text-decoration: none;
+        color: #582A7A;
+        
+    }
+
+        #asideBar a:visited {
+            text-decoration: none;
+            color: #582A7A;
+            
+        }
+
+aside h3 {
+    display: block;
+    width: auto;
+    height: 45px;
+    line-height: 48px;
+    background: url('../images/css/bgr/pxpurple.png'), whitesmoke;
+    box-shadow: 0px 1px 0px #582A7A, 1px 2px 0px #582A7A, 2px 3px 0px #582A7A, 3px 4px 0px #582A7A;
+    font-size: 28px;
+    font-family: "BebasNeue";
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding-left: 16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+    aside h3:first-child {
+        margin-top: 0px;
+    }
+
+#search {
+    width: 90%;
+    height: 30px;
+    margin: 10px auto;
+    background-color: whitesmoke;
+    border: 1px solid #401562;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #582A7A inset;
+    
+}
+
+#asideBar input[type="text"] {
+    width: 85%;
+    height: 32px;
+    border: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #995ec4;
+    caret-color: #995ec4;
+    transition: all 300ms;
+}
+
+    #asideBar input[type="text"]:focus {
+        color: #2B0548;
+        border:none;
+    }
+
+#asideBar input[type="button"] {
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid #582A7A;
+    color: #2B0548;
+    padding-left: 6px;
+}
+
+.aside-box {
+    width: 90%;
+    height: 714px;
+    margin: 0px auto;
+    margin-top: 20px;
+    padding: 16px;
+    background: whitesmoke;
+    text-decoration:none;
+    overflow: auto;
+    border: 1px solid #0E0018;
+    box-shadow: 0px 0px 1px #582A7A, 0px 3px 7px #582A7A, 0px 1px whitesmoke inset, 0px -3px 2px #582A7A inset;    
+}
+
+    .aside-box::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+
+    .aside-box::-webkit-scrollbar-thumb {
+        background-color: #401562;
+    }
+
+    .aside-box::-webkit-scrollbar{
+        width: 8px;
+    }
+
+/*ARTÍCULOS*/
+#articles {
+    float: left;
+    width: 860px;
+}
+
+    #articles h2 {
+        display: block;
+        width: 900px;
+        height: 75px;
+        line-height: 75px;
+        text-align: center;
+        font-family: "BebasNeue";
+        font-size: 40px;
+        font-weight: normal;
+        letter-spacing: 2px;
+        color: #0E0018;
+        background: url(../images/css/bgr/pxpurple.png), whitesmoke;
+        box-shadow: 0px 1px 0px #582A7A, 1px 2px 0px #582A7A, 2px 3px 0px #582A7A, 3px 4px 0px #582A7A;
+        margin: 0px auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #articles article {
+        width: 100%;
+        height: auto;
+        border: 1px solid #582A7A;
+        margin: 40px auto;
+        padding: 20px;
+        font-family: "TrebuchetMS";
+        background: whitesmoke;
+        color: #0E0018;
+        box-shadow: 1px 1px 2px #582A7A;
+    }
+
+    #articles article h4{
+        display: block;
+        font-size: 23px;
+        margin: 3px;
+    }
+
+        #articles article h4 a {
+            text-decoration: underline;
+            color: #1B022F;
+        }
+
+    #articles .data {
+        float: right;
+        background: #0E0018;
+        color: whitesmoke;
+        height: 30px;
+        line-height: 30px;
+        margin: -20px;
+        padding:4px;
+        font-size: 13px;
+        border-radius: 0px 0px 0px 5px;
+    }
+
+    #articles .data span{
+        margin: 6px;
+    }
+
+    #articles article p{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
