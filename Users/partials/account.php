@@ -2,14 +2,15 @@
 <!--INFORMACION DE USUARIO-->
 <?php
 	include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(PARTIALS_PATH.'user-info.php'); 
+	include_once(HELPERS_PATH.'currentuser.php');
+	include_once(PARTIALS_PATH.'user-info.php');
 ?>
 
 <!--INICIO TABLA Y FORMULARIO-->
 	<table>
 		<!-- ACTUALIZAR USUARIO-->
 		<form method="post" action="controllers/actualizar-usuario.php">
-			<tr><?php echo '<input type="text" id="usertoedit" name="usertoedit" value="'.$usertoedit.'" hidden/>' ?>
+			<tr><?php echo '<input type="text" id="usertoedit" name="usertoedit" value="'.$CURUSER.'" hidden/>' ?>
 			
 			<!--CAMBIAR NOMBRE-->
 				<td>Inserte un nuevo nombre:</td>

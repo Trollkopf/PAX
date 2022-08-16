@@ -1,6 +1,6 @@
 <?php
 	include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(HELPERS_PATH.'selectcurrentuserinfo.php');
+	include_once(HELPERS_PATH.'currentuser.php');
 	include_once(MODELS_PATH.'user.php');
 ?>
 <h3>MI CUENTA:</h3>
@@ -13,14 +13,14 @@
 			<td><b>Teléfono</b></td>
 		</tr>
 		
-		<?php foreach($result as $r):?>
-	<?php $usuario = new User($r['ID'], $r['usuario'], $r['nombre'], $r['apellido'], $r['email'], $r['telefono'], $r['rol']);?>
+		<?php foreach($usuario as $u):?>	
+	<?php $user = new User($u['ID'], $u['usuario'], $u['nombre'], $u['apellido'], $u['email'], $u['telefono'], $u['rol']);?>
 		<tr>
-			<td><b><?=$usuario->getUsuario();?></b></td>
-			<td><b><?=$usuario->getNombre();?></b></td>
-			<td><b><?=$usuario->getApellido();?></b></td>
-			<td><b><?=$usuario->getEmail();?></b></td>
-			<td><b><?=$usuario->getTelefono();?></b></td>
+			<td><b><?=$user->getUsuario();?></b></td>
+			<td><b><?=$user->getNombre();?></b></td>
+			<td><b><?=$user->getApellido();?></b></td>
+			<td><b><?=$user->getEmail();?></b></td>
+			<td><b><?=$user->getTelefono();?></b></td>
 		</tr>
 	<?php endforeach;?>
 	</table>

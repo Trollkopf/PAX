@@ -1,6 +1,6 @@
 <?php
 
-$sql ="SELECT * FROM usuarios WHERE usuario !='".$_SESSION['user']."' ORDER BY ID ASC;";
-$result=$mysqli->query($sql);
+$sql_userinfo ="SELECT * FROM usuarios WHERE usuario !='".$_SESSION['user']."' ORDER BY ID ASC;";
+$userinfo=$mysqli->query($sql_userinfo);
 
 ?>

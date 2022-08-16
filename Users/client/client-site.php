@@ -10,8 +10,8 @@
     </div>
 
     <!--CARGAMOS ADMINISTRAR CUENTA-->
-    <div class="info_box" id="infouser">        
-        <?php include (PARTIALS_PATH."account.php");?> 
+    <div class="info_box" id="infoaccount">
+        <?php include (PARTIALS_PATH."account.php");?>
     </div>
 
   
@@ -19,10 +19,10 @@
 <script>
     //VENTANA USUARIO
     $(document).ready(function(){
-    $('#infouser').hide();
+    $('#infoaccount').hide();
     $('#toggleUser').click(function(){
         
-        $('#infouser').toggle();
+        $('#infoaccount').toggle();
         $('#infoappointments').hide();
 
         return false;
@@ -35,7 +35,7 @@
     $('#toggleAppointments').click(function(){
 
         $('#infoappointments').toggle();
-        $('#infouser').hide();
+        $('#infoaccount').hide();
 
         return false;
         });

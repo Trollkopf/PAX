@@ -7,7 +7,6 @@
 <h3>NOTICIAS:</h3>
 	<table>
 		<tr>
-			<td rowspan="2"><b>ID</b></td>
 			<td rowspan="2"><b>Usuario</b></td>
 			<td rowspan="2"><b>Fecha</b></td>
 			<td rowspan="2"><b>Categoria</b></td>
@@ -21,11 +20,10 @@
 			<td><b>Eliminar</b></td>
 		</tr>
 
-        <?php foreach($result as $r):?>
+        <?php foreach($noticia as $n):?>
 	
-	<?php $noticia = new Noticia($r['ID'], $r['usuario'], $r['fecha'], $r['categoria'], $r['titular'], $r['subtitulo'], $r['noticia']);?>
+	<?php $noticia = new Noticia($n['ID'], $n['usuario'], $n['fecha'], $n['categoria'], $n['titular'], $n['subtitulo'], $n['noticia']);?>
 	<tr>
-		<td><?=$noticia->getID();?></td>
 		<td><?=$noticia->getUsuario();?></td>
 		<td><?=$noticia->getFecha();?></td>
 		<td><?=$noticia->getCategoria();?></td>

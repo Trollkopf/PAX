@@ -1,11 +1,11 @@
 <?php
     $sesionuser = $_SESSION['user'];
     
-    $sql_usuarios ="SELECT * FROM usuarios WHERE usuario ='".$sesionuser."';";
+    $sql_usuario ="SELECT * FROM usuarios WHERE usuario ='".$sesionuser."';";
 
-    $usuarios=$mysqli->query($sql_usuarios);
+    $usuario=$mysqli->query($sql_usuario);
 
     //OBTENEMOS LA ID DEL USUARIO
-    while($registro = mysqli_fetch_assoc($usuarios)){
-        $CURUSER = $registro['ID'];}			
+    while($registro = mysqli_fetch_assoc($usuario)){
+        $CURUSER = $registro['ID'];}	
 ?>

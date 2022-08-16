@@ -2,7 +2,7 @@
 	<?php
 		include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
 		include_once(HELPERS_PATH.'cambiaM_a_espanol.php');
-		include_once(HELPERS_PATH.'selectcurrentuserinfo.php');
+		include_once(HELPERS_PATH.'currentuser.php');
 		include_once(HELPERS_PATH.'borrar-citas-pasadas.php');
 		include_once(HELPERS_PATH.'now.php');?>
 

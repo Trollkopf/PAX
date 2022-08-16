@@ -4,7 +4,7 @@
 	include_once(HELPERS_PATH.'appointmentsinfo.php'); 
 	include_once(MODELS_PATH.'appointment.php'); 
 	include_once(HELPERS_PATH.'borrar-citas-pasadas.php');?>
-?>
+
 
 <div class='panel'>
 
@@ -21,9 +21,9 @@
 	<td><b>Eliminar Cita</b></td>
 	</tr>
 
-<?php foreach($result as $r):?>
+<?php foreach($appointment as $a):?>
 	
-	<?php $cita = new Appointment($r['ID'], $r['nombre'], $r['apellido'], $r['dia'], $r['mes'], $r['año'], $r['hora'], $r['observaciones']);?>
+	<?php $cita = new Appointment($a['ID'], $a['nombre'], $a['apellido'], $a['dia'], $a['mes'], $a['año'], $a['hora'], $a['observaciones']);?>
 	<tr>
 		<td><?=$cita->getNombre();?></td>
 		<td><?=$cita->getApellido();?></td>

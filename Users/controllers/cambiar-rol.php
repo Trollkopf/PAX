@@ -11,5 +11,7 @@
 	}else{
 		$update = "UPDATE usuarios SET rol = 'USER' WHERE ID=".$id;
 		$mysqli->query($update);
-    }			
+    }	
+	
+	header('Location:../areausuarios.php');
 ?>
