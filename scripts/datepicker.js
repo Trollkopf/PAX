@@ -1,8 +1,8 @@
 //////////////////
 ////DATEPICKER////
 ////////////////// 
-	$( function() {    
-	  $("#datepicker").datepicker({
+	$(function() {    
+	  $(".datepicker").datepicker({
 	  	/*Cambiamos el formato al que nos es util para las sentencias SQL*/
 	      dateFormat: 'yy-mm-dd',
 	    /*Ponemos lunes como primer día de la semana*/

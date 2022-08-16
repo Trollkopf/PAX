@@ -15,17 +15,10 @@
 				<input type='text' id='user' name='user' value='<?php echo $usertoedit; ?>' hidden/>
 				
 				<tr>
-					<td><input type='text' id='datepicker' name='datepicker'></td>
+					<td><input type='text' class='datepicker' name='datepicker'></td>
 				<td>
 					<select id='hour' name='hour'>
-					<option value='10:00'>10:00</option>
-					<option value='11:00'>11:00</option>
-					<option value='12:00'>12:00</option>
-					<option value='13:00'>13:00</option>
-					<option value='16:00'>16:00</option>
-					<option value='17:00'>17:00</option>
-					<option value='18:00'>18:00</option>
-					<option value='19:00'>19:00</option>
+					<?php include(HELPERS_PATH.'options-horas.html');?>
 					</select>
 				</td>
 				<td><input type='text' id='observ' name='observ' maxlength='50' placeholder='Inserte una breve observaci&oacute;n'/></td>

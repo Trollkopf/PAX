@@ -20,9 +20,8 @@
 				<td><b>Borrar</b></td>
 			</tr>
 
-	  <?php 
-	 	include(HELPERS_PATH.'appointmentsinfo.php'); 
-	  	foreach($appointment as $a):?>
+	    <?php include(HELPERS_PATH.'appointmentsinfo.php'); ?>
+	  	<?php foreach($appointment as $a):?>
 	
 		<?php $cita = new Appointment($a['ID'], $a['nombre'], $a['apellido'], $a['dia'], $a['mes'], $a['año'], $a['hora'], $a['observaciones']);?>
 		<tr>
@@ -35,10 +34,12 @@
 			<td><?=$cita->getObs();?></td>
             	
 			<!-- INICIAMOS EL CONTROL DE EDICIÓN SEGUN HORAS RESTANTES -->
-			<?=$FECHA = $a['fecha'];
+			<?php 
+			$FECHA = $a['fecha'];
 			include(HELPERS_PATH.'horasrestantes.php');
 			
 			if($horasrestantes>=72){
+				// INSERTAMOS LOS BOTONES Y EL EDITOR DE CITAS
 				include(CLIENT_PATH.'client-partials/appointments/botonesCita.php');
 				include(CLIENT_PATH.'client-partials/appointments/editar-cita.php');
 			}else{echo "<td colspan='2'>FUERA DE PLAZO DE MODIFICACION</td></tr>";}?>		
