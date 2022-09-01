@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/inicio.css" />
     <!--LLAMADA A LOS SCRIPTS-->
     <script src="scripts/RRSS.js"></script>
-    <script src="scripts/jsonLoader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     
 
@@ -39,10 +39,10 @@
             <nav id="menu">
                 <ul>
                     <li><a href="#" class="btn_in">INICIO</a></li>
-                    <li><a href="views/galeria.html" class="btn">GALER&Iacute;A</a></li>
+                    <li><a href="views/galeria.html" class="btn">PORTFOLIO</a></li>
                     <li><a href="views/presupuesto.html" class="btn">PRESUPUESTO</a></li>
                     <li><a href="views/contacto.html" class="btn">CONTACTO</a></li>
-                    <li><a href="users/areausuarios.php" class="users">AREA USUARIOS</a></li>
+                    <li><a href="Users/areausuarios.php" class="users">AREA USUARIOS</a></li>
                 </ul>
             </nav>
         </div>
@@ -93,87 +93,27 @@
 
         </section>
 
-        <!--INICIO BARRA LATERAL-->
-        <aside id="asideBar">
 
-            <h3>BUSCAR</h3>
-            <div id="search">
-                <form>
-                    <input type="text" />
-                    <input type="button" value="L" class="icon" />
-                </form>
-            </div>
-
-            <h3>&Uacute;LTIMAS NOTICIAS</h3>
-            <div id="latestNews" class="aside-box">
-
-            </div>
-        </aside>
-
-        <!--INICIO ARTÍCULOS-->
+        <!--INICIO NOTICIAS-->
         <section id="articles">
-            <h2>Novedades</h2>
+            <h2>Noticias</h2>
             <div class="clearfix"></div>
-            <article>
-                <div class="data">
-                    <span>Fecha: 19/01/2022</span>
-                    <span>Categor&iacute;a: Javascript</span>
-                </div>
-                <h4><a href="#">Finalizaci&oacute;n del proyecto</a></h4>
-                <p>
-                    En la &uacute;ltima semana programamos los diferentes ficheros de js. Comenzamos con la integraci&oacute;n de un carrusel de
-                    im&aacute;genes (visual lightbox) gracias a JQUERY, donde no solo incluyo la librer&iacute;a sino que debo localizar dentro de
-                    la misma las diferentes funciones para adaptarla a mi proyecto. Posteriormente continuamos con la validación del formulario de
-                    la secci&oacute;n "Presupuesto". El descuento lo he calculado descontando un 10% del total seg&uacute;n las semanas que nos cedan
-                    para crearlo (obviamente, esto es irreal en la vida real, simplemente es un ejemplo). Por &uacute;ltimo integramos la API de 
-                    Google Maps para insertar en la secci&oacute;n "Contacto" el mapa con localizaci&oacute;n de la empresa, con una marca que nos 
-                    muestra d&oacute; est&aacute; y c&oacute; se llama y un calculador de ruta que nos muestra la ruta desde la ubicaci&oacute;n
-                    que le ingresemos hasta la empresa.                 
-                </p>
-                <p>
-                    PD: El buscador del index no est&aacute; funcionando porque no he querido emplear m&aacute;s tiempo para integrar una funci&oacute;n
-                    que no es necesaria para el proyecto. S&iacute;mplemente lo he diseñado para crear un aspecto visual atractivo.
-                </p>
-            </article>
 
-            <article>
-                <div class="data">
-                    <span>Fecha: 12/01/2012</span>
-                    <span>Categor&iacute;a: JSON</span>
-                </div>
-                <h4><a href="#">Inclu&iacute;mos el lector de JSON</a></h4>
-                <p>
-                    Incluimos un lector de json gracias a JavaScript. El documento .json lo inluyo en una carpeta llamada "resources" que espero 
-                    me sirva m&aacute; adelante para organizar otros archivos que pueda ir necesitando a la hora de crear una aplicaci&oacute;n web.
-                </p>
+            
+            <!--INSERTAMOS NOTICIAS-->
+            <section class='wrap wrap-content'>
+                <section id='articles'>
+                    <span id="latestNews"></span>
+                    <aside id="moreNews"><h3>Más Noticias</h3>    
+                    <span class="aside-box"><ul id="masNoticias"></ul></span></aside>    
+                </section>
+                    
+            </section>
 
-                <p>
-                    Me he val&iacute;do del panel "aside" derecho para incrustar las diferentes noticias de tem&aacute;tica relacionada con el curso. 
-                    Esto proporcionar&aacute; un aspecto más claro y elegante, permitiendo al usuario ignorar las noticias (en caso de no estar 
-                    interesado en ellas) o por el contrario, tener un r&aacute;pido acceso a las mismas.
-                </p>
-            </article>
+            <!--INICIO LECTOR NOTICIAS-->     
+            
+            <script src="scripts/jsonLoader.js"></script>
 
-            <article>
-                <div class="data">
-                    <span>Fecha: 06/01/2022</span>
-                    <span>Categor&iacute;a: Informaci&oacute;n</span>
-                </div>
-                <h4><a href="#">Iniciamos la plataforma de PAX | DIGITAL MINDS</a></h4>
-                <p>
-                    Comenzamos la aventura de PAX | DIGITAL MINDS creando el esqueleto del HTML. Bas&aacute;ndonos en el anterior proyecto
-                    (Max Serratosa | Full stack developer), tomamos algo de la estructura (como por ejemplo el encabezado que incluye un men&uacute; de
-                    navegaci&oacute;n o el footer con el script que utilizamos tambi&eacute;n para el "hover" de las redes sociales).
-                </p>
-                <p>
-
-                    Incrustamos el CSS incorporando conocimientos que he ido a&ntilde;adiendo durante estos meses gracias a cursos externos, 
-                    informaci&oacute;n de diferentes webs o perfiles de instagram que ense&ntilde;an f&oacute;rmulas de JavaScript y css. Esto
-                    me permite dar un aspecto mucho m&aacute;s atractivo a la web con diferentes efectos que ofrecen dinamismo visual. Adem&aacute;s,
-                    he incrustado diferentes tipos de fuentes que dan un aspecto profesional al trabajo final.
-
-                </p>
-            </article>
         </section>
     </section>
 

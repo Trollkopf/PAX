@@ -12,7 +12,7 @@
 	$results = $mysqli->query($sql);
 
 	if($results){
-		Header("Location:../../areausuarios.php");		
+		Header("Location:../areausuarios.php");		
 	}
 
 ?>

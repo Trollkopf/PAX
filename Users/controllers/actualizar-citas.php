@@ -3,7 +3,7 @@
     include(DB_PATH.'db.php');
 
     $ID = $_POST["id_cita"];
-    $appointment = $_POST["fecha"];
+    $appointment = $_POST["datepicker"];
 	$hour = $_POST["hour"];
 	$observ = $_POST["observ"];	
 

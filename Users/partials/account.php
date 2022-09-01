@@ -10,7 +10,7 @@
 	<table>
 		<!-- ACTUALIZAR USUARIO-->
 		<form method="post" action="controllers/actualizar-usuario.php">
-			<tr><?php echo '<input type="text" id="usertoedit" name="usertoedit" value="'.$CURUSER.'" hidden/>' ?>
+			<tr><?php echo '<input type="text" id="id_usuario" name="id_usuario" value="'.$CURUSER.'" hidden/>' ?>
 			
 			<!--CAMBIAR NOMBRE-->
 				<td>Inserte un nuevo nombre:</td>

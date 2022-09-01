@@ -76,7 +76,6 @@ $update = "UPDATE usuarios SET";
 
 $update = $update." WHERE (ID = '".$ID."');";
 
-
 $mysqli->query($update);
 
 header('Location:../areausuarios.php');

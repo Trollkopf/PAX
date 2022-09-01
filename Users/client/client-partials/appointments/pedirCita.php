@@ -12,10 +12,10 @@
 				<td><b>Pedir Cita</b></td>
 			</tr>		  	
 
-				<input type='text' id='user' name='user' value='<?php echo $usertoedit; ?>' hidden/>
+				<input type='text' id='user' name='user' value='<?php echo $CURUSER; ?>' hidden/>
 				
 				<tr>
-					<td><input type='text' class='datepicker' name='datepicker'></td>
+					<td><input type='text' id='datepicker' class='datepicker' name='datepicker'></td>
 				<td>
 					<select id='hour' name='hour'>
 					<?php include(HELPERS_PATH.'options-horas.html');?>
@@ -29,8 +29,6 @@
 		</form>
 	</table>
 </div>
-
-
 
 <script>
 
@@ -48,7 +46,8 @@ $("form").submit(function(event) {
 	}else if($observ.val().length <= 0){ //COMPROBAMOS QUE HAYAN ESCRITO UNA OBSERVACIÓN
 		$("#error").html("Debe indicar sus observaciones");
 		event.preventDefault();
-	}else{}
+	}
 });
 
 </script>
+
