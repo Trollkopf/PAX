@@ -26,54 +26,49 @@ vectorObj = JSON.parse(datos);
     for (i = 0; i < vectorObj.proyecto.length; i++){
 
         //CREAMOS PROYECTO
-        let proyecto;
 
-        let enlace = document.createElement("a");
+        // let enlace = document.createElement("a");
 
-            //CREAMOS LA SECCION DE INFORMACION DEL PROYECTO
+        //     //CREAMOS LA SECCION DE INFORMACION DEL PROYECTO
             let tituloProyecto = document.createAttribute("title");
+
+            tituloProyecto.value = 'PROYECTO: ' + vectorObj.proyecto[i].nombre + 
+                                   '<br/>Tecnología usada:' + vectorObj.proyecto[i].tecnologia + 
+                                   '<br/>Tiempo de consecución: ' + vectorObj.proyecto[i].tiempo + 
+                                   '<br/>Información: ' + vectorObj.proyecto[i].datos;
             
-            // let infoProyecto = document.createTextNode();
-            // infoProyecto.appendChild(document.createTextNode('));
-            // infoProyecto.appendChild(document.createTextNode('<br/>Tiempo de consecución: ' + vectorObj.proyecto[i].tiempo));
-            // infoProyecto.appendChild(document.createTextNode());
+        //     //CREAMOS EL HREF
+        //     let dirImagen = document.createAttribute('href');
+        //     dirImagen.value = '../' + vectorObj.proyecto[i].imagen;
 
-            tituloProyecto.value = 'PROYECTO: ' + vectorObj.proyecto[i].nombre + '<br/>Tecnología usada:' + vectorObj.proyecto[i].tecnologia + '<br/>Tiempo de consecución: ' + vectorObj.proyecto[i].tiempo + '<br/>Información: ' + vectorObj.proyecto[i].datos;
-            
-            //CREAMOS EL HREF
-            let dirImagen = document.createAttribute('href');
-            dirImagen.value = '../' + vectorObj.proyecto[i].imagen;
+        //     //CREAMOS LA CLASE
+        //     let classProyecto = document.createAttribute('class');
+        //     classProyecto.value = 'slider-item';
 
-            //CREAMOS LA CLASE
-            let classProyecto = document.createAttribute('class');
-            classProyecto.value = 'vlightbox';
-
-            //MONTAMOS EL ENLACE
-            // enlace.appendChild(tituloProyecto);
-            // enlace.appendChild(dirImagen);
-            // enlace.appendChild(classProyecto);
+        //     //MONTAMOS EL ENLACE
+        //     enlace.setAttributeNode(tituloProyecto);
+        //     enlace.setAttributeNode(dirImagen);
+        //     enlace.setAttributeNode(classProyecto);
             
             //CREAMOS LA IMAEGEN DEL PROYECTO
-            let imagen = document.createElement(img);
-
+            let imagen = document.createElement('img');
             let altImagen = document.createAttribute('alt');
             altImagen.value = vectorObj.proyecto[i].nombre;
 
             let srcImagen = document.createAttribute('src');
             srcImagen.value = '../' + vectorObj.proyecto[i].imagen;
 
-            // MONTAMOS IMAGEN
-            imagen.appendChild(altImagen);
-            imagen.appendChild(srcImagen);
+            let classImagen = document.createAttribute('class');
+            classImagen.value = 'slider-item';
 
+            // MONTAMOS IMAGEN
+            imagen.setAttributeNode(altImagen);
+            imagen.setAttributeNode(tituloProyecto);
+            imagen.setAttributeNode(srcImagen);
+            imagen.setAttributeNode(classImagen);
 
         //MONTAMOS EL PROYECTO
-
-        proyecto.appendChild(enlace);
-        proyecto.appendChild(tituloProyecto)
-        proyecto.appendChild(imagen);
-
-        document.querySelector("#vlightbox").appendChild(proyecto);
+        document.querySelector("#slider-container").appendChild(imagen);
 
     }
 

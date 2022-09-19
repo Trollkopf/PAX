@@ -21,7 +21,7 @@
             classNames: "vlightbox",
             resizeSpeed: 7,
             showGroupName: false,
-            slideTime: 4,
+            slideTime: 8,
             strings: {
                 closeLink: "",
                 loadingMsg: "loading",
@@ -40,7 +40,7 @@
         if (options.animate) {
             var overlayDuration = Math.max(options.overlayDuration, 0);
             options.resizeSpeed = Math.max(Math.min(options.resizeSpeed, 10), 1);
-            var resizeDuration = (11 - options.resizeSpeed) * 0.15;
+            var resizeDuration = (11 - options.resizeSpeed) * 0.80;
         } else {
             var overlayDuration = 0;
             var resizeDuration = 0;
@@ -61,119 +61,153 @@
         objOverlay.style.display = "none";
         objBody.appendChild(objOverlay);
         $(objOverlay).click(end);
+
         var objLightbox = document.createElement("div");
         objLightbox.setAttribute("id", getID("lightbox"));
         objLightbox.style.display = "none";
         objBody.appendChild(objLightbox);
         $(objLightbox).click(end);
+
         var objImageDataContainer = document.createElement("div");
         objImageDataContainer.setAttribute("id", getID("imageDataContainer"));
         objImageDataContainer.className = getID("clearfix");
+
         var objImageData = document.createElement("div");
         objImageData.setAttribute("id", getID("imageData"));
         objImageDataContainer.appendChild(objImageData);
+
         var objImageDetails = document.createElement("div");
         objImageDetails.setAttribute("id", getID("imageDetails"));
         objImageData.appendChild(objImageDetails);
+
         var objCaption = document.createElement("div");
         objCaption.setAttribute("id", getID("caption"));
         objImageDetails.appendChild(objCaption);
+
         var objNumberDisplay = document.createElement("span");
         objNumberDisplay.setAttribute("id", getID("numberDisplay"));
         objImageDetails.appendChild(objNumberDisplay);
+
         var objDetailsNav = document.createElement("span");
         objDetailsNav.setAttribute("id", getID("detailsNav"));
         objImageDetails.appendChild(objDetailsNav);
+
         var objPrevLink = document.createElement("a");
         objPrevLink.setAttribute("id", getID("prevLinkDetails"));
         objPrevLink.setAttribute("href", "javascript:void(0);");
         objPrevLink.innerHTML = options.strings.prevLink;
         objDetailsNav.appendChild(objPrevLink);
         $(objPrevLink).click(showPrev);
+
         var objSlideShowControl = document.createElement("a");
         objSlideShowControl.setAttribute("id", getID("slideShowControl"));
         objSlideShowControl.setAttribute("href", "javascript:void(0);");
         objDetailsNav.appendChild(objSlideShowControl);
         $(objSlideShowControl).click(toggleSlideShow);
+
         var objNextLink = document.createElement("a");
         objNextLink.setAttribute("id", getID("nextLinkDetails"));
         objNextLink.setAttribute("href", "javascript:void(0);");
         objNextLink.innerHTML = options.strings.nextLink;
         objDetailsNav.appendChild(objNextLink);
         $(objNextLink).click(showNext);
+
         var objOuterImageContainer = document.createElement("table");
         objOuterImageContainer.setAttribute("id", getID("outerImageContainer"));
         objOuterImageContainer.cellSpacing = 0;
         objLightbox.appendChild(objOuterImageContainer);
+
         var objOICTop = objOuterImageContainer.insertRow(-1);
         var objOICTL = objOICTop.insertCell(-1);
         objOICTL.className = "tl";
+
         var objOICTC = objOICTop.insertCell(-1);
         objOICTC.className = "tc";
+
         var objOICTR = objOICTop.insertCell(-1);
         objOICTR.className = "tr";
+
         var objOICMiddle = objOuterImageContainer.insertRow(-1);
         var objOICML = objOICMiddle.insertCell(-1);
         objOICML.className = "ml";
+
         var objLightboxFrameBody = objOICMiddle.insertCell(-1);
         objLightboxFrameBody.setAttribute("id", getID("lightboxFrameBody"));
         objLightboxFrameBody.innerHTML = "&nbsp;";
+
         var objOICMR = objOICMiddle.insertCell(-1);
         objOICMR.className = "mr";
+
         var objOICBottom = objOuterImageContainer.insertRow(-1);
+
         var objOICBL = objOICBottom.insertCell(-1);
         objOICBL.className = "bl";
+
         var objOICBC = objOICBottom.insertCell(-1);
         objOICBC.className = "bc";
+
         var objOICBR = objOICBottom.insertCell(-1);
         objOICBR.className = "br";
+
         if (options.imageDataLocation == "north") {
             objLightboxFrameBody.appendChild(objImageDataContainer);
         }
+
         var objImageContainer = document.createElement("div");
         objImageContainer.setAttribute("id", getID("imageContainer"));
         objLightboxFrameBody.appendChild(objImageContainer);
+
         var objLightboxImage = document.createElement("img");
         objLightboxImage.setAttribute("id", getID("lightboxImage"));
         objImageContainer.appendChild(objLightboxImage);
+
         var objHoverNav = document.createElement("div");
         objHoverNav.setAttribute("id", getID("hoverNav"));
         objImageContainer.appendChild(objHoverNav);
+
         var objPrevLinkImg = document.createElement("a");
         objPrevLinkImg.setAttribute("id", getID("prevLinkImg"));
         objPrevLinkImg.setAttribute("href", "javascript:void(0);");
         objHoverNav.appendChild(objPrevLinkImg);
         $(objPrevLinkImg).click(showPrev);
+
         var objNextLinkImg = document.createElement("a");
         objNextLinkImg.setAttribute("id", getID("nextLinkImg"));
         objNextLinkImg.setAttribute("href", "javascript:void(0);");
         objHoverNav.appendChild(objNextLinkImg);
+
         $(objNextLinkImg).click(showNext);
         var objLoading = document.createElement("div");
         objLoading.setAttribute("id", getID("loading"));
         objImageContainer.appendChild(objLoading);
+
         var objLoadingLink = document.createElement("a");
         objLoadingLink.setAttribute("id", getID("loadingLink"));
         objLoadingLink.setAttribute("href", "javascript:void(0);");
         objLoadingLink.innerHTML = options.strings.loadingMsg;
         objLoading.appendChild(objLoadingLink);
         $(objLoadingLink).click(end);
+
         if (options.imageDataLocation != "north") {
             objLightboxFrameBody.appendChild(objImageDataContainer);
         }
+
         var objClose = document.createElement("div");
         objClose.setAttribute("id", getID("close"));
+
         if (options.closeLocation == "top") {
             objOICTR.appendChild(objClose);
         } else {
             objImageData.appendChild(objClose);
         }
+
         var objCloseLink = document.createElement("a");
         objCloseLink.setAttribute("id", getID("closeLink"));
         objCloseLink.setAttribute("href", "javascript:void(0);");
         objCloseLink.innerHTML = options.strings.closeLink;
         objClose.appendChild(objCloseLink);
         $(objCloseLink).click(end);
+
         if (options.initImage != "") {
             start("#" + options.initImage);
         }
@@ -202,6 +236,7 @@
                 }
             });
         }
+
         var start = this.start = function (imageLink) {
             hideBadObjects();
             imageLink = $(imageLink);

@@ -15,7 +15,7 @@ xmlHttp.open("GET", theUrl, true);
 xmlHttp.send(null);
 }
 
-httpGetAsync("users/controllers/cargador-noticias.php", newsLoader);
+httpGetAsync("users/helpers/cargador-noticias.php", newsLoader);
 
 function newsLoader(datos) {
 
@@ -118,7 +118,7 @@ vectorObj = JSON.parse(datos);
 
 //CARGAMOS TODAS LAS NOTICIAS EN EL ASIDE
     
-httpGetAsync("users/controllers/cargador-noticias-totales.php", newsLoader);
+httpGetAsync("users/helpers/cargador-noticias-totales.php", newsLoader);
 
     function newsLoader(datos) {
 
@@ -132,10 +132,10 @@ httpGetAsync("users/controllers/cargador-noticias-totales.php", newsLoader);
             let mtitle = document.createElement("h4");
             let mtitleLink = document.createElement("a");
             let mtitleLinkPoint = document.createAttribute("href");
-                mtitleLinkPoint.value = `/www/masterD/00_PROYECTO_PHP/views/.back/.ADMIN/readnew.php?id_noticia=${vectorObj.noticia[i].id}`;
-                mtitleLink.setAttributeNode(mtitleLinkPoint);
+                // mtitleLinkPoint.value = TODO:`/www/masterD/00_PROYECTO_PHP/views/.back/.ADMIN/readnew.php?id_noticia=${vectorObj.noticia[i].id}`;
+                // mtitleLink.setAttributeNode(mtitleLinkPoint);
 
-                mtitleLink.appendChild(document.createTextNode(vectorObj.noticia[i].titular));
+                // mtitleLink.appendChild(document.createTextNode(vectorObj.noticia[i].titular));
                 mtitle.appendChild(mtitleLink);
                 list.appendChild(mtitle);
             document.querySelector("#masNoticias").appendChild(list);}

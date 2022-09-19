@@ -30,7 +30,7 @@
 		<td><?=$noticia->getTitular();?></td>
 		<td><?=$noticia->getSubtitulo();?></td>
         <!--LEER NOTICIA-->
-        <form method='post' action='TODO:.back/.CLIENT/readnew.php'>
+        <form method='post' action='../views/leernoticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='ver_noticia<?=$noticia->getID();?>' name='ver_noticia' value='' />
 		<?php include (PARTIALS_PATH.'boton-ver.html');?></button></td></form>
@@ -39,11 +39,12 @@
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='editar-<?=$noticia->getID();?>' name='editar'/><?php include (PARTIALS_PATH.'boton-editar.html');?></button></td></form>
 		<!--BORRAR NOTICIA-->
-		<form method='post' action='TODO:.back/.CLIENT/deletenew.php'>
+		<form method='post' action='controllers/borrar-noticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='red' id='borrar-<?=$noticia->getID();?>' name='borrar' value='' onclick="return confirm('¿Realmente desea borrar la noticia?')">
 		<?php include (PARTIALS_PATH.'boton-borrar.html');?></button></td></form>
 	</tr>
+
 <?php endforeach; ?>
 </table>
 </div>

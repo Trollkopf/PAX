@@ -22,7 +22,7 @@
         <script type="text/javascript" src="../scripts/datepicker.js"></script>
 
         <!--METADATOS-->
-        <?php include('partials/meta.html'); ?>
+        <?php include(PARTIALS_PATH.'meta.html'); ?>
 
     </head>    
     <body>
@@ -79,7 +79,7 @@
             </section>
             <div id="errorMsg"></div>
         <!--PIE DE PÁGINA-->
-            <?php include('partials/footer.html'); ?>   
+            <?php include(PARTIALS_PATH.'footer.html'); ?>   
 
     </body>
 </html>

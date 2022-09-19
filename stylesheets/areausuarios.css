@@ -333,11 +333,12 @@ form .formText{
         box-shadow: inset 10.50em 0 0 0 #0E0018;
     }
 
-#back_button {
-    padding: 12px 64px 12px 64px;
+.back_button {
+    margin: 16px;
+    font-size:12px;
 }
 
-    #back_button:hover{
+    .back_button:hover{
         box-shadow: inset 10.50em 0 0 0 #0E0018, inset -10.50em 0 0 0 #0E0018;
     }
 
