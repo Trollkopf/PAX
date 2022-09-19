@@ -35,7 +35,7 @@
 		<button type='submit' class='edit' id='ver_noticia<?=$noticia->getID();?>' name='ver_noticia' value='' />
 		<?php include (PARTIALS_PATH.'boton-ver.html');?></button></td></form>
         <!--EDITAR NOTICIA-->
-        <form method='post' action='TODO:.back/.CLIENT/editnew.php'>
+        <form method='post' action='helpers/editar-noticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='editar-<?=$noticia->getID();?>' name='editar'/><?php include (PARTIALS_PATH.'boton-editar.html');?></button></td></form>
 		<!--BORRAR NOTICIA-->

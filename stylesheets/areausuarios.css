@@ -15,7 +15,7 @@
     width: 90%;
     height: auto;
     border: 1px 1px 0px 1px solid #582A7A;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px 20px 20px 20px;
     font-family: "TrebuchetMS";
     background: whitesmoke;
@@ -285,6 +285,15 @@ form .formText{
 }
 
 /*BOTONES*/
+
+ .caja_centrada {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin: 0px auto;
+    padding: 20px 20px 20px 40px;
+    font-family: "TrebuchetMS"; 
+}
 .boton_secundario {
     font-family: "BebasNeue";
     font-size: 16px;

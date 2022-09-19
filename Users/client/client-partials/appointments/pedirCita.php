@@ -18,7 +18,7 @@
 					<td><input type='text' id='datepicker' class='datepicker' name='datepicker'></td>
 				<td>
 					<select id='hour' name='hour'>
-					<?php include(HELPERS_PATH.'options-horas.html');?>
+					<?php include(PARTIALS_PATH.'options-horas.html');?>
 					</select>
 				</td>
 				<td><input type='text' id='observ' name='observ' maxlength='50' placeholder='Inserte una breve observaci&oacute;n'/></td>

@@ -4,10 +4,10 @@
     include_once(HELPERS_PATH.'currentuser.php');?>
 
 <section>
-    <!--LISTAR NOTICIAS-->
-    <?php include (ADMIN_PATH.'admin-partials/news/listar-noticias.php')?>
     <!--REDACTAR NOTICIA-->
     <?php include (ADMIN_PATH.'admin-partials/news/escribir-noticia.php')?>
+    <!--LISTAR NOTICIAS-->
+    <?php include (ADMIN_PATH.'admin-partials/news/listar-noticias.php')?>
     
 </section>
 
