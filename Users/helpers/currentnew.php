@@ -1,6 +1,6 @@
 <?php
 
-    $id = $_POST['id_noticia'];
+    $id = $_GET['id_noticia'];
 
     $sql_noticias ="SELECT n.ID AS ID, 
                     u.usuario AS usuario, 

@@ -30,7 +30,7 @@
 		<td><?=$proyecto->getTiempo();?></td>
 		<td><?=$proyecto->getImagen();?></td>
         <!--LEER PROYECTO-->
-        <form method='post' action=TODO:'../views/leerproyecto.php'>
+        <form method='post' action='../views/verproyecto.php'>
 		<td><input type='text' id='id_proyecto' name='id_proyecto' value='<?=$proyecto->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='ver_proyecto<?=$proyecto->getID();?>' name='ver_proyecto' value='' />
 		<?php include (PARTIALS_PATH.'boton-ver.html');?></button></td></form>

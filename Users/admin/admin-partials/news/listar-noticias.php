@@ -30,12 +30,12 @@
 		<td><?=$noticia->getTitular();?></td>
 		<td><?=$noticia->getSubtitulo();?></td>
         <!--LEER NOTICIA-->
-        <form method='post' action='../views/leernoticia.php'>
+        <form method='get' action='../views/leernoticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='ver_noticia<?=$noticia->getID();?>' name='ver_noticia' value='' />
 		<?php include (PARTIALS_PATH.'boton-ver.html');?></button></td></form>
         <!--EDITAR NOTICIA-->
-        <form method='post' action='helpers/editar-noticia.php'>
+        <form method='GET' action='helpers/editar-noticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='editar-<?=$noticia->getID();?>' name='editar'/><?php include (PARTIALS_PATH.'boton-editar.html');?></button></td></form>
 		<!--BORRAR NOTICIA-->

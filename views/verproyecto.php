@@ -1,8 +1,8 @@
 <?php
     include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
     include_once(DB_PATH.'db.php');
-    include_once(HELPERS_PATH.'currentnew.php');
-    include_once(MODELS_PATH.'news.php')
+    include_once(HELPERS_PATH.'currentproject.php');
+    include_once(MODELS_PATH.'project.php')
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
         <meta name="keywords" content="html, css, javascript, php, diseño web, ajax, mysql" />
         <meta name="revisit-after" content="7 days" />
         <meta name="category" content="Web app" />
-    	<title>LECTURA DE NOTICIAS</title>
+    	<title>VER PROYECTO</title>
     </head>
     <body>
 
@@ -56,31 +56,31 @@
             </div>
         </header>
 
-    <!--INICIO DE SECCION-->
-        <section class="wrap wrap-content"><h2>LECTURA DE NOTICIAS</h2>
-            <section class="info">
+        <!--INICIO DE SECCION-->
+        <section class="wrap wrap-content"><h2>VER PROYECTO</h2>
+        <section class="info">
+
+                <?php foreach($proyecto as $p):?>
+                <?php $proyecto = new Proyecto($p['ID_proyecto'], $p['nombre_proyecto'], $p['datos'], $p['tecnologia_empleada'], $p['tiempo_consecucion'], $p['imagen']);?>
                 <!--INICIO DEL BANNER-->
-                <div id="banner"><h2>LECTURA DE NOTICIAS</h2></div>
+                <div id="banner"><h2><?php echo $proyecto->getNombre_proyecto();?></h2></div>
 
             </section>
         </section>
 
-        <?php foreach($noticia as $n):?>
-	
-	    <?php $noticia = new Noticia($n['ID'], $n['usuario'], $n['fecha'], $n['categoria'], $n['titular'], $n['subtitulo'], $n['noticia']);?>
 
         <!--INICIAMOS CAJA PARA VER NOTICIAS-->
         <section class="wrap wrap-content">
             <section id="articles">
     			<article>
                     <div class="data">
-                        <span>Fecha: <?php echo $noticia->getFecha();?></span>
-                        <span>Categor&iacute;a: <?php echo $noticia->getCategoria();?></span>
+                        <span>Tecnología empleada: <?php echo $proyecto->getTecnologia();?></span>
+                        <span>Tiempo de consecuci&oacute;n: <?php echo $proyecto->getTiempo();?></span>
                     </div>
-                    <h4><a href="#"><?php echo $noticia->getTitular();?></a></h4>
-                    <h5>&nbsp;Por:  <?php echo $noticia->getUsuario();?></h5>
+                    <h4><?php echo $proyecto->getNombre_proyecto();?></h4>
+                    <h5><?php echo $proyecto->getDatos();?></h5>
                     <p>
-                    	<?php echo $noticia->getNoticia();?>                  
+                    <img src='../<?= $proyecto->getImagen();?>'/><br/><br/><br/>                
                     </p>
 
 

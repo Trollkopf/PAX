@@ -132,10 +132,10 @@ httpGetAsync("users/helpers/cargador-noticias-totales.php", newsLoader);
             let mtitle = document.createElement("h4");
             let mtitleLink = document.createElement("a");
             let mtitleLinkPoint = document.createAttribute("href");
-                // mtitleLinkPoint.value = TODO:`/www/masterD/00_PROYECTO_PHP/views/.back/.ADMIN/readnew.php?id_noticia=${vectorObj.noticia[i].id}`;
-                // mtitleLink.setAttributeNode(mtitleLinkPoint);
+                mtitleLinkPoint.value = `views/leernoticia.php?id_noticia=${vectorObj.noticia[i].id}`;
+                mtitleLink.setAttributeNode(mtitleLinkPoint);
 
-                // mtitleLink.appendChild(document.createTextNode(vectorObj.noticia[i].titular));
+                mtitleLink.appendChild(document.createTextNode(vectorObj.noticia[i].titular));
                 mtitle.appendChild(mtitleLink);
                 list.appendChild(mtitle);
             document.querySelector("#masNoticias").appendChild(list);}

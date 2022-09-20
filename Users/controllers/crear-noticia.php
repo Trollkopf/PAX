@@ -25,7 +25,7 @@
     $results = $mysqli->query($sql);
 
     if($results){
-        header("Location: ../../areausuarios.php");
+        header("Location: ../areausuarios.php");
     }else{
         echo "###ERROR###";
     }
