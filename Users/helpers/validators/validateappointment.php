@@ -1,6 +1,5 @@
 <?php 
-	include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(DB_PATH.'/db.php');
+	include_once('../../db/db.php');
 
 $appointment=$_POST["datepicker"];
 $horas = ['10:00', '11:00', '12:00', '13:00', '16:00', '17:00', '18:00', '19:00'];

@@ -10,27 +10,27 @@
         <!--SECCIONES-->
         <!--CARGAMOS ADMINISTRAR CUENTA-->
         <div class="info_box" id="infoaccount">
-        <?php include (PARTIALS_PATH."account.php");?>
+        <?php include ("partials/account.php");?>
         </div>
 
         <!--CARGAMOS ADMINISTRAR USUARIOS-->
         <div class="info_box" id="infousers">
-        <?php include (ADMIN_PATH."users.php");?>
+        <?php include ("admin/users.php");?>
         </div>
 
         <!--CARGAMOS ADMINISTRAR CITAS-->
         <div class="info_box" id="infoappointments">
-        <?php include (ADMIN_PATH."appointments.php");?>
+        <?php include ("admin/appointments.php");?>
         </div>
 
         <!--CARGAMOS ADMINISTRAR NOTICIAS-->
         <div class="info_box" id="infonews">
-        <?php include (ADMIN_PATH."news.php");?>
+        <?php include ("admin/news.php");?>
         </div>
 
         <!--CARGAMOS ADMINISTRAR PROYECTOS-->
         <div class="info_box" id="infoprojects">
-        <?php include (ADMIN_PATH."projects.php");?>
+        <?php include ("admin/projects.php");?>
         </div>
 
 <!--INCORPORACION AJAX PARA VENTANAS-->          

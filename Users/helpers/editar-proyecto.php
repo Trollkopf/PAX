@@ -1,9 +1,8 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(DB_PATH.'DB.PHP');
-    include_once(MODELS_PATH.'project.php'); 
-    include_once(HELPERS_PATH.'curdate.php');
-    include_once(HELPERS_PATH.'currentproject.php');
+    include_once('../db/db.php');
+    include_once('../models/project.php'); 
+    include_once('../helpers/curdate.php');
+    include_once('../helpers/currentproject.php');
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +96,7 @@
                 <td>
                 <form method="POST" action="editar-proyecto-info.php">
                     <input type="text" name="ID" value="<?=$proyecto->getID();?>" hidden>
-                    <input type="text" name="nombre" value="<?=$proyecto->getNombre_proyecto();?>" hidden>
+                    <input type="text" name="nombre_imagen" value="<?=$proyecto->getNombre_proyecto();?>" hidden>
                     <input type="text" name="datos" value="<?=$proyecto->getDatos();?>" hidden>
                     <input type="text" name="tecnologia" value="<?=$proyecto->getTecnologia();?>" hidden>
                     <input type="text" name="tiempo" value="<?=$proyecto->getTiempo();?>" hidden>
@@ -112,7 +111,8 @@
         <!-- FORMULARIO PARA CAMBIAR LA IMAGEN DEL PROYECTO -->
         <div id="cambiar_imagen" hidden>
             <form action="editar-proyecto-info.php" method="POST" enctype="multipart/form-data">
-            <?php include(ADMIN_PATH.'admin-partials/projects/editar-imagen.php');?>
+            <input type="text" name="imagen" value="<?=$proyecto->getImagen();?>" hidden>
+            <?php include('../admin/admin-partials/projects/editar-imagen.php');?>
             </form>
         </div>
     

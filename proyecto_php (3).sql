@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2022 a las 13:46:54
+-- Tiempo de generación: 25-09-2022 a las 22:19:12
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyecto_php`
 --
-CREATE DATABASE IF NOT EXISTS `proyecto_php` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `proyecto_php`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `proyecto_php`;
 -- Estructura de tabla para la tabla `citas`
 --
 
-DROP TABLE IF EXISTS `citas`;
 CREATE TABLE `citas` (
   `ID` int(11) NOT NULL,
   `usuario` int(11) NOT NULL,
@@ -45,12 +42,10 @@ INSERT INTO `citas` (`ID`, `usuario`, `cita`, `observaciones`) VALUES
 (120, 28, '2022-11-16 12:00:00.000000', 'Consulta general'),
 (121, 28, '2022-10-13 16:00:00.000000', 'Consulta general'),
 (123, 28, '2022-10-06 10:00:00.000000', 'Consulta general'),
-(135, 38, '2022-09-21 19:00:00.000000', 'Consulta general'),
 (136, 38, '2022-09-28 16:00:00.000000', 'Consulta general'),
 (137, 38, '2022-10-27 18:00:00.000000', 'Consulta general'),
 (139, 38, '2022-09-30 13:00:00.000000', 'Consulta general'),
 (141, 38, '2022-10-28 18:00:00.000000', 'Consulta general'),
-(147, 35, '2022-09-21 18:00:00.000000', 'Consulta general'),
 (150, 35, '2022-10-19 16:00:00.000000', 'Consulta general');
 
 -- --------------------------------------------------------
@@ -59,7 +54,6 @@ INSERT INTO `citas` (`ID`, `usuario`, `cita`, `observaciones`) VALUES
 -- Estructura de tabla para la tabla `noticias`
 --
 
-DROP TABLE IF EXISTS `noticias`;
 CREATE TABLE `noticias` (
   `ID` int(11) NOT NULL,
   `usuario` int(11) NOT NULL,
@@ -87,7 +81,6 @@ INSERT INTO `noticias` (`ID`, `usuario`, `noticia`, `categoria`, `fecha`, `titul
 -- Estructura de tabla para la tabla `proyectos`
 --
 
-DROP TABLE IF EXISTS `proyectos`;
 CREATE TABLE `proyectos` (
   `ID_proyecto` int(11) NOT NULL,
   `nombre_proyecto` varchar(20) COLLATE utf8_bin NOT NULL,
@@ -115,7 +108,6 @@ INSERT INTO `proyectos` (`ID_proyecto`, `nombre_proyecto`, `datos`, `tecnologia_
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `ID` int(11) NOT NULL,
   `usuario` varchar(45) NOT NULL,
@@ -135,7 +127,7 @@ INSERT INTO `usuarios` (`ID`, `usuario`, `clave`, `email`, `telefono`, `rol`, `n
 (1, 'admin', '$2y$10$cGAcQOVK4Ot8ZpoYKlOv0epT3kuIOopnK/fVlMSkPDo3VnTCCD3yu', 'max.serratosa@gmail.com', 665431648, 'ADMIN', 'Maximiliano', 'Serratosa'),
 (28, 'pepaflores', '$2y$10$ttIplKOmAm7ghIocBMZK5uzCOaaPbhJrunL9KfDMmVXcmWOT4mEYC', 'pepa@flores.com', 689324519, 'USER', 'Josefa', 'Flores'),
 (29, 'CrisTorres', '$2y$10$Iqnhgcp5rYNSS8.jYQMfIuyaqBAgyEgkztpdYSVao5I9eQUcAFTr.', 'cristina@torres.com', 632145987, 'USER', 'Cristina', 'Torres'),
-(35, 'Max', '$2y$10$kBmCvVWPlrFZ7ev01l7gVOIRWfTFo/L1n02becXEEAwXcWyBLFSbW', 'barbatosprods@gmail.com', 622626260, 'USER', 'Maximiliano', 'Serratosa'),
+(35, 'Max', '$2y$10$1bURU.JtzCQJRCWi/ioYZ.xfaDAZTlzJKzefQDpzKqIolujAFsyx.', 'barbatosprods@gmail.com', 622626260, 'USER', 'Maximiliano', 'Serratosa'),
 (37, 'JuanGomez', '$2y$10$7Wo7G3uHO/31pyldqiXLQelwNxGpmS.YpHzZ87d6jwBRXAH0bAoXK', 'juan@gomez.es', 678451235, 'ADMIN', 'Juan', 'Gómez'),
 (38, 'Pepito', '$2y$10$bfPOMUC0enedFP1R5Rr6WOmdWf43L9FyWo6dpT.Lp5.HLkEiO8ZBu', 'pepe@palotero.com', 678521493, 'USER', 'José', 'De Los Palotes'),
 (39, 'newuser', '$2y$10$hob2JkraXVT3sXpcrPlxGO9n062i8jjWGk3G43FOrW1gAV55qXhim', 'usuario@nuevo.com', 689574124, 'USER', 'Usuario', 'Nuevo'),

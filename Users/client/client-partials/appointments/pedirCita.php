@@ -18,7 +18,7 @@
 					<td><input type='text' id='datepicker' class='datepicker' name='datepicker'></td>
 				<td>
 					<select id='hour' name='hour'>
-					<?php include(PARTIALS_PATH.'options-horas.html');?>
+					<?php include('partials/options-horas.html');?>
 					</select>
 				</td>
 				<td><input type='text' id='observ' name='observ' maxlength='50' placeholder='Inserte una breve observaci&oacute;n'/></td>
@@ -30,7 +30,55 @@
 	</table>
 </div>
 
+
 <script>
+	$(document).ready(function(){
+		$("#datepicker").change(function(){
+
+			/*ACTIVAMOS TODAS LAS HORAS*/
+			$("#hour option[value='10:00']").attr("disabled", false); 
+			$("#hour option[value='11:00']").attr("disabled", false); 
+			$("#hour option[value='12:00']").attr("disabled", false); 
+			$("#hour option[value='13:00']").attr("disabled", false); 
+			$("#hour option[value='16:00']").attr("disabled", false); 
+			$("#hour option[value='17:00']").attr("disabled", false);
+			$("#hour option[value='18:00']").attr("disabled", false);
+			$("#hour option[value='19:00']").attr("disabled", false);
+
+		});
+		
+		/*CREAMOS LA FUNCION PARA DESHABILITAR TODAS LAS HORAS RESERVADAS*/        		
+		var datos='datepicker='+$("#datepicker").val();
+		var url="helpers/validators/validateappointment.php";
+		var dataType="html";
+
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: datos,
+
+			success: function(data){
+				var vectorObj = JSON.parse(data);
+				var vlength = vectorObj.length;
+
+				let i=0;
+
+				while(i<vlength){
+					switch(vectorObj[i]){
+					case "10:00:00": $("#hour option[value='10:00']").attr("disabled", true); break;
+					case "11:00:00": $("#hour option[value='11:00']").attr("disabled", true); break;
+					case "12:00:00": $("#hour option[value='12:00']").attr("disabled", true); break;
+					case "13:00:00": $("#hour option[value='13:00']").attr("disabled", true); break;
+					case "16:00:00": $("#hour option[value='16:00']").attr("disabled", true); break;
+					case "17:00:00": $("#hour option[value='17:00']").attr("disabled", true); break;
+					case "18:00:00": $("#hour option[value='18:00']").attr("disabled", true); break;
+					case "19:00:00": $("#hour option[value='19:00']").attr("disabled", true); break;
+					}
+				i++;
+				}
+			},
+		});
+	});
 
 let $datepicker = $("#datepicker");
 let $observ = $("#observ");
@@ -50,4 +98,3 @@ $("form").submit(function(event) {
 });
 
 </script>
-

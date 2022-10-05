@@ -1,7 +1,6 @@
 <?php 
-	include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(HELPERS_PATH.'projectsinfo.php');
-	include_once(MODELS_PATH.'project.php'); ?>
+	include_once('helpers/projectsinfo.php');
+	include_once('models/project.php'); ?>
 
 <div class='panel'>
 <h3>PROYECTOS:</h3>
@@ -33,16 +32,16 @@
         <form method='post' action='../views/verproyecto.php'>
 		<td><input type='text' id='id_proyecto' name='id_proyecto' value='<?=$proyecto->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='ver_proyecto<?=$proyecto->getID();?>' name='ver_proyecto' value='' />
-		<?php include (PARTIALS_PATH.'boton-ver.html');?></button></td></form>
+		<?php include ('partials/boton-ver.html');?></button></td></form>
         <!--EDITAR PROYECTO-->
         <form method='post' action='helpers/editar-proyecto.php'>
 		<td><input type='text' id='id_proyecto' name='id_proyecto' value='<?=$proyecto->getID();?>' hidden/>		
-		<button type='submit' class='edit' id='editar-<?=$proyecto->getID();?>' name='editar'/><?php include (PARTIALS_PATH.'boton-editar.html');?></button></td></form>
+		<button type='submit' class='edit' id='editar-<?=$proyecto->getID();?>' name='editar'/><?php include ('partials/boton-editar.html');?></button></td></form>
 		<!--BORRAR PROYECTO-->
 		<form method='post' action='controllers/borrar-proyecto.php'>
 		<td><input type='text' id='id_proyecto' name='id_proyecto' value='<?=$proyecto->getID();?>' hidden/>		
 		<button type='submit' class='red' id='borrar-<?=$proyecto->getID();?>' name='borrar' value='' onclick="return confirm('¿Realmente desea borrar el proyecto?')">
-		<?php include (PARTIALS_PATH.'boton-borrar.html');?></button></td></form>
+		<?php include ('partials/boton-borrar.html');?></button></td></form>
 	</tr>
 
 <?php endforeach; ?>

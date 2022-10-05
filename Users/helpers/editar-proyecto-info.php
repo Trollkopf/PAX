@@ -1,8 +1,7 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(DB_PATH.'DB.PHP');
-    include_once(MODELS_PATH.'project.php'); 
-    include_once(HELPERS_PATH.'curdate.php');
+    include_once('../db/db.php');
+    include_once('../models/project.php'); 
+    include_once('../helpers/curdate.php');
 ?>
 
 <!DOCTYPE html>
@@ -69,13 +68,15 @@
         <h3> EDITAR PROYECTO: INFORMACI&Oacute;n</h3><br/>
 
         <?php
-        include(HELPERS_PATH.'tratamiento-imagenes.php');
         
         $ID = $_POST['ID'];
         $nombre = $_POST['nombre_imagen'];
         $datos = $_POST['datos'];
         $tecnologia = $_POST['tecnologia'];
         $tiempo = $_POST['tiempo'];
+        $ruta_imagen = $_POST['imagen'];
+
+        include('../helpers/tratamiento-imagenes.php');
         ?>
 
         <div class="caja_centrada">

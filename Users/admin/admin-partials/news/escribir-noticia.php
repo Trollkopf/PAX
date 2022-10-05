@@ -1,7 +1,6 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once (HELPERS_PATH.'currentuser.php');
-    include_once (HELPERS_PATH.'curdate.php');
+    include_once ('helpers/currentuser.php');
+    include_once ('helpers/curdate.php');
 ?>
 
 <div class='panel'>

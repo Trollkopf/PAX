@@ -5,7 +5,7 @@
 		//OBTENEMOS LA EXTENSION PARA TRABAJAR LA IMAGEN
 		$imgInfo = getimagesize($orig);
 		switch($imgInfo['mime']){
-			case 'image/jpeg': $image = imagecreatefromjpeg($orig); break;
+			case 'i mage/jpeg': $image = imagecreatefromjpeg($orig); break;
 			case 'image/png': $image = imagecreatefrompng($orig); break;
 			case 'image/gif': $image = imagecreatefromgif($orig); break;
 		}

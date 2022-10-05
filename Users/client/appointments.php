@@ -1,15 +1,14 @@
 <section>
 	<?php
-		include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-		include_once(HELPERS_PATH.'cambiaM_a_espanol.php');
-		include_once(HELPERS_PATH.'currentuser.php');
-		include_once(HELPERS_PATH.'borrar-citas-pasadas.php');
-		include_once(HELPERS_PATH.'now.php');?>
+		include_once('helpers/cambiaM_a_espanol.php');
+		include_once('helpers/currentuser.php');
+		include_once('helpers/borrar-citas-pasadas.php');
+		include_once('helpers/now.php');?>
 
 <!--PEDIR NUEVA CITA-->
-	<?php include(CLIENT_PATH.'client-partials/appointments/pedirCita.php');?>
+	<?php include('client/client-partials/appointments/pedirCita.php');?>
    
 <!--ADMINISTRAR CITAS-->  
-	<?php include(CLIENT_PATH.'client-partials/appointments/misCitas.php');?>
+	<?php include('client/client-partials/appointments/misCitas.php');?>
 
 </section>

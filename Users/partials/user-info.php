@@ -1,7 +1,6 @@
 <?php
-	include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(HELPERS_PATH.'currentuser.php');
-	include_once(MODELS_PATH.'user.php');
+	include_once('helpers/currentuser.php');
+	include_once('models/user.php');
 ?>
 <h3>MI CUENTA:</h3>
       

@@ -1,6 +1,5 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(DB_PATH.'db.php');
+    include_once('../db/db.php');
 
 	$id = $_POST['id_usuario'];
 	$user = $_POST['usuario'];

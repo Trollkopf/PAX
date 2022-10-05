@@ -1,6 +1,5 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(DB_PATH.'db.php');
+    include_once('db/db.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +21,12 @@
         <script type="text/javascript" src="../scripts/datepicker.js"></script>
 
         <!--METADATOS-->
-        <?php include(PARTIALS_PATH.'meta.html'); ?>
+        <?php include('partials/meta.html'); ?>
 
     </head>    
     <body>
         <!--INICIO DE LA CABECERA-->
-            <?php include(PARTIALS_PATH.'header.html'); ?>
+            <?php include('partials/header.html'); ?>
         
         <!--INICIO DE SECCION: CARGAMOS EL AREA DE USUARIO O EL LOGIN SEGÚN SE HAYA INCIADO SESION O NO-->
             <section>
@@ -47,7 +46,7 @@
                     </section>
                     <div class='panel'>
                     <h1>Bienvenid@, ".$_SESSION['nombre']." ".$_SESSION['apellido']."</h1>";
-                    include(ADMIN_PATH.'admin-site.php');
+                    include('admin/admin-site.php');
                     echo "</div></section>";
                         break;
                     case 'USER':
@@ -59,12 +58,12 @@
                     </section>
                     <div class='panel'>
                     <p><h1>Bienvenid@, ".$_SESSION['nombre']." ".$_SESSION['apellido']."</h1><br/>";
-                    include(CLIENT_PATH.'client-site.php');
+                    include('client/client-site.php');
                     echo "</div></section>";
                         break;
                     
                     default:
-                        include(USERS_PATH.'cerrarSesion.php');
+                        include('cerrarSesion.php');
                         echo "<script>
                         $(document).ready(function({
                             $('errorMsg').html('<span class=`nvaliduser`>Error en el proceso, contacta con el administrador</span>');
@@ -79,7 +78,7 @@
             </section>
             <div id="errorMsg"></div>
         <!--PIE DE PÁGINA-->
-            <?php include(PARTIALS_PATH.'footer.html'); ?>   
+            <?php include('partials/footer.html'); ?>   
 
     </body>
 </html>

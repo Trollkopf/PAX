@@ -1,7 +1,6 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(DB_PATH.'db.php');
-    include_once(MODELS_PATH.'news.php');
+    include_once('../db/db.php');
+    include_once('../models/news.php');
 
     $noticia = new Noticia("","","","","","","");
 

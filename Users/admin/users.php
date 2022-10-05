@@ -1,9 +1,6 @@
 <?php
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(HELPERS_PATH.'usersinfo.php'); 
-	include_once(MODELS_PATH.'user.php');
-
-
+    include_once('helpers/usersinfo.php'); 
+	include_once('models/user.php');
 ?>
 <section>
 <h3>USUARIOS:</h3>
@@ -34,10 +31,10 @@
 			<td><b><?=$usuario->getRol();?></b></td>
 
 		<!-- INSERTAMOS LOS BOTONES -->
-		<?php include(ADMIN_PATH.'admin-partials/users/botones-usuario.php'); ?>
+		<?php include('admin/admin-partials/users/botones-usuario.php'); ?>
 		</tr>
 		<!--INSERTAMOS EL FORMULARIO PARA CAMBIAR USUARIO-->
-		<?php include(ADMIN_PATH.'admin-partials/users/editar-usuario.php'); ?>
+		<?php include('admin/admin-partials/users/editar-usuario.php'); ?>
 	<?php endforeach;?>
 
 	</table>

@@ -1,8 +1,7 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(DB_PATH.'DB.PHP');
-    include_once(MODELS_PATH.'project.php'); 
-    include_once(HELPERS_PATH.'curdate.php');
+    include_once('db/db.php');
+    include_once('models/project.php'); 
+    include_once('helpers/curdate.php');
 ?>
 
 <div class='panel'>

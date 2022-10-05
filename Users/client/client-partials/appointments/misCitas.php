@@ -1,6 +1,6 @@
-<?php include_once(MODELS_PATH.'appointment.php');
- 	  include_once(HELPERS_PATH.'currentuser.php');
- 	  include_once(HELPERS_PATH.'now.php');?>
+<?php include_once('models/appointment.php');
+ 	  include_once('helpers/currentuser.php');
+ 	  include_once('helpers/now.php');?>
 	  
 <div class="panel">
 <h3>MIS CITAS:</h3>
@@ -20,7 +20,7 @@
 				<td><b>Borrar</b></td>
 			</tr>
 
-	    <?php include(HELPERS_PATH.'appointmentsinfo.php'); ?>
+	    <?php include('helpers/appointmentsinfo.php'); ?>
 	  	<?php foreach($appointment as $a):?>
 	
 		<?php $cita = new Appointment($a['ID'], $a['nombre'], $a['apellido'], $a['dia'], $a['mes'], $a['año'], $a['hora'], $a['observaciones']);?>
@@ -36,12 +36,12 @@
 			<!-- INICIAMOS EL CONTROL DE EDICIÓN SEGUN HORAS RESTANTES -->
 			<?php 
 			$FECHA = $a['fecha'];
-			include(HELPERS_PATH.'horasrestantes.php');
+			include('helpers/horasrestantes.php');
 			
 			if($horasrestantes>=72){
 				// INSERTAMOS LOS BOTONES Y EL EDITOR DE CITAS
-				include(CLIENT_PATH.'client-partials/appointments/botonesCita.php');
-				include(CLIENT_PATH.'client-partials/appointments/editar-cita.php');
+				include('client/client-partials/appointments/botonesCita.php');
+				include('client/client-partials/appointments/editar-cita.php');
 			}else{echo "<td colspan='2'>FUERA DE PLAZO DE MODIFICACION</td></tr>";}?>		
 		</tr>
 		

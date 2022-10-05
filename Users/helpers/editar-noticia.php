@@ -1,9 +1,8 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(DB_PATH.'DB.PHP');
-    include_once(MODELS_PATH.'news.php'); 
-    include_once(HELPERS_PATH.'curdate.php');
-    include_once(HELPERS_PATH.'currentnew.php');
+    include_once('../db/db.php');
+    include_once('../models/news.php'); 
+    include_once('../helpers/curdate.php');
+    include_once('../helpers/currentnew.php');
 ?>
 
 <!DOCTYPE html>

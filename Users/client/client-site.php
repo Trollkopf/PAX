@@ -1,4 +1,3 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');?>
 <!--BOTONES DE LAS SECCIONES-->
 <button type="submit" class="boton_primario" id="toggleAppointments">MIS CITAS</button>
 <button type="submit" class="boton_primario" id="toggleUser">MI CUENTA</button>
@@ -6,12 +5,12 @@
 
     <!--CARGAMOS ADMINISTRAR CITAS-->
     <div class="info_box" id="infoappointments">
-        <?php include (CLIENT_PATH."appointments.php");?>  
+        <?php include ("client/appointments.php");?>  
     </div>
 
     <!--CARGAMOS ADMINISTRAR CUENTA-->
     <div class="info_box" id="infoaccount">
-        <?php include (PARTIALS_PATH."account.php");?>
+        <?php include ("partials/account.php");?>
     </div>
 
   

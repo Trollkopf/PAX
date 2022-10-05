@@ -1,13 +1,12 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(HELPERS_PATH.'curdate.php');
-    include_once(HELPERS_PATH.'currentuser.php');?>
+    include_once('helpers/curdate.php');
+    include_once('helpers/currentuser.php');?>
 
 <section>
     <!--REDACTAR NOTICIA-->
-    <?php include (ADMIN_PATH.'admin-partials/news/escribir-noticia.php')?>
+    <?php include ('admin/admin-partials/news/escribir-noticia.php')?>
     <!--LISTAR NOTICIAS-->
-    <?php include (ADMIN_PATH.'admin-partials/news/listar-noticias.php')?>
+    <?php include ('admin/admin-partials/news/listar-noticias.php')?>
     
 </section>
 

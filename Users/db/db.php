@@ -1,7 +1,6 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
 //INCLUIMOS CREDENCIALES PARA CONECTAR CON LA BD
-include_once(DB_PATH.'.env.php');
+include_once('.env.php');
 
 //ESTABLECEMOS CONEXIÓN
 $mysqli = new mysqli(SERVIDOR, USUARIO, PASSWORD, BD);

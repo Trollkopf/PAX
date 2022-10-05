@@ -1,15 +1,14 @@
 <div class='panel'>    
 <!--INFORMACION DE USUARIO-->
 <?php
-	include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(HELPERS_PATH.'currentuser.php');
-	include_once(PARTIALS_PATH.'user-info.php');
+	include_once('helpers/currentuser.php');
+	include_once('partials/user-info.php');
 ?>
 
 <!--INICIO TABLA Y FORMULARIO-->
 	<table>
 		<!-- ACTUALIZAR USUARIO-->
-		<form method="post" action="controllers/actualizar-usuario.php">
+		<form method="post" id="actualizar" action="controllers/actualizar-usuario.php">
 			<tr><?php echo '<input type="text" id="id_usuario" name="id_usuario" value="'.$CURUSER.'" hidden/>' ?>
 			
 			<!--CAMBIAR NOMBRE-->
@@ -42,6 +41,24 @@
 				<td>Inserte un nuevo n&uacute;mero de tel&eacute;fono:</td>
 				<td><input type="text" id="nuevo_telf" name="nuevo_telf"/></td>
 			</tr>
+			<tr>
+				<td colspan="3"><span id='error-usuario' class='nvaliduser'></span></td>
+			</tr>
 		</form>
     </table>
 </div>
+
+<script>
+$(document).ready(function(){
+	$("#actualizar").submit(function(event) {
+			if(($("#nuevo_nombre").val().length <= 0)&&
+			   ($("#nuevo_apellido").val().length <= 0)&&
+			   ($("#nuevo_password").val().length <= 0)&&
+			   ($("#nuevo_email").val().length <= 0)&&
+			   ($("#nuevo_telf").val().length <= 0)){ 
+				$("#error-usuario").html("Debe rellenar al menos uno de los campos");
+				event.preventDefault();
+			}else{}
+		});
+	});
+</script>

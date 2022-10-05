@@ -1,8 +1,7 @@
-﻿<?php
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include_once(DB_PATH.'db.php');
-    include_once(MODELS_PATH.'project.php');
-    include_once(HELPERS_PATH.'projectsinfo.php');
+﻿<?php 
+    include_once('../users/db/db.php');
+    include_once('../users/models/project.php');
+    include_once('../users/helpers/projectsinfo.php');
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,7 @@
         
         
         <!--METADATOS-->
-       <?php include(PARTIALS_PATH.'meta.html');?>
+       <?php include('../users/partials/meta.html');?>
         
         
     </head>
@@ -48,7 +47,7 @@
                     <li><a href="#" class="btn_in">PORTFOLIO</a></li>
                     <li><a href="presupuesto.html" class="btn">PRESUPUESTO</a></li>
                     <li><a href="contacto.html" class="btn">CONTACTO</a></li>
-                    <li><a href="../users/areaUsuarios.php" class="users">AREA USUARIOS</a></li>
+                    <li><a href="../users/areausuarios.php" class="users">AREA USUARIOS</a></li>
                 </ul>
             </nav>
         </div>
@@ -91,7 +90,7 @@
     </section>
 
     <!--PIE DE PÁGINA-->
-    <?php include(PARTIALS_PATH.'footer.html'); ?>   
+    <?php include('../users/partials/footer.html'); ?>   
 
 </body>
 </html>

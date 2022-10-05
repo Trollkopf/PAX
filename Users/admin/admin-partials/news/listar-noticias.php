@@ -1,7 +1,7 @@
 <?php 
-	include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-	include_once(HELPERS_PATH.'newsinfo.php');
-	include_once(MODELS_PATH.'news.php'); ?>
+	include_once('helpers/newsinfo.php');
+	include_once('models/news.php'); 
+?>
 
 <div class='panel'>
 <h3>NOTICIAS:</h3>
@@ -33,16 +33,16 @@
         <form method='get' action='../views/leernoticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='edit' id='ver_noticia<?=$noticia->getID();?>' name='ver_noticia' value='' />
-		<?php include (PARTIALS_PATH.'boton-ver.html');?></button></td></form>
+		<?php include ('partials/boton-ver.html');?></button></td></form>
         <!--EDITAR NOTICIA-->
         <form method='GET' action='helpers/editar-noticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
-		<button type='submit' class='edit' id='editar-<?=$noticia->getID();?>' name='editar'/><?php include (PARTIALS_PATH.'boton-editar.html');?></button></td></form>
+		<button type='submit' class='edit' id='editar-<?=$noticia->getID();?>' name='editar'/><?php include ('partials/boton-editar.html');?></button></td></form>
 		<!--BORRAR NOTICIA-->
 		<form method='post' action='controllers/borrar-noticia.php'>
 		<td><input type='text' id='id_noticia' name='id_noticia' value='<?=$noticia->getID();?>' hidden/>		
 		<button type='submit' class='red' id='borrar-<?=$noticia->getID();?>' name='borrar' value='' onclick="return confirm('¿Realmente desea borrar la noticia?')">
-		<?php include (PARTIALS_PATH.'boton-borrar.html');?></button></td></form>
+		<?php include ('partials/boton-borrar.html');?></button></td></form>
 	</tr>
 
 <?php endforeach; ?>

@@ -1,6 +1,5 @@
 <?php 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/dirs.php');
-    include(DB_PATH.'db.php');
+    include_once('../db/db.php');
 
 	$user = $_POST["user"];
 	$appointment = $_POST["datepicker"];
