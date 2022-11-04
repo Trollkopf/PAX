@@ -66,4 +66,3 @@
 			$ruta_imagen = 'images/projects/'.$nombre.$extension;
 		}
 	}
-?>

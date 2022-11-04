@@ -8,4 +8,3 @@
 
 	$mysqli->query($drop);
 	header('Location: ../../areausuarios.php');
-?>

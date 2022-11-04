@@ -7,5 +7,4 @@
 
     //OBTENEMOS LA ID DEL USUARIO
     while($registro = mysqli_fetch_assoc($usuario)){
-        $CURUSER = $registro['ID'];}	
-?>
+        $CURUSER = $registro['ID'];}

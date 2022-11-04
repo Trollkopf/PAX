@@ -1,415 +1,409 @@
 ﻿#formulario section {
-    width: 50%;
-    height: auto;
-    border: 1px 1px 0px 1px solid #582A7A;
-    margin: 0px auto;
-    padding: 50px 20px 20px 40px;
-    font-family: "TrebuchetMS";
-    background: whitesmoke;
-    color: #2B0548;
-    box-shadow: 1px 1px 2px #582A7A;
-    margin-bottom: 40px;
+  width: 50%;
+  height: auto;
+  border: 1px 1px 0px 1px solid #582a7a;
+  margin: 0px auto;
+  padding: 50px 20px 20px 40px;
+  font-family: "TrebuchetMS";
+  background: whitesmoke;
+  color: #2b0548;
+  box-shadow: 1px 1px 2px #582a7a;
+  margin-bottom: 40px;
 }
 
 .panel {
-    width: 90%;
-    height: auto;
-    border: 1px 1px 0px 1px solid #582A7A;
-    margin: 0 auto;
-    padding: 20px 20px 20px 20px;
-    font-family: "TrebuchetMS";
-    background: whitesmoke;
-    color: #2B0548;
-    box-shadow: 1px 1px 2px #582A7A;
-
+  width: 90%;
+  height: auto;
+  border: 1px 1px 0px 1px solid #582a7a;
+  margin: 0 auto;
+  padding: 20px 20px 20px 20px;
+  font-family: "TrebuchetMS";
+  background: whitesmoke;
+  color: #2b0548;
+  box-shadow: 1px 1px 2px #582a7a;
 }
 
-    .panel h3 {
-        display: block;
-        width: auto;
-        height: 45px;
-        line-height: 48px;
-        background: url('../images/css/bgr/pxpurple.png'), whitesmoke;
-        box-shadow: 0px 1px 0px #582A7A, 1px 2px 0px #582A7A, 2px 3px 0px #582A7A, 3px 4px 0px #582A7A;
-        font-size: 28px;
-        font-family: "BebasNeue";
-        font-weight: normal;
-        letter-spacing: 2px;
-        padding-left: 16px;
-        margin-top: 32px;
-        margin-bottom: 16px;
-    }
+.panel h3 {
+  display: block;
+  width: auto;
+  height: 45px;
+  line-height: 48px;
+  background: url("../images/css/bgr/pxpurple.png"), whitesmoke;
+  box-shadow: 0px 1px 0px #582a7a, 1px 2px 0px #582a7a, 2px 3px 0px #582a7a,
+    3px 4px 0px #582a7a;
+  font-size: 28px;
+  font-family: "BebasNeue";
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding-left: 16px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
 
+.form div{
+  margin-bottom: 8px;
+}
 
 #formulario .last {
-    width: 50%;
-    text-align: center;
-    height: auto;
-    margin: 0px auto;
-    padding: 20px 20px 20px 40px;
-    font-family: "TrebuchetMS"; 
+  width: 50%;
+  text-align: center;
+  height: auto;
+  margin: 0px auto;
+  padding: 20px 20px 20px 40px;
+  font-family: "TrebuchetMS";
 }
 
-#formulario .title h2{
-    float: left;
-    background: #0E0018;
-    color: whitesmoke;
-    font-family:"BebasNeue";
-    letter-spacing:2px;
-    height: 30px;
-    line-height: 30px;
-    margin: -50px 0px 0px -40px;
-    padding: 4px;
-    font-size: 24px;
-    border-radius: 0px 0px 5px 0px;
+#formulario .title h2 {
+  float: left;
+  background: #0e0018;
+  color: whitesmoke;
+  font-family: "BebasNeue";
+  letter-spacing: 2px;
+  height: 30px;
+  line-height: 30px;
+  margin: -50px 0px 0px -40px;
+  padding: 4px;
+  font-size: 24px;
+  border-radius: 0px 0px 5px 0px;
 }
 
 /*INPUTS*/
 #login input[type="text"],
-#login input[type="password"]{
-    display:  block;
-    margin:  0px auto;
-    width:  40%;
-    height:  32px;
-    border: 1pf solid whitesmoke;
-    box-shadow: 1px 1px 4px #582A7A inset;
-    border-radius: 5px;
-    padding-left:  35px;
+#login input[type="password"] {
+  display: block;
+  margin: 0px auto;
+  width: 40%;
+  height: 32px;
+  border: 1pf solid whitesmoke;
+  box-shadow: 1px 1px 4px #582a7a inset;
+  border-radius: 5px;
+  padding-left: 35px;
 }
 
-#login #user-icon{
-    display: block;
-    text-align:  center;
-    position: absolute;
-    margin-left: 180px;
-    margin-top: 8px; 
+#login #user-icon {
+  display: block;
+  text-align: center;
+  position: absolute;
+  margin-left: 180px;
+  margin-top: 8px;
 }
 
-#login #password-icon{
-    display: block;
-    text-align:  center;
-    position: absolute;
-    margin-left: 185px;
-    margin-top: 9px;
-    
+#login #password-icon {
+  display: block;
+  text-align: center;
+  position: absolute;
+  margin-left: 185px;
+  margin-top: 9px;
 }
-
 
 
 /*NUEVO USUARIO*/
 .newUser {
- border: none;
- background: none;
- text-decoration: none;
- font-family: "bebas Neue";
- color: #582A7A;
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-family: "bebas Neue";
+  color: #582a7a;
 }
 
-.newUser span {  
- padding-bottom: 7px;
- letter-spacing: 6px;
- font-size: 15px;
- padding-right: 15px;
- text-transform: uppercase;
- color: #582A7A;
-
+.newUser span {
+  padding-bottom: 7px;
+  letter-spacing: 6px;
+  font-size: 15px;
+  padding-right: 15px;
+  text-transform: uppercase;
+  color: #582a7a;
 }
 
 .newUser .icon {
- transform: translateX(-8px);
- transition: all 0.3s ease;
- color: #582A7A;
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+  color: #582a7a;
 }
 
 .newUser:hover .icon {
- transform: translateX(0);
+  transform: translateX(0);
 }
 
 .newUser:active .icon {
- transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .hover-underline-animation {
- position: relative;
- color: black;
- padding-bottom: 20px;
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
 }
 
 .hover-underline-animation:after {
- content: "";
- position: absolute;
- width: 100%;
- transform: scaleX(0);
- height: 1.5px;
- bottom: 0;
- left: 0;
- background-color: #582A7A;
- transform-origin: bottom right;
- transition: transform 0.25s ease-out;
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #582a7a;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
 .newUser:hover .hover-underline-animation:after {
- transform: scaleX(1);
- transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-/*ERROR USUARIO NUEVO*/ 
-.nvaliduser{
-    color: red;
+/*ERROR USUARIO NUEVO*/
+.nvaliduser {
+  color: red;
 }
 
-.validuser{
-    color:  green;
+.validuser {
+  color: green;
 }
 
 /*INPUTS*/
 #signup input[type="text"],
 #signup input[type="password"],
 #signup input[type="email"],
-#signup input[type="tel"]{
-    display:  block;
-    margin:  0px auto;
-    width:  40%;
-    height:  32px;
-    border: 1pf solid whitesmoke;
-    box-shadow: 1px 1px 4px #582A7A inset;
-    border-radius: 5px;
-    padding-left:  45px;
+#signup input[type="tel"] {
+  display: block;
+  margin: 0px auto;
+  width: 40%;
+  height: 32px;
+  border: 1pf solid whitesmoke;
+  box-shadow: 1px 1px 4px #582a7a inset;
+  border-radius: 5px;
+  padding-left: 45px;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-#signup .icon{
-    display: block;
-    text-align:  center;
-    position: absolute;
-    margin-left: 180px;
-    margin-top: 8px;
+#signup .icon {
+  display: block;
+  text-align: center;
+  position: absolute;
+  margin-left: 180px;
+  margin-top: 8px;
 }
 
-#signup #password-icon{
-    margin-left: 186px;
-    margin-top: 10px;
+#signup #password-icon {
+  margin-left: 186px;
+  margin-top: 10px;
 }
 
-#signup #telf-icon{
-    margin-left: 184px;
-
+#signup #telf-icon {
+  margin-left: 184px;
 }
 
 /*LECTURA NOTICIAS*/
 #articles {
-    margin:0px auto;
-    width: 85.6%;
-        
+  margin: 0px auto;
+  width: 85.6%;
 }
 
-    #articles article {
-        width: 82%;
-        height: auto;
-        border: 1px solid #582A7A;
-        margin: 0px auto;
-        margin-bottom: 24px;
-        padding: 20px;
-        font-family: "TrebuchetMS";
-        background: whitesmoke;
-        color: #0E0018;
-        box-shadow: 1px 1px 2px #582A7A;
-    }
-
-    #articles article h4{
-        display: block;
-        font-size: 23px;
-        margin: 3px;
-        margin-top: 30px;
-        
-    }
-
-        #articles article h4 a {
-
-            text-decoration: underline;
-            color: #1B022F;
-        }
-
-    #articles .data {
-        float: right;
-        background: #0E0018;
-        color: whitesmoke;
-        height: 30px;
-        line-height: 30px;
-        margin: -20px;
-        padding:4px;
-        font-size: 13px;
-        border-radius: 0px 0px 0px 5px;
-    }
-
-    #articles .data span{
-        margin: 6px;
-    }
-
-    #articles article p{
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-    }
-
-    #articles #back_button {
-    font-size: 24px;
-    padding: 12px 64px 12px 64px;
+#articles article {
+  width: 82%;
+  height: auto;
+  border: 1px solid #582a7a;
+  margin: 0px auto;
+  margin-bottom: 24px;
+  padding: 20px;
+  font-family: "TrebuchetMS";
+  background: whitesmoke;
+  color: #0e0018;
+  box-shadow: 1px 1px 2px #582a7a;
 }
 
-    #articles #back_button:hover{
-        box-shadow: inset 10.50em 0 0 0 #0E0018, inset -10.50em 0 0 0 #0E0018;
-    }
+#articles article h4 {
+  display: block;
+  font-size: 23px;
+  margin: 3px;
+  margin-top: 30px;
+}
+
+#articles article h4 a {
+  text-decoration: underline;
+  color: #1b022f;
+}
+
+#articles .data {
+  float: right;
+  background: #0e0018;
+  color: whitesmoke;
+  height: 30px;
+  line-height: 30px;
+  margin: -20px;
+  padding: 4px;
+  font-size: 13px;
+  border-radius: 0px 0px 0px 5px;
+}
+
+#articles .data span {
+  margin: 6px;
+}
+
+#articles article p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#articles #back_button {
+  font-size: 24px;
+  padding: 12px 64px 12px 64px;
+}
+
+#articles #back_button:hover {
+  box-shadow: inset 10.5em 0 0 0 #0e0018, inset -10.5em 0 0 0 #0e0018;
+}
 
 /*TABLAS*/
 
-table{
-    border:1px solid #2B0548;
-    margin: 0 auto;
+table {
+  border: 1px solid #2b0548;
+  margin: 0 auto;
 }
 
-
-td{
-    background-color: #2B0548;
-    font-size: 12px;
-    text-align: center;
-    color: whitesmoke;
-    padding: 5px 25px 5px 25px;
+td {
+  background-color: #2b0548;
+  font-size: 12px;
+  text-align: center;
+  color: whitesmoke;
+  padding: 5px 25px 5px 25px;
 }
 
-form .formText{
-    width: 100%;
+form .formText {
+  width: 100%;
 }
 
 /*BOTONES*/
 
- .caja_centrada {
-    width: 100%;
-    text-align: center;
-    height: auto;
-    margin: 0px auto;
-    padding: 20px 20px 20px 40px;
-    font-family: "TrebuchetMS"; 
+.caja_centrada {
+  width: 100%;
+  text-align: center;
+  height: auto;
+  margin: 0px auto;
+  padding: 20px 20px 20px 40px;
+  font-family: "TrebuchetMS";
 }
 .boton_secundario {
-    font-family: "BebasNeue";
-    font-size: 16px;
-    padding: 12px;
-    background: whitesmoke;
-    color: #582A7A;
-    border: 1px solid #582A7A;
-    cursor: pointer;
-    transition: .5s ease;
-    border-radius: 4px;
+  font-family: "BebasNeue";
+  font-size: 16px;
+  padding: 12px;
+  background: whitesmoke;
+  color: #582a7a;
+  border: 1px solid #582a7a;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
 }
-    .boton_secundario:hover {
-        box-shadow: inset 10.50em 0 0 0 #582A7A, inset -10.50em 0 0 0 #582A7A;
-        color: whitesmoke;
-    }
+.boton_secundario:hover {
+  box-shadow: inset 10.5em 0 0 0 #582a7a, inset -10.5em 0 0 0 #582a7a;
+  color: whitesmoke;
+}
 
 .boton_cerrar-sesion {
-    float: right;
-    font-family: "BebasNeue";
-    font-size: 16px;
-    padding: 12px;
-    background: whitesmoke;
-    color: #582A7A;
-    border: 1px solid #582A7A;
-    cursor: pointer;
-    transition: .5s ease;
-    border-radius: 4px;
+  float: right;
+  font-family: "BebasNeue";
+  font-size: 16px;
+  padding: 12px;
+  background: whitesmoke;
+  color: #582a7a;
+  border: 1px solid #582a7a;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
 }
-    .boton_cerrar-sesion:hover {
-        box-shadow: inset 10.50em 0 0 0 #582A7A, inset -10.50em 0 0 0 #582A7A;
-        color: whitesmoke;
-    }
+.boton_cerrar-sesion:hover {
+  box-shadow: inset 10.5em 0 0 0 #582a7a, inset -10.5em 0 0 0 #582a7a;
+  color: whitesmoke;
+}
 
 .boton_primario {
-    font-family: "BebasNeue";
-    font-size: 16px;
-    padding: 12px 32px 12px 32px;
-    background: #582A7A;
-    color: whitesmoke;
-    border: 1px solid #582A7A;
-    cursor: pointer;
-    transition: .5s ease;
-    border-radius: 4px;
+  font-family: "BebasNeue";
+  font-size: 16px;
+  padding: 12px 32px 12px 32px;
+  background: #582a7a;
+  color: whitesmoke;
+  border: 1px solid #582a7a;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
 }
-    .boton_primario:hover {
-        box-shadow: inset 10.50em 0 0 0 #0E0018;
-    }
+.boton_primario:hover {
+  box-shadow: inset 10.5em 0 0 0 #0e0018;
+}
 
 .back_button {
-    margin: 16px;
-    font-size:12px;
+  margin: 16px;
+  font-size: 12px;
 }
 
-    .back_button:hover{
-        box-shadow: inset 10.50em 0 0 0 #0E0018, inset -10.50em 0 0 0 #0E0018;
-    }
+.back_button:hover {
+  box-shadow: inset 10.5em 0 0 0 #0e0018, inset -10.5em 0 0 0 #0e0018;
+}
 
 .red {
-    font-family: "BebasNeue";
-    font-size: 16px;
-    padding: 8px 10px;
-    background: darkred;
-    color: Whitesmoke;
-    border: 1px solid #582A7A;
-    cursor: pointer;
-    transition: .5s ease;
-    border-radius: 4px;
+  font-family: "BebasNeue";
+  font-size: 16px;
+  padding: 8px 10px;
+  background: darkred;
+  color: Whitesmoke;
+  border: 1px solid #582a7a;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
 }
 .red:hover {
-        box-shadow: inset 10.50em 0 0 0 #1B022F, inset -10.50em 0 0 0 #1B022F;
-        color: whitesmoke;
-    }
-
-    .white {
-    font-family: "BebasNeue";
-    font-size: 16px;
-    padding: 8px 10px;
-    background: whitesmoke;
-    color: #582A7A;
-    border: 1px solid #582A7A;
-    cursor: pointer;
-    transition: .5s ease;
-    border-radius: 4px;
+  box-shadow: inset 10.5em 0 0 0 #1b022f, inset -10.5em 0 0 0 #1b022f;
+  color: whitesmoke;
 }
-    .white:hover {
-        box-shadow: inset 10.50em 0 0 0 #582A7A, inset -10.50em 0 0 0 #582A7A;
-        color: whitesmoke;
-    }
+
+.white {
+  font-family: "BebasNeue";
+  font-size: 16px;
+  padding: 8px 10px;
+  background: whitesmoke;
+  color: #582a7a;
+  border: 1px solid #582a7a;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
+}
+.white:hover {
+  box-shadow: inset 10.5em 0 0 0 #582a7a, inset -10.5em 0 0 0 #582a7a;
+  color: whitesmoke;
+}
 
 .edit {
-font-family: "BebasNeue";
-font-size: 16px;
-padding: 8px 10px;
-background: whitesmoke;
-color: #582A7A;
-border: 1px solid #582A7A;
-cursor: pointer;
-transition: .5s ease;
-border-radius: 4px;
+  font-family: "BebasNeue";
+  font-size: 16px;
+  padding: 8px 10px;
+  background: whitesmoke;
+  color: #582a7a;
+  border: 1px solid #582a7a;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
 }
-    .edit:hover {
-        box-shadow: inset 10.50em 0 0 0 #1B022F, inset -10.50em 0 0 0 #1B022F;
-        color: whitesmoke;
-    }
+.edit:hover {
+  box-shadow: inset 10.5em 0 0 0 #1b022f, inset -10.5em 0 0 0 #1b022f;
+  color: whitesmoke;
+}
 
 .purple {
-    font-family: "BebasNeue";
-    font-size: 16px;
-    padding: 8px 12px;
-    background: #582A7A;
-    color: whitesmoke;
-    border: 1px solid #582A7A;
-    cursor: pointer;
-    transition: .5s ease;
-    border-radius: 4px;
+  font-family: "BebasNeue";
+  font-size: 16px;
+  padding: 8px 12px;
+  background: #582a7a;
+  color: whitesmoke;
+  border: 1px solid #582a7a;
+  cursor: pointer;
+  transition: 0.5s ease;
+  border-radius: 4px;
 }
-    .purple:hover {
-        box-shadow: inset 10.50em 0 0 0 #0E0018;
-    }
+.purple:hover {
+  box-shadow: inset 10.5em 0 0 0 #0e0018;
+}

@@ -13,5 +13,3 @@
 	if($results){
 		Header("Location:../areausuarios.php");		
 	}
-
-?>

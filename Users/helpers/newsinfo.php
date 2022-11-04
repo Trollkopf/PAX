@@ -9,4 +9,3 @@
                     FROM noticias n INNER JOIN usuarios u ON n.usuario = u.id 
                     ORDER BY n.ID ASC;";
     $noticia=$mysqli->query($sql_noticias);
-?>

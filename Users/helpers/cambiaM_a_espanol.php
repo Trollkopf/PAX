@@ -17,4 +17,3 @@
             case "December": return "Diciembre"; break;
             } 
         };
-?>

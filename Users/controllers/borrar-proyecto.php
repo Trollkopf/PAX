@@ -8,4 +8,3 @@ include_once('../db/db.php');
 	$mysqli->query($drop);
 
 	header('Location: ../areausuarios.php');
-?>

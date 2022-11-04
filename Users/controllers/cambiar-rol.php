@@ -13,4 +13,3 @@
     }	
 	
 	header('Location:../areausuarios.php');
-?>

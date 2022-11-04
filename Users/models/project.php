@@ -70,4 +70,3 @@ class Proyecto{
         $this->imagen = $imagen;
     }
 }
-?>

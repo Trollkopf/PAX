@@ -1,12 +1,13 @@
-<?php 
-    include_once('../db/db.php');
-    include_once('../models/project.php'); 
-    include_once('../helpers/curdate.php');
-    include_once('../helpers/currentproject.php');
+<?php
+include_once('../db/db.php');
+include_once('../models/project.php');
+include_once('../helpers/curdate.php');
+include_once('../helpers/currentproject.php');
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <!--IDIOMA DE LOS CARACTERES-->
     <meta charset="utf-8" />
@@ -32,6 +33,7 @@
     <meta name="category" content="Web app" />
     <title>EDITAR PROYECTO</title>
 </head>
+
 <body>
 
     <!--INICIO DE LA CABECERA-->
@@ -56,69 +58,73 @@
     </header>
 
     <!--INICIO DE SECCION-->
-    <section class="wrap wrap-content"><h2>EDITAR PROYECTO</h2>
+    <section class="wrap wrap-content">
+        <h2>EDITAR PROYECTO</h2>
         <section class="info">
             <!--INICIO DEL BANNER-->
-            <div id="banner"><h2>EDITAR PROYECTO</h2></div>
-            
+            <div id="banner">
+                <h2>EDITAR PROYECTO</h2>
+            </div>
+
         </section>
     </section>
 
 
     <div class='panel'>
-        <h3> EDITAR PROYECTO </h3><br/>
+        <h3> EDITAR PROYECTO </h3><br />
 
         <!-- CARGAMOS LOS DATOS DEL PROYECTO -->
-        <?php foreach($proyecto as $p):?>
-	    <?php $proyecto = new Proyecto($p['ID_proyecto'], $p['nombre_proyecto'], $p['datos'], $p['tecnologia_empleada'], $p['tiempo_consecucion'], $p['imagen']);?>
+        <?php foreach ($proyecto as $p) : ?>
+            <?php $proyecto = new Proyecto($p['ID_proyecto'], $p['nombre_proyecto'], $p['datos'], $p['tecnologia_empleada'], $p['tiempo_consecucion'], $p['imagen']); ?>
 
-        <!-- MOSTRAMOS LA IMAGEN DEL PROYECTO -->
-        <div class="caja_centrada">
-            <h4>Imagen del proyecto:</h4><br/>
-            <img src='../../<?= $proyecto->getImagen();?>'/><br/><br/><br/>
+            <!-- MOSTRAMOS LA IMAGEN DEL PROYECTO -->
+            <div class="caja_centrada">
+                <h4>Imagen del proyecto:</h4><br />
+                <img src='../../<?= $proyecto->getImagen(); ?>' /><br /><br /><br />
 
-            <table>
-            <tr>
-                <td colspan="2">¿Cambiar imagen?</td>
-            </tr>
-            <tr>
-                <!-- EN CASO DE QUERER CAMBIAR LA IMAGEN DEL PROYECTO MOSTRAMOS EL FORMULARIO CORRESPONDIENTE -->
-                <td>
-                <button type='submit' class='boton_primario' id='cambiar-imagen' name='cambiar-imagen'/>Cambiar</button> 
-                    <script>
-                        $('#cambiar-imagen').click(function(){					
-                            $('#cambiar_imagen').toggle();
-                            return false;});
-                    </script>
-                </td>
+                <table>
+                    <tr>
+                        <td colspan="2">¿Cambiar imagen?</td>
+                    </tr>
+                    <tr>
+                        <!-- EN CASO DE QUERER CAMBIAR LA IMAGEN DEL PROYECTO MOSTRAMOS EL FORMULARIO CORRESPONDIENTE -->
+                        <td>
+                            <button type='submit' class='boton_primario' id='cambiar-imagen' name='cambiar-imagen' />Cambiar</button>
+                            <script>
+                                $('#cambiar-imagen').click(function() {
+                                    $('#cambiar_imagen').toggle();
+                                    return false;
+                                });
+                            </script>
+                        </td>
 
-                <!-- EN CASO DE NO QUERER CAMBIAR LA IMAGEN DEL PROYECTO AVANZAMOS AL SIGUIENTE PASO CON LOS DATOS ACTUALES -->
-                <td>
-                <form method="POST" action="editar-proyecto-info.php">
-                    <input type="text" name="ID" value="<?=$proyecto->getID();?>" hidden>
-                    <input type="text" name="nombre_imagen" value="<?=$proyecto->getNombre_proyecto();?>" hidden>
-                    <input type="text" name="datos" value="<?=$proyecto->getDatos();?>" hidden>
-                    <input type="text" name="tecnologia" value="<?=$proyecto->getTecnologia();?>" hidden>
-                    <input type="text" name="tiempo" value="<?=$proyecto->getTiempo();?>" hidden>
-                    <input type="text" name="imagen" value="<?=$proyecto->getImagen();?>" hidden>
-                    <input type="submit" name="mantener_imagen" value="No cambiar" class="boton_secundario">
+                        <!-- EN CASO DE NO QUERER CAMBIAR LA IMAGEN DEL PROYECTO AVANZAMOS AL SIGUIENTE PASO CON LOS DATOS ACTUALES -->
+                        <td>
+                            <form method="POST" action="editar-proyecto-info.php">
+                                <input type="text" name="ID" value="<?= $proyecto->getID(); ?>" hidden>
+                                <input type="text" name="nombre_imagen" value="<?= $proyecto->getNombre_proyecto(); ?>" hidden>
+                                <input type="text" name="datos" value="<?= $proyecto->getDatos(); ?>" hidden>
+                                <input type="text" name="tecnologia" value="<?= $proyecto->getTecnologia(); ?>" hidden>
+                                <input type="text" name="tiempo" value="<?= $proyecto->getTiempo(); ?>" hidden>
+                                <input type="text" name="imagen" value="<?= $proyecto->getImagen(); ?>" hidden>
+                                <input type="submit" name="mantener_imagen" value="No cambiar" class="boton_secundario">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- FORMULARIO PARA CAMBIAR LA IMAGEN DEL PROYECTO -->
+            <div id="cambiar_imagen" hidden>
+                <form action="editar-proyecto-info.php" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="imagen" value="<?= $proyecto->getImagen(); ?>" hidden>
+                    <?php include('../admin/admin-partials/projects/editar-imagen.php'); ?>
                 </form>
-                </td>
-            </tr>
-            </table>
-        </div>
-        
-        <!-- FORMULARIO PARA CAMBIAR LA IMAGEN DEL PROYECTO -->
-        <div id="cambiar_imagen" hidden>
-            <form action="editar-proyecto-info.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="imagen" value="<?=$proyecto->getImagen();?>" hidden>
-            <?php include('../admin/admin-partials/projects/editar-imagen.php');?>
-            </form>
-        </div>
-    
-        <!-- BOTON DE VOLVER ATRÁS -->
-        <a href='javascript:history.back()' class="boton_secundario">VOLVER ATRÁS</a>
-        <?php endforeach;?>
+            </div>
+
+            <!-- BOTON DE VOLVER ATRÁS -->
+            <a href='javascript:history.back()' class="boton_secundario">VOLVER ATRÁS</a>
+        <?php endforeach; ?>
     </div>
 
     <div class="clearfix"></div>
@@ -126,20 +132,22 @@
 
         <div class="wrap">
 
-            
+
             <div>
                 <h5>PAX | DIGITAL MINDS</h5>
                 <!--DIRECCION-->
                 Avenida de Palmela 19 - 03730 J&aacute;vea (Alicante)<br />
                 <!--AVISO LEGAL-->
                 <p><a href="#" class="advice">Política de cookies</a>&nbsp; | &nbsp;
-                <a href="#" class="advice">Política de privacidad</a>&nbsp; | &nbsp;
-                <a href="views/avisolegal.html" class="advice">Aviso Legal</a></p>
-                
+                    <a href="#" class="advice">Política de privacidad</a>&nbsp; | &nbsp;
+                    <a href="views/avisolegal.html" class="advice">Aviso Legal</a>
+                </p>
+
                 </p>&copy; PAX | DIGITAL MINDS 2022
             </div>
 
         </div>
     </footer>
 </body>
+
 </html>

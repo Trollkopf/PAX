@@ -1,11 +1,12 @@
-<?php 
-    include_once('../db/db.php');
-    include_once('../models/project.php'); 
-    include_once('../helpers/curdate.php');
+<?php
+include_once('../db/db.php');
+include_once('../models/project.php');
+include_once('../helpers/curdate.php');
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <!--IDIOMA DE LOS CARACTERES-->
     <meta charset="utf-8" />
@@ -31,6 +32,7 @@
     <meta name="category" content="Web app" />
     <title>EDITAR PROYECTO</title>
 </head>
+
 <body onload="categorias()">
 
     <!--INICIO DE LA CABECERA-->
@@ -55,52 +57,56 @@
     </header>
 
     <!--INICIO DE SECCION-->
-    <section class="wrap wrap-content"><h2>EDITAR PROYECTO</h2>
+    <section class="wrap wrap-content">
+        <h2>EDITAR PROYECTO</h2>
         <section class="info">
             <!--INICIO DEL BANNER-->
-            <div id="banner"><h2>EDITAR PROYECTO</h2></div>
-            
+            <div id="banner">
+                <h2>EDITAR PROYECTO</h2>
+            </div>
+
         </section>
     </section>
 
 
     <div class='panel'>
-        <h3> CREAR PROYECTO: INFORMACI&Oacute;n</h3><br/>
-        <?php include('../helpers/tratamiento-imagenes.php');?>
+        <h3> CREAR PROYECTO: INFORMACI&Oacute;n</h3><br />
+        <?php include('../helpers/tratamiento-imagenes.php'); ?>
 
         <div class="caja_centrada">
-        <form method="post" action="../controllers/crear-proyecto.php">
+            <form method="post" action="../controllers/crear-proyecto.php">
 
-        <h4>Imagen del proyecto:</h4><br/>
-            <img src='../../<?php echo $ruta_imagen ;?>'/><br/><br/><br/>
-            <table>
-                <tr>
-                    <td>Nombre del Proyecto:</td>
-                    <td colspan="2"><input type="Text" class="formText" name="nombre_proyecto" id="nombre_proyecto" ></td>
-                </tr>
-                <tr>
-                    <td>Datos:</td>
-                    <td colspan="2"><input type="Text" class="formText" name="datos_proyecto" id="datos_proyecto" ></td>
-                </tr>
-                <tr>
-                    <td>Tecnolog&iacute;a:</td>
-                    <td colspan="2">
-                    <input type="checkbox" id="Html" name="Html" value="Html"> Html
-                    <input type="checkbox" id="Css" name="Css" value="Css"> Css
-                    <input type="checkbox" id="JS" name="JavaScript" value="JavaScript"> JavaScript
-                    <input type="checkbox" id="MySQL" name="MySQL" value="MySQL"> MySQL
-                    <input type="checkbox" id="PHP" name="PHP" value="PHP"> PHP
-                    <input type="checkbox" id="Csharp" name="C#" value="C#"> C#
-                    </td>
-                </tr>
-                <tr>
-                    <td>Tiempo de Consecución</td>
-                    <td colspan="2"><input type="text" class="formText" name="tiempo_consecucion" id="tiempo_consecucion"></td>
-                </tr><tr>
-                    <td colspan="3"><input type="submit" class="white" name="send_project" id="send_project" value="CREAR PROYECTO"></td>
-                </tr>
-                    <input type="text" name="rutaimagen" id="rutaimagen" value=<?php echo '"'.$ruta_imagen.'"'?> hidden>    
-            </table>
+                <h4>Imagen del proyecto:</h4><br />
+                <img src='../../<?php echo $ruta_imagen; ?>' /><br /><br /><br />
+                <table>
+                    <tr>
+                        <td>Nombre del Proyecto:</td>
+                        <td colspan="2"><input type="Text" class="formText" name="nombre_proyecto" id="nombre_proyecto"></td>
+                    </tr>
+                    <tr>
+                        <td>Datos:</td>
+                        <td colspan="2"><input type="Text" class="formText" name="datos_proyecto" id="datos_proyecto"></td>
+                    </tr>
+                    <tr>
+                        <td>Tecnolog&iacute;a:</td>
+                        <td colspan="2">
+                            <input type="checkbox" id="Html" name="Html" value="Html"> Html
+                            <input type="checkbox" id="Css" name="Css" value="Css"> Css
+                            <input type="checkbox" id="JS" name="JavaScript" value="JavaScript"> JavaScript
+                            <input type="checkbox" id="MySQL" name="MySQL" value="MySQL"> MySQL
+                            <input type="checkbox" id="PHP" name="PHP" value="PHP"> PHP
+                            <input type="checkbox" id="Csharp" name="C#" value="C#"> C#
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tiempo de Consecución</td>
+                        <td colspan="2"><input type="text" class="formText" name="tiempo_consecucion" id="tiempo_consecucion"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="submit" class="white" name="send_project" id="send_project" value="CREAR PROYECTO"></td>
+                    </tr>
+                    <input type="text" name="rutaimagen" id="rutaimagen" value=<?php echo '"' . $ruta_imagen . '"' ?> hidden>
+                </table>
 
         </div>
     </div>
@@ -110,20 +116,22 @@
 
         <div class="wrap">
 
-            
+
             <div>
                 <h5>PAX | DIGITAL MINDS</h5>
                 <!--DIRECCION-->
                 Avenida de Palmela 19 - 03730 J&aacute;vea (Alicante)<br />
                 <!--AVISO LEGAL-->
                 <p><a href="#" class="advice">Política de cookies</a>&nbsp; | &nbsp;
-                <a href="#" class="advice">Política de privacidad</a>&nbsp; | &nbsp;
-                <a href="views/avisolegal.html" class="advice">Aviso Legal</a></p>
-                
+                    <a href="#" class="advice">Política de privacidad</a>&nbsp; | &nbsp;
+                    <a href="views/avisolegal.html" class="advice">Aviso Legal</a>
+                </p>
+
                 </p>&copy; PAX | DIGITAL MINDS 2022
             </div>
 
         </div>
     </footer>
 </body>
+
 </html>

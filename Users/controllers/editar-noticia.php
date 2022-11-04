@@ -13,4 +13,3 @@ $update = "UPDATE noticias SET noticia = '".$noticia."', categoria ='".$categori
 $mysqli->query($update);
 
 header("Location: ../areausuarios.php");
-?>

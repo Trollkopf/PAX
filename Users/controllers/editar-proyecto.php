@@ -88,6 +88,3 @@ include_once('../db/db.php');
 
 			echo "###ERROR###";
 		}
-
-
- ?>

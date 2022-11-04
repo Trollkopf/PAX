@@ -1,43 +1,42 @@
 <!--BOTONES DE LAS SECCIONES-->
 <button type="submit" class="boton_primario" id="toggleAppointments">MIS CITAS</button>
 <button type="submit" class="boton_primario" id="toggleUser">MI CUENTA</button>
-<a href="cerrarSesion.php" class="boton_cerrar-sesion">CERRAR SESIÓN</a><br/>
+<a href="cerrarSesion.php" class="boton_cerrar-sesion">CERRAR SESIÓN</a><br />
 
-    <!--CARGAMOS ADMINISTRAR CITAS-->
-    <div class="info_box" id="infoappointments">
-        <?php include ("client/appointments.php");?>  
-    </div>
+<!--CARGAMOS ADMINISTRAR CITAS-->
+<div class="info_box" id="infoappointments">
+    <?php include("client/appointments.php"); ?>
+</div>
 
-    <!--CARGAMOS ADMINISTRAR CUENTA-->
-    <div class="info_box" id="infoaccount">
-        <?php include ("partials/account.php");?>
-    </div>
+<!--CARGAMOS ADMINISTRAR CUENTA-->
+<div class="info_box" id="infoaccount">
+    <?php include("partials/account.php"); ?>
+</div>
 
-  
-<!--INCORPORACION AJAX PARA VENTANAS-->          
+
+<!--INCORPORACION AJAX PARA VENTANAS-->
 <script>
     //VENTANA USUARIO
-    $(document).ready(function(){
-    $('#infoaccount').hide();
-    $('#toggleUser').click(function(){
-        
-        $('#infoaccount').toggle();
-        $('#infoappointments').hide();
+    $(document).ready(function() {
+        $('#infoaccount').hide();
+        $('#toggleUser').click(function() {
 
-        return false;
+            $('#infoaccount').toggle();
+            $('#infoappointments').hide();
+
+            return false;
         });
     });
 
     //VENTANA CITAS
-    $(document).ready(function(){
-    $('#infoappointments').show();
-    $('#toggleAppointments').click(function(){
+    $(document).ready(function() {
+        $('#infoappointments').show();
+        $('#toggleAppointments').click(function() {
 
-        $('#infoappointments').toggle();
-        $('#infoaccount').hide();
+            $('#infoappointments').toggle();
+            $('#infoaccount').hide();
 
-        return false;
+            return false;
         });
     });
-
 </script>

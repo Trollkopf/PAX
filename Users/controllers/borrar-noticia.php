@@ -6,5 +6,4 @@
 	$drop = "DELETE FROM noticias WHERE ID=".$id;
 
     $mysqli->query($drop);
-    header('Location: ../areausuarios.php');			
-?>
+    header('Location: ../areausuarios.php');

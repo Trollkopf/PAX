@@ -58,36 +58,35 @@ class Appointment{
     }
 
     // SETTERS
-    public function setID(){
+    public function setID($id){
         $this->id = $id;
     }
 
-    public function setNombre(){
+    public function setNombre($nombre){
         $this->nombre = $nombre;
     }
 
-    public function setApellido(){
+    public function setApellido($apellido){
         $this->apellido = $apellido;
     }
 
-    public function setDia(){
+    public function setDia($dia){
         $this->dia = $dia;
     }
 
-    public function setMes(){
+    public function setMes($mes){
         $this->mes = $mes;
     }
 
-    public function setAño(){
+    public function setAño($año){
         $this->año = $año;
     }
 
-    public function setHora(){
+    public function setHora($hora){
         $this->hora = $hora;
     }
 
-    public function setObs(){
+    public function setObs($observaciones){
         $this->observaciones = $observaciones;
     }
 }
-?>

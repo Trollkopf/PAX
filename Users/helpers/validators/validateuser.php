@@ -11,5 +11,3 @@ $result=$mysqli->query($sql);
 	}else{
 		echo "false";
 	}
-
-?>

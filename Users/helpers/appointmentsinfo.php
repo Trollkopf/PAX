@@ -19,4 +19,3 @@
                 ORDER BY ci.cita ASC;";
 
     $appointment=$mysqli->query($sql_cita);
-?>

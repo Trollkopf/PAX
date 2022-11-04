@@ -1,5 +1,5 @@
 {
-  "noticia":[
+  "noticia": [
     {
       "title": "HTML5 nuevas etiquetas, efectos y comportamientos",
       "body": "HTML5 tambi&eacute;n es un termino de marketing para agrupar las nuevas tecnolog&iacute;as y est&aacute;ndares de desarrollo de aplicaciones Web: HTML5, CSS3 y Javascript.",
@@ -20,25 +20,25 @@
       "body": "El lenguaje de programaci&oacute;n Javascript es el m&aacute;s utilizado en la actualidad, y casi 14 millones de desarrolladores en el mundo programan con &eacute;l especialmente en la web y para la nube, seguido de otros lenguajes como Python, Java y C++",
       "link": "https://www.europapress.es/portaltic/software/noticia-javascript-mantiene-lenguaje-programacion-mas-popular-14-millones-desarrolladores-20210430172721.html"
     },
-              {
-                "title": "Ultima noticia 5",
-                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-              },
-              {
-                "title": "Ultima noticia 6",
-                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-              },
-              {
-                "title": "Ultima noticia 7",
-                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-              },
-              {
-                "title": "Ultima noticia 8",
-                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-              },
-              {
-                "title": "Ultima noticia 9",
-                "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
-              }
-            ]
+    {
+      "title": "Ultima noticia 5",
+      "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+    },
+    {
+      "title": "Ultima noticia 6",
+      "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+    },
+    {
+      "title": "Ultima noticia 7",
+      "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+    },
+    {
+      "title": "Ultima noticia 8",
+      "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+    },
+    {
+      "title": "Ultima noticia 9",
+      "body": "bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+    }
+  ]
 }

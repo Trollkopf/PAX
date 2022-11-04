@@ -4,4 +4,3 @@
 	$_SESSION=array();
 
 	header("Location: areausuarios.php");
-?>

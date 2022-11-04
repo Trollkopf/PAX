@@ -79,4 +79,3 @@ class Noticia{
         $this->noticia = $noticia;
     }
 }
-?>

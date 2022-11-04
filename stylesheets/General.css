@@ -1,230 +1,227 @@
 ﻿/*IMPORTAR FUENTES*/
-@font-face{
-    font-family: "TrebuchetMS";
-    src: url('css/fonts/TrebuchetMS.ttf');
-    font-weight: normal;
-    font-style: normal;
+@font-face {
+  font-family: "TrebuchetMS";
+  src: url("css/fonts/TrebuchetMS.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: "BebasNeue";
-    src: url('css/fonts/BebasNeue.otf');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "BebasNeue";
+  src: url("css/fonts/BebasNeue.otf");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-    font-family: "WebSymbolsRegular";
-    src: url('css/fonts/websymbols-regular-webfont.eot');
-    src: url('css/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('css/fonts/websymbols-regular-webfont.woff') format('woff'),
-        url('css/fonts/websymbols-regular-webfont.ttf') format('truetype'), 
-        url('css/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "WebSymbolsRegular";
+  src: url("css/fonts/websymbols-regular-webfont.eot");
+  src: url("css/fonts/websymbols-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("css/fonts/websymbols-regular-webfont.woff") format("woff"),
+    url("css/fonts/websymbols-regular-webfont.ttf") format("truetype"),
+    url("css/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-    /*RESETEO DE MARGIN Y PADDING*/
-*{
-    margin:0px;
-    padding:0px;
+/*RESETEO DE MARGIN Y PADDING*/
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
 /*ESTILOS GENERALES*/
-body{
-    background: url('../images/css/bgr/pattern.png');
-
+body {
+  background: url("../images/css/bgr/pattern.png");
 }
-.wrap{
-    width:1250px;
-    margin: 0px auto;
+.wrap {
+  width: 1250px;
+  margin: 0px auto;
 }
-.gear, .icon {
-    font-family: "WebSymbolsRegular";
+.gear,
+.icon {
+  font-family: "WebSymbolsRegular";
 }
-.clearfix{
-    float:none;
-    clear:both;
+.clearfix {
+  float: none;
+  clear: both;
 }
 /*ESTILOS CABECERA*/
 
-header{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    z-index: 1;
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 1;
 }
 
 #header {
-    float:none;
-    width: 100%;
-    height: 70px;
-    background-color: #0E0018;
-    font-family: "BebasNeue";
-    color: whitesmoke;
+  float: none;
+  width: 100%;
+  height: 70px;
+  background-color: #0e0018;
+  font-family: "BebasNeue";
+  color: whitesmoke;
 }
 #logo {
-    float: left;
-    width: 300px;
-    background-color: whitesmoke;
-    text-align: center;
-    margin-top: 16px;
-    margin-left: 20px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 300ms;
-    border-radius: 4px;
+  float: left;
+  width: 300px;
+  background-color: whitesmoke;
+  text-align: center;
+  margin-top: 16px;
+  margin-left: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 300ms;
+  border-radius: 4px;
 }
 
-    #logo:hover {
-        border-radius: 0px;
-        color: #0E0018;
-    }
+#logo:hover {
+  border-radius: 0px;
+  color: #0e0018;
+}
 
-#logo .displ{
-    display:block;
-    float:left;
-    font-size: 24px;
-    margin-top: 8px;
-    margin-left: 24px;  
+#logo .displ {
+  display: block;
+  float: left;
+  font-size: 24px;
+  margin-top: 8px;
+  margin-left: 24px;
 }
 
 #logo h1 {
-        display: block;
-        float: right;
-        font-size: 30px;
-        margin-top: 4px;
-        margin-right: 24px;
-        transition: all 300ms;
-        color: #7b44a4;
-    }
-
-#menu{
-    float: right;
-    height: 72px;
-    background: transparent;
+  display: block;
+  float: right;
+  font-size: 30px;
+  margin-top: 4px;
+  margin-right: 24px;
+  transition: all 300ms;
+  color: #7b44a4;
 }
-#menu ul li{
-    font-size: 24px;
-    display: inline-block;
-    margin: 0px 20px 0px 20px;
-    letter-spacing: 1px;
-    line-height: 72px;
-}
-#menu ul li a{
-    display: block;
-    color: whitesmoke;
-    text-decoration: none;
-    transition: all 200ms;
-}
-    #menu ul li a:hover {
-        color: #582A7A;
-        transform: scale(1.2,1.2);
-    }
 
-    #menu .btn_in {
-        color: #582A7A;
-        transform: scale(1.4,1.4);
-        text-decoration: none;
-        transition: all 200ms;
-    }
-        #menu .btn_in:hover {
-            color: whitesmoke;
-            transform: scale(1.6,1.6);
-        }
+#menu {
+  float: right;
+  height: 72px;
+  background: transparent;
+}
+#menu ul li {
+  font-size: 24px;
+  display: inline-block;
+  margin: 0px 20px 0px 20px;
+  letter-spacing: 1px;
+  line-height: 72px;
+}
+#menu ul li a {
+  display: block;
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all 200ms;
+}
+#menu ul li a:hover {
+  color: #582a7a;
+  transform: scale(1.2, 1.2);
+}
 
+#menu .btn_in {
+  color: #582a7a;
+  transform: scale(1.4, 1.4);
+  text-decoration: none;
+  transition: all 200ms;
+}
+#menu .btn_in:hover {
+  color: whitesmoke;
+  transform: scale(1.6, 1.6);
+}
 
 /*BANNER*/
-#banner{
-    width: 95.6%;
-    height: 100px;
-    border: 10px solid whitesmoke;
-    box-shadow: 0px 0px 2px #b7b7b7;
-    background: url('../images/css/bgr/backbanner.png');
+#banner {
+  width: 95.6%;
+  height: 100px;
+  border: 10px solid whitesmoke;
+  box-shadow: 0px 0px 2px #b7b7b7;
+  background: url("../images/css/bgr/backbanner.png");
+  background-position: 0px -200px;
+  margin: 20px auto;
+  overflow: hidden;
+  margin-top: 100px;
+  animation: backBanner 20s linear infinite;
+}
+
+@keyframes backBanner {
+  0% {
+    background-position: 0px 0px;
+  }
+  50% {
     background-position: 0px -200px;
-    margin: 20px auto;
-    overflow: hidden;
-    margin-top: 100px;
-    animation: backBanner 20s linear infinite;
-    
+  }
+  100% {
+    background-position: 0px 0px;
+  }
 }
-
-    @keyframes backBanner{
-        0%{
-            background-position: 0px 0px;
-        }
-        50%{
-            background-position: 0px -200px;
-        }
-        100% {
-            background-position: 0px 0px;
-        }
-    }
 #banner h2 {
-    display: block;
-    width: 940px;
-    font-family: "BebasNeue";
-    color: whitesmoke;
-    font-size: 36px;
-    font-weight: normal;
-    text-shadow: 2px 2px 1px #0E0018;
-    letter-spacing: 2px;
-    margin: 32px auto;
-    animation: showText 10s linear;
+  display: block;
+  width: 940px;
+  font-family: "BebasNeue";
+  color: whitesmoke;
+  font-size: 36px;
+  font-weight: normal;
+  text-shadow: 2px 2px 1px #0e0018;
+  letter-spacing: 2px;
+  margin: 32px auto;
+  animation: showText 10s linear;
 }
-
- 
 
 /*PIE DE PAGINA*/
 
 #footer {
-    width: 100%;
-    height: 300px;
-    background: #0E0018;
-    color: whitesmoke;
-    overflow:hidden;
+  width: 100%;
+  height: 300px;
+  background: #0e0018;
+  color: whitesmoke;
+  overflow: hidden;
 }
 
-#footer .wrap > div{
-    float:left;
-    width: 100%;
-    height:370px;
-    margin-top: 40px;
-    text-align: center;
-    color: whitesmoke;
-    font-family: "TrebuchetMS";
-
+#footer .wrap > div {
+  float: left;
+  width: 100%;
+  height: 370px;
+  margin-top: 40px;
+  text-align: center;
+  color: whitesmoke;
+  font-family: "TrebuchetMS";
 }
 
 footer a {
-    text-decoration: none;
-    color: #7b44a4;
-    transition: all 300ms;
+  text-decoration: none;
+  color: #7b44a4;
+  transition: all 300ms;
 }
 
-    footer a:hover {
-        color: #582A7A;
-    }
+footer a:hover {
+  color: #582a7a;
+}
 
 #footer h5 {
-    display: block;
-    background: url('../images/css/bgr/pxpurple.png');
-    background-color:whitesmoke;
-    height: 50px;
-    width: 350px;
-    letter-spacing: 2px;
-    text-align: center;
-    font-family: "BebasNeue";
-    font-size: 40px;
-    line-height: 55px;
-    color: #0E0018;
-    border-radius: 8px;
-    margin: 20px auto;
+  display: block;
+  background: url("../images/css/bgr/pxpurple.png");
+  background-color: whitesmoke;
+  height: 50px;
+  width: 350px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: "BebasNeue";
+  font-size: 40px;
+  line-height: 55px;
+  color: #0e0018;
+  border-radius: 8px;
+  margin: 20px auto;
 }
-#footer .rrss{   
-    font-size:28px;
+#footer .rrss {
+  font-size: 28px;
 }
 
-#footer .advice{
-    margin:10px auto;
+#footer .advice {
+  margin: 10px auto;
 }

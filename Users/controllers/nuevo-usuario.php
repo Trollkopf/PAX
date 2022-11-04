@@ -15,4 +15,3 @@
 	if($rs){
 		Header('Location:../areausuarios.php');	
 	}
-?>

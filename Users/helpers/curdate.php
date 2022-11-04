@@ -4,4 +4,3 @@
     $curdate=$mysqli->query($sql_curdate);
     while($registro = mysqli_fetch_assoc($curdate)){
     $CURDATE = $registro['CURDATE()'];}
-?>
