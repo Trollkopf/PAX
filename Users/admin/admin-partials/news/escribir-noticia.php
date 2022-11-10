@@ -1,12 +1,11 @@
 <?php
-include_once('helpers/currentuser.php');
 include_once('helpers/curdate.php');
 ?>
 
 <div class='panel'>
     <h3>ESCRIBIR NUEVA NOTICIA:</h3><br />
-    <form method="post" action="controllers/crear-noticia.php">
-        <input type='text' id='user' name='user' value='<?php echo $CURUSER; ?>' hidden />
+    <form method="post" action="router/router.php">
+        <input type='text' id='user' name='id_usuario' value='<?php echo $curId; ?>' hidden />
         <input type='text' id='curdate' name='curdate' value='<?php echo $CURDATE; ?>' hidden />
 
         <!--INICIAMOS LA TABLA PARA INTRODUCIR NOTICIAS-->

@@ -1,7 +1,6 @@
 <section>
 	<?php
 	include_once('helpers/cambiaM_a_espanol.php');
-	include_once('helpers/currentuser.php');
 	include_once('helpers/borrar-citas-pasadas.php');
 	include_once('helpers/now.php'); ?>
 

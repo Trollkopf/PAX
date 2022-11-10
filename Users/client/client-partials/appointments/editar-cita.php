@@ -1,5 +1,5 @@
 <!-- FORMULARIO DE EDITAR CITA -->
-<form method="POST" id="actualizar-<?= $cita->getID(); ?>" action="controllers/actualizar-citas.php">
+<form method="POST" id="actualizar-<?= $cita->getID(); ?>" action="router/router.php">
     <tr class="edit-<?= $cita->getID(); ?>" hidden>
         <td colspan="2"><input type='text' name='id_cita' value='<?= $cita->getID(); ?>' hidden>Inserte los nuevos datos:</td>
 
@@ -10,7 +10,7 @@
 
         <td><input type='text' id='observ-<?= $cita->getID(); ?>' name='observ' maxlength='50' placeholder='Inserte una breve observaci&oacute;n' /></td>
 
-        <td colspan="2"><input type="submit" class="purple" name="cambiar-datos-<?= $cita->getID(); ?>" id="cambiar-datos" value="CAMBIAR DATOS" /></td>
+        <td colspan="2"><input type="submit" class="purple" name="editar_cita" id="cambiar-datos" value="CAMBIAR DATOS" /></td>
         </td>
     </tr>
     <tr class="edit-<?= $cita->getID(); ?>" hidden>

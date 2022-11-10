@@ -1,5 +1,5 @@
 <?php
-include_once('../db/db.php');
+include_once('../db/PDO.php');
 include_once('../models/news.php');
 include_once('../helpers/curdate.php');
 include_once('../helpers/currentnew.php');
@@ -75,7 +75,7 @@ include_once('../helpers/currentnew.php');
         <!--INICIAMOS CAJA PARA VER NOTICIAS-->
         <div class='panel'>
             <h3>EDITAR NOTICIA:</h3><br />
-            <form method="post" action="../controllers/editar-noticia.php">
+            <form method="post" action="../router/router.php">
                 <input type='text' id='curdate' name='curdate' value='<?php echo $CURDATE; ?>' hidden />
                 <input type='text' id='curdate' name='id' value='<?php echo $noticia->getID(); ?>' hidden />
 
@@ -106,7 +106,7 @@ include_once('../helpers/currentnew.php');
                         </td>
                         <!--BOTON-->
                         <td align="right" rowspan="3">
-                            <input type="submit" name="enviar_noticia" id="enviar_noticia" class="purple" value="enviar">
+                            <input type="submit" name="editar_noticia" id="enviar_noticia" class="purple" value="enviar">
                         </td>
                     </tr>
                     <tr>

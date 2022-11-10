@@ -1,5 +1,5 @@
 <?php
-include_once('../db/db.php');
+include_once('../db/PDO.php');
 include_once('../models/project.php');
 include_once('../helpers/curdate.php');
 ?>
@@ -74,7 +74,7 @@ include_once('../helpers/curdate.php');
         <?php include('../helpers/tratamiento-imagenes.php'); ?>
 
         <div class="caja_centrada">
-            <form method="post" action="../controllers/crear-proyecto.php">
+            <form method="post" action="../router/router.php">
 
                 <h4>Imagen del proyecto:</h4><br />
                 <img src='../../<?php echo $ruta_imagen; ?>' /><br /><br /><br />
@@ -103,7 +103,7 @@ include_once('../helpers/curdate.php');
                         <td colspan="2"><input type="text" class="formText" name="tiempo_consecucion" id="tiempo_consecucion"></td>
                     </tr>
                     <tr>
-                        <td colspan="3"><input type="submit" class="white" name="send_project" id="send_project" value="CREAR PROYECTO"></td>
+                        <td colspan="3"><input type="submit" class="white" name="crear_proyecto" id="send_project" value="CREAR PROYECTO"></td>
                     </tr>
                     <input type="text" name="rutaimagen" id="rutaimagen" value=<?php echo '"' . $ruta_imagen . '"' ?> hidden>
                 </table>

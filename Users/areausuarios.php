@@ -33,39 +33,25 @@ include_once('db/db.php');
     <!--INICIO DE SECCION: CARGAMOS EL AREA DE USUARIO O EL LOGIN SEGÚN SE HAYA INCIADO SESION O NO-->
     <section>
 
-    <section>
-            <?php 
+        <section>
+            <?php
             session_start();
-            if(@$_SESSION["valido"]!="SI"){
+            if (@$_SESSION["valido"] != "SI") {
                 include("login/login.php");
-            }else{
+            } else {
 
                 switch ($_SESSION['rol']) {
                     case 'ADMIN':
-                        echo "
-                    <section class='wrap wrap-content'><h2>Area Administradores</h2>
-                    <section class='info'>
-                        <!--INICIO DEL BANNER-->
-                        <div id='banner'><h2>Bienvenido a tu área personal</h2></div>
-                    </section>
-                    <div class='panel'>
-                    <h1>Bienvenid@, ".$_SESSION['nombre']." ".$_SESSION['apellido']."</h1>";
-                    include('admin/admin-site.php');
-                    echo "</div></section>";
+                        include('partials/panelsuperior.php');
+                        include('admin/admin-site.php');
+                        echo "</div></section><br/>";
                         break;
                     case 'USER':
-                        echo "
-                    <section class='wrap wrap-content'><h2>Area Usuarios</h2>
-                    <section class='info'>
-                        <!--INICIO DEL BANNER-->
-                        <div id='banner'><h2>Bienvenido a tu área personal</h2></div>
-                    </section>
-                    <div class='panel'>
-                    <p><h1>Bienvenid@, ".$_SESSION['nombre']." ".$_SESSION['apellido']."</h1><br/>";
-                    include('client/client-site.php');
-                    echo "</div></section>";
+                        include('partials/panelsuperior.php');
+                        include('client/client-site.php');
+                        echo "</div></section><br/>";
                         break;
-                    
+
                     default:
                         include('cerrarSesion.php');
                         echo "<script>
@@ -78,7 +64,8 @@ include_once('db/db.php');
                         break;
                 }
             }
-            ?> 
+            ?>
+        </section>
     </section>
     <div id="errorMsg"></div>
     <!--PIE DE PÁGINA-->

@@ -42,9 +42,9 @@ include_once('models/project.php'); ?>
 					</td>
 				</form>
 				<!--BORRAR PROYECTO-->
-				<form method='post' action='controllers/borrar-proyecto.php'>
+				<form method='post' action='router/router.php'>
 					<td><input type='text' id='id_proyecto' name='id_proyecto' value='<?= $proyecto->getID(); ?>' hidden />
-						<button type='submit' class='red' id='borrar-<?= $proyecto->getID(); ?>' name='borrar' value='' onclick="return confirm('¿Realmente desea borrar el proyecto?')">
+						<button type='submit' class='red' id='borrar-<?= $proyecto->getID(); ?>' name='borrar_proyecto' value='borrar' onclick="return confirm('¿Realmente desea borrar el proyecto?')">
 							<?php include('partials/boton-borrar.html'); ?></button>
 					</td>
 				</form>

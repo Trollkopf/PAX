@@ -1,5 +1,5 @@
 <?php
-include_once('../db/db.php');
+include_once('../db/PDO.php');
 include_once('../models/project.php');
 include_once('../helpers/curdate.php');
 include_once('../helpers/currentproject.php');

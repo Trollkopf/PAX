@@ -1,7 +1,7 @@
 <!--BOTONES DE LAS SECCIONES-->
 <button type="submit" class="boton_primario" id="toggleAppointments">MIS CITAS</button>
 <button type="submit" class="boton_primario" id="toggleUser">MI CUENTA</button>
-<a href="cerrarSesion.php" class="boton_cerrar-sesion">CERRAR SESIÓN</a><br />
+<a href="cerrarSesion.php" class="boton_cerrar-sesion">CERRAR SESIÓN</a><br /><br />
 
 <!--CARGAMOS ADMINISTRAR CITAS-->
 <div class="info_box" id="infoappointments">

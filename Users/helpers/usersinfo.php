@@ -1,4 +1,7 @@
 <?php
 
-$sql_userinfo ="SELECT * FROM usuarios WHERE usuario !='".$_SESSION['user']."' ORDER BY ID ASC;";
-$userinfo=$mysqli->query($sql_userinfo);
+$conexion = DB::conn();
+$sentencia = "SELECT * FROM usuarios WHERE ID !=:id ORDER BY ID ASC;";
+$listaUsuarios = $conexion->prepare($sentencia);
+$listaUsuarios->bindParam(":id", $curId);
+$listaUsuarios->execute();

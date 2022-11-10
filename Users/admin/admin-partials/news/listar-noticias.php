@@ -43,9 +43,9 @@ include_once('models/news.php');
 					</td>
 				</form>
 				<!--BORRAR NOTICIA-->
-				<form method='post' action='controllers/borrar-noticia.php'>
+				<form method='post' action='router/router.php'>
 					<td><input type='text' id='id_noticia' name='id_noticia' value='<?= $noticia->getID(); ?>' hidden />
-						<button type='submit' class='red' id='borrar-<?= $noticia->getID(); ?>' name='borrar' value='' onclick="return confirm('¿Realmente desea borrar la noticia?')">
+						<button type='submit' class='red' id='borrar-<?= $noticia->getID(); ?>' name='borrar_noticia' value='borrar' onclick="return confirm('¿Realmente desea borrar la noticia?')">
 							<?php include('partials/boton-borrar.html'); ?></button>
 					</td>
 				</form>

@@ -3,7 +3,7 @@
 	<h3>PEDIR NUEVA CITA:</h3><br />
 	<table border='0' cellpadding='4' cellspacing='2'>
 
-		<form method="post" action="controllers/nueva-cita.php">
+		<form method="post" action="router/router.php">
 
 			<tr>
 				<td><b>D&iacute;a</b></td>
@@ -12,7 +12,7 @@
 				<td><b>Pedir Cita</b></td>
 			</tr>
 
-			<input type='text' id='user' name='user' value='<?php echo $CURUSER; ?>' hidden />
+			<input type='text' id='user' name='user' value='<?php echo $curId; ?>' hidden />
 
 			<tr>
 				<td><input type='text' id='datepicker' class='datepicker' name='datepicker'></td>

@@ -1,6 +1,6 @@
 <?php
 
-include '.env.php';
+include_once('.env.php');
 
 class DB
 {

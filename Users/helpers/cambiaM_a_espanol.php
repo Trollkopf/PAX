@@ -1,5 +1,5 @@
 <?php
-//FUNCIÓN PARA PONER LOS MESES EN ESPAÑOL CUANDO VUELVEN DEL QUERY
+// * FUNCIÓN PARA PONER LOS MESES EN ESPAÑOL CUANDO VUELVEN DEL QUERY
     function cambiaM_a_espanol($mes){
 
         switch ($mes){

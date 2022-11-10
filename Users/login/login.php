@@ -21,7 +21,6 @@
           <div><input type="text" id="usuario" name="usuario" /></div>
           <label id="password-icon" class="icon">w</label>
           <input type="password" id="contrasena" name="contrasena" />
-          <span id="respuesta"></span>
 
           <!--BOTONES-->
           <div class="last">
@@ -29,10 +28,10 @@
             <input type="submit" name="login" value="Acceder" class="boton_primario" id="enviar" />
             <br /><br />
             <div><a href="login/signup.php" class="newUser">
-              <span class="hover-underline-animation"> Nuevo usuario</span>
-              <label class="icon">j</label>
-            </a></div>
-            
+                <span class="hover-underline-animation"> Nuevo usuario</span>
+                <label class="icon">j</label>
+              </a></div>
+
             <?php
             $user = null;
             if (isset($_GET['usuario'])) {

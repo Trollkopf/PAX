@@ -1,6 +1,12 @@
 <?php
-//OBTENEMOS LA FECHA ACTUAL
-    $sql_curdate = "SELECT CURDATE();";
-    $curdate=$mysqli->query($sql_curdate);
-    while($registro = mysqli_fetch_assoc($curdate)){
-    $CURDATE = $registro['CURDATE()'];}
+// * OBTENEMOS LA FECHA ACTUAL
+
+    $conexion = DB::conn();
+    $sentencia = "SELECT CURDATE();";
+    $consulta = $conexion->prepare($sentencia);
+    $consulta->execute();
+    while( $fila = $consulta->fetch(PDO::FETCH_ASSOC)){
+        $CURDATE = $fila['CURDATE()'];
+    }
+    $consulta->closeCursor();
+    $conexion = null;

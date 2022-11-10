@@ -20,7 +20,7 @@ include_once('models/user.php');
 			<td><b>Eliminar</b></td>
 		</tr>
 
-		<?php foreach ($userinfo as $u) : ?>
+		<?php foreach ($listaUsuarios as $u) : ?>
 			<?php $usuario = new User($u['ID'], $u['usuario'], $u['nombre'], $u['apellido'], $u['email'], $u['telefono'], $u['rol']); ?>
 			<tr>
 				<td><b><?= $usuario->getUsuario(); ?></b></td>

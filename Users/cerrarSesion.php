@@ -1,6 +1,6 @@
-<?php 
-	session_start();
-	session_destroy();
-	$_SESSION=array();
+<?php
+session_start();
+session_destroy();
+$_SESSION = array();
 
-	header("Location: areausuarios.php");
+header("Location: areausuarios.php");

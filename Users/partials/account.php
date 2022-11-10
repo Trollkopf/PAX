@@ -1,21 +1,20 @@
 <div class='panel'>
 	<!--INFORMACION DE USUARIO-->
 	<?php
-	include_once('helpers/currentuser.php');
 	include_once('partials/user-info.php');
 	?>
 
 	<!--INICIO TABLA Y FORMULARIO-->
 	<table>
 		<!-- ACTUALIZAR USUARIO-->
-		<form method="post" id="actualizar" action="controllers/actualizar-usuario.php">
-			<tr><?php echo '<input type="text" id="id_usuario" name="id_usuario" value="' . $CURUSER . '" hidden/>' ?>
+		<form method="post" id="actualizar" action="router/router.php">
+			<tr><?php echo '<input type="text" id="id_usuario" name="id_usuario" value="' . $curId . '" hidden/>' ?>
 
 				<!--CAMBIAR NOMBRE-->
 				<td>Inserte un nuevo nombre:</td>
 				<td><input type="text" id="nuevo_nombre" name="nuevo_nombre" /></td>
 				<!--boton formulario-->
-				<td rowspan="5"><input type="submit" class="purple" name="CambiarDatos" id="CambiarDatos" value="CAMBIAR DATOS" /></td>
+				<td rowspan="5"><input type="submit" class="purple" name="actualizar_usuario" id="CambiarDatos" value="CAMBIAR DATOS" /></td>
 			</tr>
 
 			<!--CAMBIAR APELLIDO-->

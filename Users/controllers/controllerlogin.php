@@ -16,7 +16,6 @@ class ControllerLogin
      * @param string $email
      * @param int $telefono
      */
-
     public function nuevoUsuario($usuario, $nombre, $apellido, $contrasena, $email, $telefono)
     {
 
@@ -37,15 +36,13 @@ class ControllerLogin
                 break;
             case "ok":
                 controllerUsuario::insertarUsuario($usuario, $nombre, $apellido, $contrasena, $email, $telefono);
-                $user = controllerUsuario::buscarUsuario($usuario);
+
+                $datos = controllerUsuario::buscarUsuario($usuario);
                 session_start();
                 $_SESSION['valido'] = "SI";
-                $_SESSION['ID'] = $user[0]->ID;
-                $_SESSION['user'] = $user[0]->usuario;
-                $_SESSION['nombre'] = $user[0]->nombre;
-                $_SESSION['apellido'] = $user[0]->apellido;
-                $_SESSION['password'] = $user[0]->clave;
-                $_SESSION['rol'] = $user[0]->rol;
+                $_SESSION['ID'] = $datos[0]->ID;
+                $_SESSION['rol'] = $datos[0]->rol;
+
                 header('location:../areausuarios.php');
                 break;
         }
@@ -57,7 +54,6 @@ class ControllerLogin
      * @param string $usuario
      * @param string $contrasena
      */
-
     public function login($usuario, $contrasena)
     {
         $login = $this->comprobarContrasena($usuario, $contrasena);
@@ -66,12 +62,11 @@ class ControllerLogin
             $datos = controllerUsuario::buscarUsuarioID($id[0]);
             session_start();
             $_SESSION['valido'] = "SI";
-            $_SESSION['user'] = $datos[0]->usuario;
-            $_SESSION['nombre'] = $datos[0]->nombre;
-            $_SESSION['apellido'] = $datos[0]->apellido;
+            $_SESSION['ID'] = $datos[0]->ID;
             $_SESSION['rol'] = $datos[0]->rol;
+
             header('Location: ../areausuarios.php');
-        }else{
+        } else {
             header('Location: ../areausuarios.php?usuario=unknown');
         }
     }

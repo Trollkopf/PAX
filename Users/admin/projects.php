@@ -1,6 +1,5 @@
 <?php
-include_once('helpers/curdate.php');
-include_once('helpers/currentuser.php'); ?>
+include_once('helpers/curdate.php');?>
 
 <section>
     <!--NUEVO PROYECTO-->

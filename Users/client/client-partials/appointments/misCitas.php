@@ -1,5 +1,4 @@
 <?php include_once('models/appointment.php');
-include_once('helpers/currentuser.php');
 include_once('helpers/now.php'); ?>
 
 <div class="panel">

@@ -1,5 +1,5 @@
 <?php
-include_once('helpers/currentuser.php');
+include_once('controllers/controllerUsuario.php');
 include_once('models/user.php');
 ?>
 <h3>MI CUENTA:</h3>
@@ -13,7 +13,11 @@ include_once('models/user.php');
 		<td><b>Teléfono</b></td>
 	</tr>
 
-	<?php foreach ($usuario as $u) : ?>
+	<?php
+
+	$identificador = json_decode(json_encode(controllerUsuario::buscarUsuarioID($curId)), true);
+
+	foreach ($identificador as $u):?>
 		<?php $user = new User($u['ID'], $u['usuario'], $u['nombre'], $u['apellido'], $u['email'], $u['telefono'], $u['rol']); ?>
 		<tr>
 			<td><b><?= $user->getUsuario(); ?></b></td>

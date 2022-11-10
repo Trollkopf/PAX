@@ -1,25 +1,28 @@
 <?php
-   include_once('../db/db.php');
+include_once('../db/PDO.php');
 
+$rows['noticia'] = array();
 
-    $sql = "SELECT  u.nombre AS nombre, 
-                    u.apellido AS apellido, 
-                    n.id AS id, 
-                    n.fecha AS fecha, 
-                    n.categoria AS categoria, 
-                    n.titular AS titular, 
-                    n.noticia AS noticia, 
-                    n.subtitulo AS subtitulo 
-                    FROM noticias n 
-                    INNER JOIN usuarios u ON n.usuario = u.id 
-                    ORDER BY n.id DESC";
+$conexion = DB::conn();
+$sentencia =  "SELECT  u.nombre AS nombre, 
+               u.apellido AS apellido, 
+               n.id AS id, 
+               n.fecha AS fecha, 
+               n.categoria AS categoria, 
+               n.titular AS titular, 
+               n.noticia AS noticia, 
+               n.subtitulo AS subtitulo 
+               FROM noticias n 
+               INNER JOIN usuarios u ON n.usuario = u.id 
+               ORDER BY n.id DESC";
 
-    $result=$mysqli->query($sql);
+$consulta = $conexion->prepare($sentencia);
+$consulta->execute();
+while ($registro = $consulta->fetch(PDO::FETCH_OBJ)) {
+    array_push($rows['noticia'], $registro);
+}
 
-    $rows['noticia'] = array();
+$consulta->closeCursor();
+$conexion = null;
 
-    while($registro = $result->fetch_object()){
-        array_push($rows['noticia'], $registro);
-    }
-
-    echo json_encode($rows);
+echo json_encode($rows);

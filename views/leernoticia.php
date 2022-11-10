@@ -1,5 +1,5 @@
 <?php
-include_once('../users/db/db.php');
+include_once('../users/db/PDO.php');
 include_once('../users/helpers/currentnew.php');
 include_once('../users/models/news.php')
 ?>
@@ -69,7 +69,7 @@ include_once('../users/models/news.php')
         </section>
     </section>
 
-    <?php foreach ($noticia as $n) : ?>
+    <?php foreach ($noticia as $n): ?>
 
         <?php $noticia = new Noticia($n['ID'], $n['usuario'], $n['fecha'], $n['categoria'], $n['titular'], $n['subtitulo'], $n['noticia']); ?>
 

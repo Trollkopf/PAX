@@ -1,5 +1,9 @@
 <?php
-$sql_now = "SELECT NOW() AS NOW;";
-		$now=$mysqli->query($sql_now);
-		while($registro = mysqli_fetch_assoc($now)){
-		$NOW = $registro['NOW'];}
+
+$conexion = DB::conn();
+$sentencia = "SELECT NOW() AS NOW;";
+$consulta = $conexion->prepare($sentencia);
+$consulta->execute();
+while ($registro = $consulta->fetch(PDO::FETCH_ASSOC)) {
+	$NOW = $registro['NOW'];
+}

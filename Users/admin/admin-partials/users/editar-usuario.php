@@ -1,4 +1,4 @@
-<form method='post' action='controllers/actualizar-usuario.php'>
+<form method='post' action='router/router.php'>
 
 	<!--CAMBIAR NOMBRE-->
 	<tr class="edit-<?= $usuario->getID(); ?>" hidden>
@@ -7,7 +7,7 @@
 		<td colspan="3"><input type="text" id="nuevo_usuario" name="nuevo_usuario" /></td>
 
 		<!--boton formulario-->
-		<td rowspan="6" colspan="3"><input type="submit" class="purple" name="cambiar-datos-<?= $usuario->getID(); ?>" id="cambiar-datos" value="CAMBIAR DATOS" /></td>
+		<td rowspan="6" colspan="3"><input type="submit" class="purple" name="actualizar_usuario" id="cambiar-datos-<?= $usuario->getID(); ?>" value="CAMBIAR DATOS" /></td>
 	</tr>
 	<tr class="edit-<?= $usuario->getID(); ?>" hidden>
 		<!--CAMBIAR NOMBRE-->

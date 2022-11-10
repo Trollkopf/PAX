@@ -1,8 +1,8 @@
 <!--CAMBIAR ROL -->
-<form method='post' action='controllers/cambiar-rol.php'>
+<form method='post' action='router/router.php'>
 	<td><input type='text' id='id_usuario' name='id_usuario' value='<?= $usuario->getID(); ?>' hidden />
 		<input type='text' id='rol_usuario' name='rol_usuario' value='<?= $usuario->getRol(); ?>' hidden />
-		<button type='submit' class='edit' id='cambiar' name='cambiar' value='' />
+		<button type='submit' class='edit' id='cambiar' name='cambiar_rol' value='cambiar' />
 		<?php include('partials/boton-cambiar.html'); ?>
 		</button>
 	</td>
@@ -22,9 +22,9 @@
 </td>
 
 <!-- BORRAR USUARIO -->
-<form method='post' action='controllers/borrar-usuario.php'>
+<form method='post' action='router/router.php'>
 	<td><input type='text' id='id_usuario' name='id_usuario' value='<?= $usuario->getID(); ?>' hidden />
-		<button type='submit' class='red' id='borrar-<?= $usuario->getID(); ?>' name='borrar' value='' onclick="return confirm('¿Realmente desea borrar el usuario?')">
+		<button type='submit' class='red' id='borrar-<?= $usuario->getID(); ?>' name='borrar_usuario' value='borrar' onclick="return confirm('¿Realmente desea borrar el usuario?')">
 			<?php include('partials/boton-borrar.html'); ?>
 		</button>
 	</td>

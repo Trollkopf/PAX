@@ -4,7 +4,7 @@
     <button type="submit" class="boton_primario" id="toggleAppointments">CITAS</button>
     <button type="submit" class="boton_primario" id="toggleNews">NOTICIAS</button>
     <button type="submit" class="boton_primario" id="toggleAccount">MI CUENTA</button>
-    <a href="cerrarSesion.php" class="boton_cerrar-sesion">CERRAR SESIÓN</a><br />
+    <a href="cerrarSesion.php" class="boton_cerrar-sesion">CERRAR SESIÓN</a><br /><br />
 
     <!--SECCIONES-->
     <!--CARGAMOS ADMINISTRAR CUENTA-->

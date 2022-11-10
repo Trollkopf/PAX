@@ -1,13 +1,11 @@
 <?php
-include_once('db/db.php');
+include_once('db/PDO.php');
 include_once('models/project.php');
-include_once('helpers/curdate.php');
 ?>
 
 <div class='panel'>
     <h3>CREAR PROYECTO:</h3><br />
     <form method="POST" action="helpers/nuevo-proyecto.php" enctype="multipart/form-data">
-        <input type='text' id='curdate' name='curdate' value='<?php echo $CURDATE; ?>' hidden />
 
         <table border='1' cellpadding='4' cellspacing='2'>
             <tr>
