@@ -1,6 +1,6 @@
 <?php 
 //INCLUIMOS CREDENCIALES PARA CONECTAR CON LA BD
-include_once('.env.php');
+include_once('../../.env');
 
 //ESTABLECEMOS CONEXIÓN
 $mysqli = new mysqli(SERVER, USER, PASS, DB);
