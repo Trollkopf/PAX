@@ -20,7 +20,7 @@ include_once('../users/models/project.php')
     <link rel="stylesheet" type="text/css" href="../stylesheets/user-site.css" />
 
     <!--LLAMADA A LOS SCRIPTS-->
-    <script src="../scripts/RRSS.js"></script>
+    <script src="../scripts/rrss.js"></script>
 
 
     <!--METADATOS-->
