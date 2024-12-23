@@ -1,107 +1,67 @@
 ﻿<?php
-include_once('../users/db/PDO.php');
-include_once('../users/models/project.php');
-include_once('../users/helpers/projectsinfo.php');
+include_once('../src/db/PDO.php');
+include_once('../src/models/project.php');
+include_once('../src/helpers/projectsinfo.php');
 ?>
 
 <!DOCTYPE html>
-
 <html lang="es">
+  <?php
+    $basePath = '../';
+    include "{$basePath}src/partials/head.php";
+  ?>
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <?php include $basePath . 'src/partials/header.php'; ?>
 
-<head>
-    <!--IDIOMA DE LOS CARACTERES-->
-    <meta charset="utf-8" />
-    <!--TÍTULO-->
-    <title>PAX | DIGITAL MINDS</title>
-    <!--ICONO-->
-    <link rel="icon" type="favicon/x-icon" href="../images/icon.png" />
-    <!--LLAMADA A LAS HOJAS DE ESTILO-->
-    <link rel="stylesheet" type="text/css" href="../stylesheets/General.css" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/visuallightbox.css" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/vlightbox.css" />
-    <!--LLAMADA A LOS SCRIPTS-->
-    <script src="../scripts/RRSS.js"></script>
+    <!-- Sección Portfolio -->
+    <main class="container mx-auto my-10 px-4 flex-grow">
+      <h2 class="text-3xl font-bold text-teal-700 text-center mb-8">Portfolio</h2>
 
-    <!--LLAMADA AL API DE JQUERY-->
-    <script src="../scripts/jquery.js"></script>
+      <!-- Galería -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <?php foreach ($proyecto as $p) : ?>
+          <?php $proyecto = new Proyecto($p['ID'], $p['nombre'], $p['datos'], $p['tecnologia'], $p['tiempo'], $p['imagen']); ?>
 
-
-    <!--METADATOS-->
-    <?php include('../users/partials/meta.html'); ?>
-
-
-</head>
-
-<body>
-
-    <!--INICIO DE LA CABECERA-->
-    <header id="header">
-        <div class="wrap">
-            <div id="logo">
-                <span class="displ"><img src="../images/icon.png" alt="logo" /></span>
-                <h1>PAX | DIGITAL MINDS</h1>
+          <!-- Tarjeta del Proyecto -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
+            <a href="../<?= $proyecto->getImagen(); ?>" class="vlightbox" title="
+              PROYECTO: <?= $proyecto->getNombre_proyecto(); ?>
+              Tecnología usada: <?= $proyecto->getTecnologia(); ?>
+              Tiempo de consecución: <?= $proyecto->getTiempo(); ?>
+              Información: <?= $proyecto->getDatos(); ?>">
+              <img
+                src="../<?= $proyecto->getImagen(); ?>"
+                alt="<?= $proyecto->getNombre_proyecto(); ?>"
+                class="w-full h-64 object-cover"
+              />
+            </a>
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-teal-700"><?= $proyecto->getNombre_proyecto(); ?></h3>
+              <p class="text-sm text-gray-600 mt-2">
+                <?= $proyecto->getDatos(); ?>
+              </p>
+              <p class="text-sm text-gray-500 mt-2">
+                <span class="font-semibold">Tecnología:</span> <?= $proyecto->getTecnologia(); ?><br>
+                <span class="font-semibold">Tiempo:</span> <?= $proyecto->getTiempo(); ?>
+              </p>
             </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </main>
 
-            <!--MENÚ DE NAVEGACIÓN-->
-            <nav id="menu">
-                <ul>
-                    <li><a href="../index.html" class="btn">INICIO</a></li>
-                    <li><a href="#" class="btn_in">PORTFOLIO</a></li>
-                    <li><a href="presupuesto.html" class="btn">PRESUPUESTO</a></li>
-                    <li><a href="contacto.html" class="btn">CONTACTO</a></li>
-                    <li><a href="../users/areausuarios.php" class="users">AREA USUARIOS</a></li>
-                </ul>
-            </nav>
-        </div>
+    <?php include $basePath . 'src/partials/footer.php'; ?>
 
-
-    </header>
-
-    <!--INICIO DE SECCION-->
-    <section class="wrap wrap-content">
-        <h2>PORTFOLIO</h2>
-        <section class="info">
-            <!--INICIO DEL BANNER-->
-            <div id="banner">
-                <h2>PORTFOLIO</h2>
-            </div>
-
-        </section>
-
-        <!--INICIAMOS LA GALERÍA-->
-        <div id="vlightbox">
-
-            <?php foreach ($proyecto as $p) : ?>
-
-                <?php $proyecto = new Proyecto($p['ID'], $p['nombre'], $p['datos'], $p['tecnologia'], $p['tiempo'], $p['imagen']); ?>
-
-                <!-- CARGAMOS DATOS DE CADA PROYECTO -->
-                <a title="PROYECTO:          <?= $proyecto->getNombre_proyecto(); ?>
-        <br/> Tecnología usada:      <?= $proyecto->getTecnologia(); ?>
-        <br/> Tiempo de consecución: <?= $proyecto->getTiempo(); ?>
-        <br/> Información:           <?= $proyecto->getDatos(); ?>" href="../<?= $proyecto->getImagen(); ?>" class="vlightbox">
-                    <img alt="<?= $proyecto->getNombre_proyecto(); ?>" src="../<?= $proyecto->getImagen(); ?>" /> </a>
-
-            <?php endforeach; ?>
-            <!--FIN DE LA GALERIA-->
-        </div>
-
-        <script>
-            let $VisualLightBoxParams$ = {
-                autoPlay: true,
-                borderSize: 21,
-                enableSlideshow: true,
-                overlayOpacity: 0.4,
-                startZoom: true
-            };
-        </script>
-        <script src="../scripts/visuallightbox.js"></script>
-
-    </section>
-
-    <!--PIE DE PÁGINA-->
-    <?php include('../users/partials/footer.html'); ?>
-
-</body>
-
+    <!-- Scripts -->
+    <script>
+      let $VisualLightBoxParams$ = {
+        autoPlay: true,
+        borderSize: 21,
+        enableSlideshow: true,
+        overlayOpacity: 0.4,
+        startZoom: true
+      };
+    </script>
+    <script src="<?= $basePath ?>scripts/visuallightbox.js"></script>
+  </body>
 </html>
