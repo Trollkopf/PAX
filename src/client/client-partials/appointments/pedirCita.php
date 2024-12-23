@@ -1,117 +1,93 @@
-<div class='panel'>
+<div class="panel bg-gray-100 p-6 rounded-lg shadow-md">
+	<h3 class="text-2xl font-bold text-teal-700 mb-4">PEDIR NUEVA CITA:</h3>
 
-	<h3>PEDIR NUEVA CITA:</h3><br />
-	<table border='0' cellpadding='4' cellspacing='2'>
+	<form method="post" action="router/router.php" class="space-y-4">
+		<!-- Día, Hora, Observaciones y Botón -->
+		<div class="grid grid-cols-4 gap-4 items-center">
+			<!-- Día -->
+			<div>
+				<label for="datepicker" class="block text-gray-700 font-medium">Día</label>
+				<input type="text" id="datepicker" name="datepicker"
+					class="datepicker w-full border border-gray-300 rounded-lg shadow-sm p-2" />
+			</div>
 
-		<form method="post" action="router/router.php">
+			<!-- Hora -->
+			<div>
+				<label for="hour" class="block text-gray-700 font-medium">Hora</label>
+				<select id="hour" name="hour" class="w-full border border-gray-300 rounded-lg shadow-sm p-2">
+					<?php include('partials/options-horas.html'); ?>
+				</select>
+			</div>
 
-			<tr>
-				<td><b>D&iacute;a</b></td>
-				<td><b>Hora</b></td>
-				<td><b>Observaciones</b></td>
-				<td><b>Pedir Cita</b></td>
-			</tr>
+			<!-- Observaciones -->
+			<div>
+				<label for="observ" class="block text-gray-700 font-medium">Observaciones</label>
+				<input type="text" id="observ" name="observ" maxlength="50" placeholder="Inserte una breve observación"
+					class="w-full border border-gray-300 rounded-lg shadow-sm p-2" />
+			</div>
 
-			<input type='text' id='user' name='user' value='<?php echo $curId; ?>' hidden />
+			<input type="hidden" name="action" value="nueva_cita" />
 
-			<tr>
-				<td><input type='text' id='datepicker' class='datepicker' name='datepicker'></td>
-				<td>
-					<select id='hour' name='hour'>
-						<?php include('partials/options-horas.html'); ?>
-					</select>
-				</td>
-				<td><input type='text' id='observ' name='observ' maxlength='50' placeholder='Inserte una breve observaci&oacute;n' /></td>
-				<td><input type='submit' name='nueva_cita' id='nueva_cita' class='purple' value='Añadir Cita' /></td>
-			</tr>
-			<tr>
-				<td colspan="4"><span id='error' class='nvaliduser'></span></td>
-			</tr>
-			<br />
-		</form>
-	</table>
+			<!-- Botón Pedir Cita -->
+			<div class="flex items-center justify-center">
+				<input type="hidden" id="user" name="user" value="<?php echo $curId; ?>" />
+				<input type="submit" name="nueva_cita" id="nueva_cita" value="Añadir Cita"
+					class="bg-teal-600 text-white px-4 py-2 rounded-lg shadow hover:bg-teal-700 transition" />
+			</div>
+		</div>
+
+		<!-- Mensaje de error -->
+		<div>
+			<span id="error" class="text-red-500 font-medium"></span>
+		</div>
+	</form>
 </div>
-
-
 <script>
-	$(document).ready(function() {
-		$("#datepicker").change(function() {
+	$(document).ready(function () {
+		// Configuración del datepicker
+		$("#datepicker").datepicker({
+			dateFormat: "yy-mm-dd"
+		}).change(function () {
+			// Habilitar todas las opciones de hora inicialmente
+			$("#hour option").prop("disabled", false);
 
-			/*ACTIVAMOS TODAS LAS HORAS*/
-			$("#hour option[value='10:00']").attr("disabled", false);
-			$("#hour option[value='11:00']").attr("disabled", false);
-			$("#hour option[value='12:00']").attr("disabled", false);
-			$("#hour option[value='13:00']").attr("disabled", false);
-			$("#hour option[value='16:00']").attr("disabled", false);
-			$("#hour option[value='17:00']").attr("disabled", false);
-			$("#hour option[value='18:00']").attr("disabled", false);
-			$("#hour option[value='19:00']").attr("disabled", false);
-
-		});
-
-		/*CREAMOS LA FUNCION PARA DESHABILITAR TODAS LAS HORAS RESERVADAS*/
-		var datos = 'datepicker=' + $("#datepicker").val();
-		var url = "helpers/validators/validateappointment.php";
-		var dataType = "html";
-
-		$.ajax({
-			type: "POST",
-			url: url,
-			data: datos,
-
-			success: function(data) {
-				var vectorObj = JSON.parse(data);
-				var vlength = vectorObj.length;
-
-				let i = 0;
-
-				while (i < vlength) {
-					switch (vectorObj[i]) {
-						case "10:00:00":
-							$("#hour option[value='10:00']").attr("disabled", true);
-							break;
-						case "11:00:00":
-							$("#hour option[value='11:00']").attr("disabled", true);
-							break;
-						case "12:00:00":
-							$("#hour option[value='12:00']").attr("disabled", true);
-							break;
-						case "13:00:00":
-							$("#hour option[value='13:00']").attr("disabled", true);
-							break;
-						case "16:00:00":
-							$("#hour option[value='16:00']").attr("disabled", true);
-							break;
-						case "17:00:00":
-							$("#hour option[value='17:00']").attr("disabled", true);
-							break;
-						case "18:00:00":
-							$("#hour option[value='18:00']").attr("disabled", true);
-							break;
-						case "19:00:00":
-							$("#hour option[value='19:00']").attr("disabled", true);
-							break;
+			// Verificar las horas ocupadas para la fecha seleccionada
+			let fechaSeleccionada = $(this).val();
+			if (fechaSeleccionada) {
+				$.ajax({
+					type: "POST",
+					url: "helpers/validators/validateappointment.php",
+					data: { datepicker: fechaSeleccionada },
+					dataType: "json",
+					success: function (horasOcupadas) {
+						// Deshabilitar las horas ocupadas
+						horasOcupadas.forEach(hora => {
+							$("#hour option[value='" + hora.substring(0, 5) + "']").prop("disabled", true);
+						});
+					},
+					error: function () {
+						$("#error").text("Error al validar las horas. Inténtelo de nuevo.");
 					}
-					i++;
-				}
-			},
+				});
+			}
 		});
-	});
 
-	let $datepicker = $("#datepicker");
-	let $observ = $("#observ");
+		// Validación del formulario al enviarlo
+		$("form").submit(function (event) {
+			let $datepicker = $("#datepicker");
+			let $observ = $("#observ");
+			let $hour = $("#hour");
 
-	$("form").submit(function(event) {
-
-		if ($datepicker.val().length <= 0) { //COMPROBAMOS QUE SE HA SELECCIONADO UNA FECHA
-			$("#error").html("Debe seleccionar una fecha");
-			event.preventDefault();
-		} else if ($("#hour").find(":selected").prop('disabled')) { //COMPROBAMOS QUE LA HORA NO ESTE OCUPADA
-			$("#error").html("La hora seleccionada está ocupada");
-			event.preventDefault();
-		} else if ($observ.val().length <= 0) { //COMPROBAMOS QUE HAYAN ESCRITO UNA OBSERVACIÓN
-			$("#error").html("Debe indicar sus observaciones");
-			event.preventDefault();
-		}
+			if (!$datepicker.val()) {
+				$("#error").text("Debe seleccionar una fecha");
+				event.preventDefault();
+			} else if ($hour.find(":selected").prop("disabled")) {
+				$("#error").text("La hora seleccionada está ocupada");
+				event.preventDefault();
+			} else if (!$observ.val()) {
+				$("#error").text("Debe indicar sus observaciones");
+				event.preventDefault();
+			}
+		});
 	});
 </script>

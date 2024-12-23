@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <?php
-$basePath = '../';
+$basePath = '';
 include "{$basePath}src/partials/head.php";
 ?>
 

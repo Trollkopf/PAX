@@ -1,14 +1,16 @@
 <?php
 
-include_once('../src/controllers/controllerlogin.php');
-include_once('../src/controllers/controllerCita.php');
-include_once('../src/controllers/controllerProyecto.php');
-include_once('../src/controllers/controllerNoticia.php');
-include_once('../src/controllers/controllerUsuario.php');
+include_once('../controllers/controllerlogin.php');
+include_once('../controllers/controllerCita.php');
+include_once('../controllers/controllerProyecto.php');
+include_once('../controllers/controllerNoticia.php');
+include_once('../controllers/controllerUsuario.php');
 
 // Procesar peticiones POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
+
+    // var_dump(value: $_POST['action']);
 
     switch ($action) {
         // **Registro y Login**

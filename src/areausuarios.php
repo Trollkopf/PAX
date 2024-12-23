@@ -1,12 +1,17 @@
 <?php
 session_start();
 include_once('db/db.php');
+
+$user = null;
+if (isset($_GET['error'])) {
+  $user = $_GET['error'];
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <?php
-$basePath = '../';
+$basePath= '../';
 include "{$basePath}src/partials/head.php";
 ?>
 
@@ -41,6 +46,9 @@ include "{$basePath}src/partials/head.php";
             }
         }
         ?>
+         <!-- Mensaje de Error -->
+      
+        
     </main>
 
     <!-- MENSAJE DE ERROR -->

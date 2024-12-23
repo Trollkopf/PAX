@@ -5,10 +5,9 @@ include_once('controllerUsuario.php');
 
 class ControllerLogin
 {
-
     /**
      * * NUEVO USUARIO
-     * ? Comprueba que el usuario, el email o el telefono no estén registrados. Si no lo está inserta el usuario en la BD e inicia sesión.
+     * Verifica que el usuario, email o teléfono no estén registrados. Si no lo están, inserta el usuario en la base de datos e inicia sesión.
      * @param string $usuario
      * @param string $nombre
      * @param string $apellido
@@ -18,75 +17,110 @@ class ControllerLogin
      */
     public function nuevoUsuario($usuario, $nombre, $apellido, $contrasena, $email, $telefono)
     {
+        try {
+            $result = controllerUsuario::comprobarUsuario($usuario, $email, $telefono);
 
-        $result = controllerUsuario::comprobarUsuario($usuario, $email, $telefono);
+            switch ($result) {
+                case "usuario":
+                    header('Location: ../login/signup.php?registro=usuario');
+                    exit();
 
-        switch ($result) {
-            case "usuario":
-                header('location:../login/signup.php?registro=usuario');
-                exit();
-                break;
-            case "email":
-                header('location:../login/signup.php?registro=email');
-                exit();
-                break;
-            case "telefono":
-                header('location:../login/signup.php?registro=telefono');
-                exit();
-                break;
-            case "ok":
-                controllerUsuario::insertarUsuario($usuario, $nombre, $apellido, $contrasena, $email, $telefono);
+                case "email":
+                    header('Location: ../login/signup.php?registro=email');
+                    exit();
 
-                $datos = controllerUsuario::buscarUsuario($usuario);
-                session_start();
-                $_SESSION['valido'] = "SI";
-                $_SESSION['ID'] = $datos[0]->ID;
-                $_SESSION['rol'] = $datos[0]->rol;
+                case "telefono":
+                    header('Location: ../login/signup.php?registro=telefono');
+                    exit();
 
-                header('location:../areausuarios.php');
-                break;
+                case "ok":
+                    controllerUsuario::insertarUsuario($usuario, $nombre, $apellido, $contrasena, $email, $telefono);
+
+                    $datos = controllerUsuario::buscarUsuario($usuario);
+                    if (!$datos || count($datos) === 0) {
+                        throw new Exception("Error al buscar el usuario recién creado.");
+                    }
+
+                    // Iniciar sesión
+                    session_start();
+                    $_SESSION['valido'] = "SI";
+                    $_SESSION['ID'] = $datos[0]->ID;
+                    $_SESSION['rol'] = $datos[0]->rol;
+
+                    header('Location: ../areausuarios.php');
+                    exit();
+
+                default:
+                    throw new Exception("Estado desconocido al verificar usuario: $result");
+            }
+        } catch (Exception $e) {
+            error_log("Error en nuevoUsuario: " . $e->getMessage());
+            header('Location: ../login/signup.php?registro=error');
+            exit();
         }
     }
 
     /**
      * * LOGIN
-     * ? Logea al usuario
+     * Logea al usuario.
      * @param string $usuario
      * @param string $contrasena
      */
     public function login($usuario, $contrasena)
     {
-        $login = $this->comprobarContrasena($usuario, $contrasena);
-        if ($login[0]) {
-            $id = $login[1];
-            $datos = controllerUsuario::buscarUsuarioID($id[0]);
-            session_start();
-            $_SESSION['valido'] = "SI";
-            $_SESSION['ID'] = $datos[0]->ID;
-            $_SESSION['rol'] = $datos[0]->rol;
+        try {
+            $login = $this->comprobarContrasena($usuario, $contrasena);
+            if ($login[0]) {
+                $id = $login[1];
+                $datos = controllerUsuario::buscarUsuarioID($id[0]);
 
-            header('Location: ../areausuarios.php');
-        } else {
-            header('Location: ../areausuarios.php?usuario=unknown');
+                if (!$datos || count($datos) === 0) {
+                    throw new Exception("Error al obtener datos del usuario con ID: $id[0]");
+                }
+
+                // Iniciar sesión
+                session_start();
+                $_SESSION['valido'] = "SI";
+                $_SESSION['ID'] = $datos[0]->ID;
+                $_SESSION['rol'] = $datos[0]->rol;
+
+                header('Location: ../areausuarios.php');
+                exit();
+            } else {
+                header('Location: ../areausuarios.php?error=unknown');
+                exit();
+            }
+        } catch (Exception $e) {
+            error_log("Error en login: " . $e->getMessage());
+            header('Location: ../areausuarios.php?error=error');
+            exit();
         }
     }
 
     /**
      * * COMPROBAR CONTRASEÑA
-     * ? Comprueba que usuario y contraseña sean correctos, en caso de que coincida devuelve true
+     * Verifica si usuario y contraseña son correctos. Si coinciden, retorna true junto con el ID del usuario.
      * @param string $usuario
      * @param string $contrasena
-     * @return bool $found
+     * @return array [bool $found, array $userId]
      */
     public function comprobarContrasena($usuario, $contrasena)
     {
-        $found = false;
-        $datos = controllerUsuario::buscarUsuario($usuario);
-        if (count($datos) === 1) {
-            if ($usuario === $datos[0]->usuario && password_verify($contrasena, $datos[0]->clave)) {
-                $found = true;
+        try {
+            $found = false;
+            $datos = controllerUsuario::buscarUsuario($usuario);
+
+            if (count($datos) === 1) {
+                if ($usuario === $datos[0]->usuario && password_verify($contrasena, $datos[0]->clave)) {
+                    $found = true;
+                }
+                return [$found, [$datos[0]->ID]];
             }
-            return [$found, [$datos[0]->ID]];
+
+            return [$found, []];
+        } catch (Exception $e) {
+            error_log("Error en comprobarContrasena: " . $e->getMessage());
+            return [false, []];
         }
     }
 }

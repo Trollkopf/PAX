@@ -1,198 +1,126 @@
 <!DOCTYPE html>
-
 <html lang="es">
+<?php
+$basePath= '../';
+include "{$basePath}/partials/head.php";
+?>
 
-<head>
-    <!--IDIOMA DE LOS CARACTERES-->
-    <meta charset="utf-8" />
-    <!--TÍTULO-->
-    <title>PAX | DIGITAL MINDS</title>
-    <!--ICONO-->
-    <link rel="icon" type="favicon/x-icon" href="../../images/icon.png" />
-    <!--LLAMADA A LAS HOJAS DE ESTILO-->
-    <link rel="stylesheet" type="text/css" href="../../stylesheets/General.css" />
-    <link rel="stylesheet" type="text/css" href="../../stylesheets/areausuarios.css" />
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <?php include "{$basePath}/partials/header.php"; ?>
 
-    <!--LLAMADA A LOS SCRIPTS-->
-    <script src="../../scripts/RRSS.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- SECCIÓN DE REGISTRO -->
+    <main class="container mx-auto px-4 py-10 flex-grow">
+        <section class="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-gray-700 text-center mb-6">Nuevo Usuario</h2>
 
+            <!-- FORMULARIO -->
+            <form id="signup" action="../router/router.php" method="post" class="space-y-4">
+                <!-- Usuario -->
+                <div>
+                    <label for="usuario" class="block text-sm font-medium text-gray-700">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Inserte su nombre de usuario"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
+                </div>
+                <!-- Nombre -->
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Inserte su nombre"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
+                </div>
+                <!-- Apellido -->
+                <div>
+                    <label for="apellido" class="block text-sm font-medium text-gray-700">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Inserte su apellido"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
+                </div>
+                <!-- Contraseña -->
+                <div>
+                    <label for="contrasena" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Inserte su contraseña"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
+                </div>
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Inserte su E-mail"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
+                </div>
+                <!-- Teléfono -->
+                <div>
+                    <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Inserte su teléfono"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500">
+                </div>
 
-    <!--METADATOS-->
-    <meta name="author" content="Maximiliano Serratosa" />
-    <meta name="robots" content="follow" />
-    <meta name="description" content="PAX | DIGITAL MINDS es tu solucion para tu aplicacion web" />
-    <meta name="keywords" content="html, css, javascript, php, diseño web, ajax, mysql" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="category" content="Web app" />
-</head>
+                <input type="hidden" name="action" value="signup">
 
-<body>
+                <!-- Botones -->
+                <div class="flex justify-between items-center">
+                    <button type="reset" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600">
+                        Vaciar
+                    </button>
+                    <button type="submit" name="signup" class="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700">
+                        Enviar
+                    </button>
+                </div>
 
-    <!--INICIO DE LA CABECERA-->
-    <header id="header">
-        <div class="wrap">
-            <div id="logo">
-                <span class="displ"><img src="../../images/icon.png" alt="logo" /></span>
-                <h1>PAX | DIGITAL MINDS</h1>
-            </div>
+                <!-- Enlace Volver Atrás -->
+                <div class="text-center mt-4">
+                    <a href="../areausuarios.php" class="text-teal-600 hover:underline">Volver Atrás</a>
+                </div>
 
-            <!--MENÚ DE NAVEGACIÓN-->
-            <nav id="menu">
-                <ul>
-                    <li><a href="../../index.html" class="btn">INICIO</a></li>
-                    <li><a href="../../views/portfolio.php" class="btn">PORTFOLIO</a></li>
-                    <li><a href="../../views/presupuesto.html" class="btn">PRESUPUESTO</a></li>
-                    <li><a href="../../views/contacto.html" class="btn">CONTACTO</a></li>
-                    <li><a href="#" class="btn_in">AREA USUARIOS</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <section class="wrap wrap-content">
-        <h2>Nuevo usuario</h2>
-        <section class="info">
-            <!--INICIO DEL BANNER-->
-            <div id="banner">
-                <h2>Nuevo usuario</h2>
-            </div>
+                <!-- Mensaje de Error -->
+                <?php
+                $registro = null;
+                $advertencia = null;
+                if (isset($_GET['registro'])) {
+                    $registro = $_GET['registro'];
+                    $advertencia = match ($registro) {
+                        "usuario" => "Usuario ya registrado",
+                        "email" => "Email ya registrado",
+                        "telefono" => "Teléfono ya registrado",
+                    };
+                }
+                ?>
+                <span id="error" class="text-red-600 text-sm font-semibold">
+                    <?php echo $advertencia ?>
+                </span>
+            </form>
         </section>
+    </main>
 
-        <!--INICIO DEL FORMULARIO-->
-        <div id="formulario">
-            <!--DATOS PERSONALES-->
-            <section>
-                <div class="title">
-                    <h2>Datos del nuevo usuario</h2>
-                </div>
-                <div id="signup">
-
-                    <form class="form" action="../router/router.php" id="signup" method="post">
-                        <!--USUARIO-->
-                        <label id="user-icon" class="icon">U</label>
-                        <div><input type="text" name="usuario" id="usuario" placeholder="Inserte su nombre de usuario"></div>
-
-                        <!--NOMBRE-->
-                        <label id="user-icon" class="icon">U</label>
-                        <div><input type="text" name="nombre" id="nombre" placeholder="Inserte su nombre "></div>
-
-                        <!--APELLIDO-->
-                        <label id="user-icon" class="icon">U</label>
-                        <div><input type="text" name="apellido" id="apellido" placeholder="Inserte su apellido"></div>
-
-                        <!--CONTRASEÑA-->
-                        <label id="password-icon" class="icon">w</label>
-                        <div><input type="password" name="contrasena" id="contrasena" placeholder="Inserte su contraseña"></div>
-
-                        <!--EMAIL-->
-                        <label id="email-icon" class="icon">@</label>
-                        <div><input type="email" name="email" id="email" placeholder="Inserte su E-mail"></div>
-
-                        <!--TELEFONO-->
-                        <label id="telf-icon" class="icon">¹</label>
-                        <div><input type="tel" name="telefono" id="telefono" placeholder="Inserte su tel&eacute;fono"></div>
-
-                        <div class="last">
-
-                            <input type="reset" name="VaciarFormulario" id="reset" class="boton_secundario" onclick="resetear()" />
-                            <input type="submit" name="signup" value="Enviar" class="boton_primario" id="enviar">
-                            <br /><br /><a href='../areausuarios.php' class="boton_secundario" id="back_button">VOLVER ATRÁS</a>
-
-                            <?php
-                            $registro = null;
-                            $advertencia = null;
-                            if (isset($_GET['registro'])) {
-                                $registro = $_GET['registro'];
-                                switch ($registro) {
-                                    case ("usuario"):
-                                        $advertencia = "Usuario ya registrado";
-                                        break;
-                                    case ("email"):
-                                        $advertencia = "Email ya registrado";
-                                        break;
-                                    case ("telefono"):
-                                        $advertencia = "Teléfono ya registrado";
-                                        break;
-                                }
-                            }
-
-                            ?>
-
-                            <br /><br /><span id="error" class="nvaliduser"><?php echo $advertencia ?></span>
-                        </div>
-
-
-                    </form>
-
-                </div>
-
-            </section>
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-teal-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; PAX | DIGITAL MINDS 2022</p>
+            <p>Avenida de Palmela 19 - 03730 Jávea (Alicante)</p>
+            <p>
+                <a href="#" class="hover:underline">Política de cookies</a> | 
+                <a href="#" class="hover:underline">Política de privacidad</a> | 
+                <a href="../../views/avisolegal.html" class="hover:underline">Aviso Legal</a>
+            </p>
         </div>
-    </section>
+    </footer>
 
     <script>
-        $("form").submit(function(event) {
+        $("form").submit(function (event) {
+            let campos = ['#usuario', '#nombre', '#apellido', '#contrasena', '#email', '#telefono'];
+            let error = null;
 
-            let $usuario = $('#usuario');
-            let $nombre = $('#nombre');
-            let $apellido = $('#apellido');
-            let $contraseña = $('#contrasena');
-            let $email = $('#email');
-            let $telefono = $('#telefono');
+            campos.forEach(function (campo) {
+                if ($(campo).val().length <= 0) {
+                    error = `Debe rellenar el campo <b>${$(campo).attr('name').toUpperCase()}</b>`;
+                }
+            });
 
-            if ($usuario.val().length <= 0) { //COMPROBAMOS QUE USUARIO NO ESTÉ VACÍO
-                $('#error').html('Debe rellenar el campo <b>USUARIO</b>');
-                event.preventDefault();
-            } else if ($nombre.val().length <= 0) { //COMPROBAMOS QUE EL NOMBRE NO ESTÉ VACÍO
-                $('#error').html('Debe rellenar el campo <b>NOMBRE</b>');
-                event.preventDefault();
-            } else if ($apellido.val().length <= 0) { //COMPROBAMOS QUE EL APELLIDO NO ESTÉ VACÍO
-                $('#error').html('Debe rellenar el campo <b>APELLIDO</b>');
-                event.preventDefault();
-            } else if ($contrasena.val().length <= 0) { //COMPROBAMOS QUE LA CONTRASEÑA NO ESTÉ VACÍA
-                $('#error').html('Debe rellenar el campo <b>CONTRASEÑA</b>');
-                event.preventDefault();
-            } else if ($email.val().length <= 0) { //COMPROBAMOS QUE EL EMAIL NO ESTÉ VACÍO
-                $('#error').html('Debe rellenar el campo <b>EMAIL</b>');
-                event.preventDefault();
-            } else if ($telefono.val().length <= 0) { //COMPROBAMOS QUE EL TELÉFONO NO ESTÉ VACIO
-                $('#error').html('Debe rellenar el campo <b>TELEFONO</b>');
+            if (error) {
+                $('#error').html(error);
                 event.preventDefault();
             } else {
-                $('#error').html('')
+                $('#error').html('');
             }
         });
     </script>
 </body>
-
-<!--PIE DE PÁGINA-->
-<div class="clearfix"></div>
-<footer id="footer">
-
-    <div class="wrap">
-
-        <div>
-            <h5>PAX | DIGITAL MINDS</h5>
-            <!--DIRECCION-->
-            Avenida de Palmela 19 - 03730 J&aacute;vea (Alicante)<br />
-            <!--AVISO LEGAL-->
-            <p>
-                <a href="#" class="advice">Política de cookies</a>&nbsp; | &nbsp;
-                <a href="#" class="advice">Política de privacidad</a>&nbsp; | &nbsp;
-                <a href="views/avisolegal.html" class="advice">Aviso Legal</a>
-            </p>
-            <!--RRSS-->
-            <p>
-                <a href="#" class="rrss" onmouseover="fbhover()" onmouseout="fbblack()"><img id="fb" alt="Facebook" src="../../images/rrss/facebook.png" /></a> &nbsp;
-                <a href="#" class="rrss" onmouseover="ighover()" onmouseout="igblack()"><img id="ig" alt="Instagram" src="../../images/rrss/instagram.png" /></a> &nbsp;
-                <a href="#" class="rrss" onmouseover="twhover()" onmouseout="twblack()"><img id="tw" alt="twitter" src="../../images/rrss/twitter.png" /></a>
-            </p>&copy; PAX | DIGITAL MINDS 2022
-        </div>
-
-    </div>
-</footer>
-
 
 </html>
